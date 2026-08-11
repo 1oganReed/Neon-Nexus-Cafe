@@ -1,0 +1,97 @@
+:root{
+    /* Light Mode Palette */
+    --LightNeonBlue: #3381FF;
+    --LightNeonPurple: #8F28A4;
+    --LightElectricCyan: #70E0FF;
+    --LightBlack: #141414;
+    --LightDarkGray: #3D3E3D;
+    --LightWhite: #ffffff;
+
+    /* Dark Mode Palette */
+    --DarkNeonBlue: #0046B8;
+    --DarkNeonPurple: #391042;
+    --DarkElectricCyan: #00C0F5;
+    --DarkBlack: #020202;
+    --DarkDarkGray: #161413;
+    --DarkWhite: #ffffff;
+}
+
+/* Nav Container CSS */
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#nav-card{
+    display: inline-flex;
+    justify-content: space-around;
+    background: rgba(128, 128, 128, 0.134);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 40px;
+    width: 100%;
+    max-width: 1900px;
+    height:100%;
+    max-height: 10px;
+    color: white;
+    text-align: center;
+}
+
+/* #nav-card:hover{
+    background: rgba(128, 128, 128, 0.034);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 14px 36px 0 rgba(32, 40, 146, 0.567);
+    padding: 40px;
+    width: 100%;
+    max-width: 1900px;
+    height:100%;
+    max-height: 10px;
+    color: white;
+    text-align: center;
+} */
+
+#logo{
+    display: inline-flex;
+    align-items: center;
+    font-size: 42px;  
+}
+
+#nav-links-container{
+    display: flex;
+    align-items: center;
+}
+
+#nav-links{
+    align-items: center;
+    display: inline-flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 150px;
+}
+
+#nav-links > li{
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 25px;
+    
+}
+
+#nav-links:hover > li{
+    background: rgba(128, 128, 128, 0);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.064);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
