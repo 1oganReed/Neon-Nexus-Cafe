@@ -6,7 +6,8 @@
     <title>Nexus Link Checkout</title>
     <link href="/shared/css/footer.css" rel="stylesheet">
     <link href="checkout.css" rel="stylesheet">
-    <link href="shared/css/global.css" rel="stylesheet">
+    <link href="/shared/css/global.css" rel="stylesheet">
+    <link href="/shared/css/navbar.css" rel="stylesheet">
 
     <script src="checkout.js">
         
@@ -21,28 +22,16 @@
         <div id="nav-card">
             <!-- Logo -->
             <div id="logo">
-                <img src="/assets/icons/Transparent_DM-Logo.png" alt="Nexus Logo" class="icons">
-                <h1>Nexus</h1>
+                <img src="assets/icons/Transparent_DM-Logo.png" alt="Nexus Logo" width="50px">
+                <h1 id="logo"><a href="index.html">Nexus</a></h1>
             </div>
 
             <!-- Nav Links -->
-            <div id="nav-links">
-                <ul>
-                    <li>
-                        <a href="/index.html" title="Our homepage" target="_blank">
-                            <img src="/assets/icons/NEXUS-whitecyan.png" alt="Home" class="icons">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/pages/menu/index.html" title="Our menu" target="_blank">
-                            <img src="/assets/icons/NEXUS-menu-whitecyan.png" alt="Menu" class="icons">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/pages/checkout/index.html" title="Done browsing? Head to checkout!">
-                            <img src="/assets/icons/cart-whitecyanglow.png" alt="Checkout" class="icons">
-                        </a>
-                    </li>
+            <div id="nav-links-container">
+                <ul id="nav-links">
+                    <li><a href="index.html"><img src="assets/icons/home-icon.png" width="35px" alt="Home Logo" title="Go back to our homepage">Home</a></li>
+                    <li><a href="pages/menu/index.html"><img src="assets/icons/menu-icon.png" width="35px" alt="Menu Logo" title="Hungry? checkout our menu">Menu</a></li>
+                    <li><a href="pages/checkout/index.html"><img src="assets/icons/cart-icon.png" width="35px" alt="Checkout Logo" title="Done browsing? Start your order!">Checkout</a></li>
                 </ul>
             </div>
         </div>
@@ -75,7 +64,7 @@
             <label for="cname">Name on card</label>
             <input type="text" id="cname" name="cname" minlength="5" placeholder="Ex. John Doe" required>
             
-            <button type="submit" id="nextbtn">Next</button>
+            <button type="submit" id="nextbtn" onclick="purchaseBtn()">Next</button>
             </form>
 
             <!-- Right side of checkout card, should display user's total items, prices, subtotal, and tax. Total should be calculated through javascript.  -->
