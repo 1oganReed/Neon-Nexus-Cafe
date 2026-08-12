@@ -27,7 +27,7 @@ nav{
 #nav-card{
     display: inline-flex;
     justify-content: space-around;
-    background: rgba(128, 128, 128, 0.134);
+    background: rgba(128, 128, 128, 0.012);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: 20px;
@@ -61,37 +61,36 @@ nav{
 #logo{
     display: inline-flex;
     align-items: center;
-    font-size: 42px;  
+    font-size: 58px;  
 }
 
 #nav-links-container{
-    display: flex;
+   
+    display: inline-flex;
     align-items: center;
+
 }
 
 #nav-links{
-    align-items: center;
     display: inline-flex;
+    align-items: center;
     flex-direction: row;
     list-style-type: none;
-    gap: 150px;
+    /* gap: 90px; */
+}
+.img{
+    display: inline-flex; 
+    align-items: center;
+    align-content: center;
+    margin-top: 10px;
 }
 
 #nav-links > li{
+    font-size: 30px;
     border: 1px solid white;
     padding: 10px;
     border-radius: 25px;
-    
-}
-
-#nav-links:hover > li{
-    background: rgba(128, 128, 128, 0);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.064);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    padding: 10px;
-    color: white;
     text-align: center;
+    width: 200px;
+    height: 40px;
 }
