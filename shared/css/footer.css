@@ -1,0 +1,19 @@
+hr{
+    margin-bottom: 15px;
+}
+
+table td{
+    text-align: center;
+    width:500px;
+    margin: 15px;
+    padding: 20px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-size: 12px;
+   color: rgb(77, 77, 77);
+}
+
+th{ 
+   
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:14px;
+}
