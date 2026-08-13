@@ -50,14 +50,20 @@ header > h1{
     height: 700px;
     width: 600px;
     margin-left: 100px;
+    margin-bottom: 80px;
+    text-align: center;
 }
 
 .card-2{
+    display: flex;
     grid-area: card-2;
     border: 1px solid white;
     height: 700px;
     width: 600px;
     margin-left: 100px;
+    text-align: center;
+    justify-content: center;
+    
 }
 
 .card-3{
@@ -66,6 +72,8 @@ header > h1{
     grid-area: card-3;
     border: 1px solid white;
     margin-left: 100px;
+    margin-bottom: 80px;
+    text-align: center;
 }
 
 .card-4{
@@ -74,4 +82,43 @@ header > h1{
     grid-area: card-4;
     border: 1px solid white;
     margin-left: 100px;
+    text-align: center;
+}
+
+.card-1 >h2{
+    font-size: 90px;
+    font-variant: small-caps;
+    background-color: rgba(44, 112, 111, 0.089);
+    
+}
+
+.card-3 >h2{
+    font-size: 90px;
+    font-variant: small-caps;
+    background-color: rgba(44, 112, 111, 0.089);
+}
+
+.card-4 >h2{
+    font-size: 90px;
+    font-variant: small-caps;
+    background-color: rgba(44, 112, 111, 0.089);
+}
+
+.card-1 >p{
+    display: flex;
+    font-size: 20px;
+    margin-top: 50px;
+    padding: 50px;
+}
+
+.card-3 >p{
+    font-size: 20px;
+    margin-top: 50px;
+    padding: 50px;
+}
+
+.card-4 >p{
+    font-size: 20px;
+    margin-top: 50px;
+    padding: 50px;
 }

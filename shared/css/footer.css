@@ -1,3 +1,25 @@
+:root{
+    /* Light Mode Palette */
+    --LightNeonBlue: #3381FF;
+    --LightNeonPurple: #8F28A4;
+    --LightElectricCyan: #70E0FF;
+    --LightBlack: #141414;
+    --LightDarkGray: #3D3E3D;
+    --LightWhite: #ffffff;
+
+    /* Dark Mode Palette */
+    --DarkNeonBlue: #0046B8;
+    --DarkNeonPurple: #391042;
+    --DarkElectricCyan: #00C0F5;
+    --DarkBlack: #020202;
+    --DarkDarkGray: #161413;
+    --DarkWhite: #ffffff;
+}
+
+footer{
+    background-color: var(--LightBlack);
+}
+
 hr{
     margin-bottom: 15px;
 }
@@ -13,7 +35,7 @@ table td{
 }
 
 th{ 
-   
+   color: white;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size:14px;
 }
