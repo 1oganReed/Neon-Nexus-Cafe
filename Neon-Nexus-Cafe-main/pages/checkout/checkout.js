@@ -1,0 +1,5 @@
+function purchaseBtn() {
+    document.getElementById("nextbtn")
+}
+
+document.getElementById("menuitems").innerHTML = "";

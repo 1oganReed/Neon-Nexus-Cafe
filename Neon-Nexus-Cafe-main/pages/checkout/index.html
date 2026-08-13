@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Link Checkout</title>
+    <link href="/shared/css/footer.css" rel="stylesheet">
+    <link href="checkout.css" rel="stylesheet">
+    <link href="/shared/css/global.css" rel="stylesheet">
+    <link href="/shared/css/navbar.css" rel="stylesheet">
+
+    <script src="checkout.js">
+        
+        
+        </script>
+        <link href="\menu\index.html" rel="prev">
+        <link href="index.html" rel="next">
+</head>
+<body>
+    <!-- Navigation bar, should expand horizontally on hover, navigation icons should have inverted/alternated colours upon hover, links/words should toggle an underline when hovered -->
+    <nav>
+        <div id="nav-card">
+            <!-- Logo -->
+            <div id="logo">
+                <img src="assets/icons/Transparent_DM-Logo.png" alt="Nexus Logo" width="90px">
+                <h1 id="logo"><a href="index.html">Neon Nexus</a></h1>
+            </div>
+
+            <!-- Nav Links -->
+            <div id="nav-links-container">
+                <ul id="nav-links">
+                    <li class="nav-list"><a href="index.html"><img class="img" src="assets/icons/NEXUS-whitecyan.png" width="70px" alt="Home Logo">Home</a></li>
+                    <li class="nav-list"><a href="pages/menu/index.html"><img class="img"  src="assets/icons/NEXUS-menu-whitecyan.png" width="70px" alt="Menu Logo">Menu</a></li>
+                    <li class="nav-list"><a href="pages/checkout/index.html"><img  class="img" src="assets/icons/cart-whitecyanglow.png" width="70px" alt="Checkout Logo">Checkout</a></li>
+                </ul>
+            </div>
+        </div>
+     </nav>
+     
+
+
+    <!-- Header containing title -->
+    <header>
+        <h1>Checkout</h1>
+    
+
+    </header>
+    <!-- Main body content containing the checkout card to display user's total items, price, and enter card info -->
+    <main>
+        <div id="checkoutCard">
+            
+            <!-- left side of checkout card, field for user to enter card info. -->
+            <form id="cardinfo">
+                <h3>Payment</h3>
+            <label for="cnumber">Card number</label>
+            <input type="number" id="cnumber" name="cnumber" minlength="16" maxlength="19" placeholder="0000-0000-0000-0000" required>
+            
+            <label for="cexpire">EXP. date</label>
+            <input type="date" id="cexpire" name="cexpire" placeholder="MM/YYYY" required>
+            
+            <label for="ccvv">CVV</label>
+            <input type="number" id="ccvv" name="ccvv" minlength="3" maxlength="3" placeholder="000" required>
+
+            <label for="cname">Name on card</label>
+            <input type="text" id="cname" name="cname" minlength="5" placeholder="Ex. John Doe" required>
+            
+            <button type="submit" id="nextbtn" onclick="purchaseBtn()">Next</button>
+            </form>
+
+            <!-- Right side of checkout card, should display user's total items, prices, subtotal, and tax. Total should be calculated through javascript.  -->
+            <div id="carttotal">
+                <h2>Cart</h2>
+                <!-- container for selected menu items to appear, when an item is in the cart add/remove buttons should appear on the left side of the displayed item, upon hover the buttons should display their respective symbols (+/-)  -->
+                <div id="menuitems">
+                    
+                </div>
+
+                <div id="subtotal">
+                    <h4>Subtotal</h4>
+
+                    <p id="total"> Total : </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        
+
+    </main>
+
+
+    <!-- Footer containing all page links, "all rights reserved", and small "about"-->
+    <footer>
+
+        <p>All rights reserved &copy;</p>
+        <ul>
+            <li>
+                <a href="/index.html" title="Our homepage" target="_blank">
+                
+                </a>
+            </li>
+            <li>
+                <a href="/pages/menu/index.html" title="Our menu" target="_blank">
+                            
+                </a>
+            </li>
+            <li>
+                <a href="/pages/checkout/index.html" title="Done browsing? Head to checkout!">
+                            
+                </a>
+            </li>
+        </ul>
+
+        
+
+
+    </footer>
+</body>
