@@ -1,6 +1,77 @@
 body{
-    background-image: linear-gradient(to bottom right, rgb(3, 3, 3), black, rgb(31, 31, 31));
+    background: linear-gradient(270deg, #020209 0.000%, #05050b 8.333%, #08080d 16.667%, #0a0a10 25.000%, #0d0d13 33.333%, #0f1015 41.667%, #121217 50.000%, #14151a 58.333%, #17171c 66.667%, #19191e 75.000%, #1b1b20 83.333%, #1c1c22 91.667%, #1e1e24 100.000%);
     height: 100vh;
     padding:0;
     margin:0;
+    color:white;
+}
+
+main{
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "card-1 card-2"
+    "card-3 card-4";
+    grid-template-columns: 1fr 1fr ;
+    justify-content: space-evenly;
+    row-gap: 200px;
+}
+
+header{
+    grid-area: header;
+    font-size: 60px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    background: conic-gradient(from 180deg, #a47451 0.000deg, #9c9881 60.000deg, #73a09d 120.000deg, #3b899a 180.000deg, #095b79 240.000deg, #002847 300.000deg, #000116 360.000deg);
+    height: 700px;
+}
+
+header > h1{
+    background: rgba(128, 128, 128, 0.134);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 40px;
+    /* width: 100%; */
+    max-width: 1400px;
+    height:100%;
+    max-height: 130px;
+    color: white;
+    text-align: center;
+    justify-self: center;
+}
+
+.card-1{
+    grid-area: card-1;
+    border: 1px solid white;
+    height: 700px;
+    width: 600px;
+    margin-left: 100px;
+}
+
+.card-2{
+    grid-area: card-2;
+    border: 1px solid white;
+    height: 700px;
+    width: 600px;
+    margin-left: 100px;
+}
+
+.card-3{
+    height: 700px;
+    width: 600px;
+    grid-area: card-3;
+    border: 1px solid white;
+    margin-left: 100px;
+}
+
+.card-4{
+    height: 700px;
+    width: 600px;
+    grid-area: card-4;
+    border: 1px solid white;
+    margin-left: 100px;
 }
