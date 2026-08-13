@@ -4,27 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu-Nexus</Menu-Nexus></title>
-    <link rel="stylesheet" href="/shared/css/navbar.css">
-    <link rel="stylesheet" href="/shared/css/footer.css">
+    <link href="/shared/css/footer.css" rel="stylesheet">
     <link href="menu.css" rel="stylesheet">
     <defer>
         <a src="menus.js"alt="javascript"></a>
 </head>
+
+
 <body>
     <nav>
         <div id="nav-card">
             <!-- Logo -->
             <div id="logo">
-                <img src="/assets/icons/Transparent_DM-Logo.png" alt="Nexus Logo" width="90px">
-                <h1 id="logo"><a href="/index.html">Neon Nexus</a></h1>
+                <img src="assets/icons/Transparent_DM-Logo.png" alt="Nexus Logo" width="90px">
+                <h1 id="logo"><a href="index.html">Neon Nexus</a></h1>
             </div>
 
             <!-- Nav Links -->
             <div id="nav-links-container">
                 <ul id="nav-links">
-                    <li class="nav-list"><a href="/index.html"><img class="img" src="/assets/icons/NEXUS-whitecyan.png" width="70px" alt="Home Logo">Home</a></li>
-                    <li class="nav-list"><a href="index.html"><img class="img"  src="/assets/icons/NEXUS-menu-whitecyan.png" width="70px" alt="Menu Logo">Menu</a></li>
-                    <li class="nav-list"><a href="/pages/checkout/index.html"><img  class="img" src="/assets/icons/cart-whitecyanglow.png" width="70px" alt="Checkout Logo">Checkout</a></li>
+                    <li class="nav-list"><a href="index.html"><img class="img" src="assets/icons/NEXUS-whitecyan.png" width="70px" alt="Home Logo">Home</a></li>
+                    <li class="nav-list"><a href="pages/menu/index.html"><img class="img"  src="assets/icons/NEXUS-menu-whitecyan.png" width="70px" alt="Menu Logo">Menu</a></li>
+                    <li class="nav-list"><a href="pages/checkout/index.html"><img  class="img" src="assets/icons/cart-whitecyanglow.png" width="70px" alt="Checkout Logo">Checkout</a></li>
                 </ul>
             </div>
         </div>
@@ -32,73 +33,129 @@
     <header id="banner">
         
     </header>
+       
     <main class="container">
-        <div id="menu-H">
+         
+        <div class="menu-H">
             <h1>Menu</h1>
         </div>
-       
         <!--Times of resnaut-->
-        <div id="time-restnaut">
-        <h3>Opening times</h3>
+        <img class="time" src="\assets\icons\time-border.png" alt="border">
+        <div class="time-w">
+        <h4>Opening times</h4>
+        <p>Open for 8am-12pm all WEEK</p>
         
         </div>
          <!--Main menu and food-->   
         <section class="menu" id="sec-1">
-            <h3>Breakfest</h3>
-            <ul class="items">
-                <li>Quantum Waffles &nbsp; 12.99$</li>
-                <li>Pixel Waffles  &nbsp; 11.50$</li>
-                <li>Cyber Omelet  &nbsp; 15.99$</li>
-                <li>Data Breakfest &nbsp; 14.75$</li>
-                <li>Ciruit bord toast  &nbsp; 12.99$</li>
-            </ul>
+            <Table id="items">
+                <tr>
+                    <th class="h3">Breakfest</th>
+                </tr>
+                <tr >
+                <tr>
+                    <td>Quantum Waffles &nbsp; 12.99$</td>
+                </tr>
+                <tr>
+                    <td>Pixel Waffles  &nbsp; 11.50$</td>
+                </tr>
+                <tr>
+                     <td>Cyber Omelet  &nbsp; 15.99$</td>
+                </tr>
+                <tr>
+                     <td>Data Breakfest &nbsp; 14.75$</td>
+                </tr>
+                <tr>
+                    <td>Ciruit bord toast  &nbsp; 12.99$ <img class="food-icon" src="/assets\icons\toast.png" alt="toast"></td>
+                                             
+                </tr>
+                  
+    
+            </table>
         </section>
         <!--Lunch-->
          <section class="menu"id="sec-2">
-             <h3>Lunch</h3>
-             <ul class="items">
-                <li>Glitch wrap &nbsp;10.99$</li>
-                <li>Fusion club sandwich &nbsp;12.50$</li>
-                <li>AI ramen bowl &nbsp; 15.99$</li>
-                <li>Hologram burger &nbsp;15.75$</li>
-                <li>Fusion turkey sandwich &nbsp; 13.99$</li>
+             <table class="items">
+                <tr>
+                    <th class="h3">Lunch</th>
+                </tr>
+                <tr>
+                    <td>Glitch wrap &nbsp;10.99$</td>
+                </tr>
+                <tr>
+                      <td>Fusion club sandwich &nbsp;12.50$</td>
+                </tr>
+                <tr>
+                      <td>AI ramen bowl &nbsp; 15.99$</td>
+                </tr>
+                <tr>
+                       <td>Hologram burger &nbsp;15.75$</td>
+                </tr>
+                <tr>
+                      <td>Fusion turkey sandwich &nbsp; 13.99$</td>
+                </tr>
 
-             </ul>
+             </table>
         </section>
         <!--Dinner-->
         <aside class="menu" id="sec-3">
             <h3>Dinner</h3>
-            <ul class="items">
-                <li>Plasma Steak &nbsp; 60.99$</li>
-                <li>Binary tacos &nbsp; 20.98$</li>
-                <li>cyber sushi &nbsp; 21.75$</li>
-                <li>Neon curry plate &nbsp;35.75$ </li>
-                <li>Quantum rice plate &nbsp;20.99$</li>
-
-            </ul>
+            <table class="items">
+                <tr>
+                    <td>Plasma Steak &nbsp; 60.99$</td>
+                </tr>
+                <tr>
+                    <td>Binary tacos &nbsp; 20.98$</td>
+                </tr>
+                <tr>
+                    <td>cyber sushi &nbsp; 21.75$</td>
+                </tr>
+                <tr>
+                    <td>Neon curry plate &nbsp;35.75$ </td>
+                </tr>
+                <tr>
+                     <td>Quantum rice plate &nbsp;20.99$</td>
+                </tr>
+            </table>
         </aside>
         <!--Derserts-->
-        <section class="deals" id="sec-3">
+        <section class="deals" id="sec-4">
             <h3>Derserts</h3>
-            <ul class="items">
-                <li>Data cube brownies &nbsp; 15.99$</li>
-                <li>Neon cooke &nbsp; 12.99$</li>
-                <li>Hologram sundae &nbsp; 18.99$</li>
-                <li>pixel devil cake &nbsp; 25.75$</li>
-                <li>Quamtum icecream float &nbsp; 16.99$</li>
-
-            </ul>
+            <table class="items">
+                <tr>
+                      <td>Data cube brownies &nbsp; 15.99$</td>
+                </tr>
+                <tr>
+                      <td>Hologram sundae &nbsp; 18.99$</td>
+                </tr>
+                <tr>
+                       <td>pixel devil cake &nbsp; 25.75$</td>
+                </tr>
+                <tr>
+                    <td>Quamtum icecream float &nbsp; 16.99$</td>
+                </tr>
+            </table>
     
         </section>
-        <section class="menu" id="sec-4">
+        <section class="menu" id="sec-5">
             <h3>Drinks</h3>
-            <ul class="items">
-                <li>Blue screen soda &nbsp; 13.99$</li>
-                <li>Lighting energery &nbsp; 15.75$</li>
-                <li>RGB shake &nbsp; 12.75$</li>
-                <li>Nano Lemonade &nbsp;16.99$</li>
-                <li>Data tea &nbsp;12.99$</li>
-            </ul>
+            <table class="items">
+                <tr>
+                     <td>Blue screen soda &nbsp; 13.99$</td>
+                </tr>
+                <tr>
+                     <td>Lighting energery &nbsp; 15.75$</td>
+                </tr>
+                <tr>
+                         <td>RGB shake &nbsp; 12.75$</td>
+                </tr>
+                <tr>
+                        <td>Nano Lemonade &nbsp;16.99$</td>
+                </tr>
+                <tr>
+                          <td>Data tea &nbsp;12.99$</td>
+                </tr>              
+            </table>
 
         </section>
 
@@ -107,26 +164,39 @@
     <button id="cart-button"></button>
     <button id="Dark-mode"></button>
 
+    <!--Footer index-->
     <footer>
         <hr>
-        <table>
-            <tr>
-                <th>Contact Info</th>
-                <th>Adress booking</th>
-                <th>Locations</th>
-            </tr>
-            <tr>
-                <td> 000-783-1780</td>
-                <td> Open Mon-Fri</td>
-                <td> 2376 New Tech Ave</td>
-            </tr>
-            <tr>
-                <td> NexusSupport@sample.com</td>
-                <td> Open 8AM-10PM</td>
-                <td> 7890 Future St.</td>
-            </tr>
-        </table>
-     </footer>
+
+    <table>
+      <tr>
+        <th>Contact Info</th>
+        <th>Info</th>
+        <th>Locations</th>
+        <th>Privarcy Notice</th>
+      </tr>
+      <tr>
+        <td> 643-783-1780</td>
+        <td> open Mon-Fri</td>
+        <td>Adress 2376 New Tech Ave</td>
+        <td>Consumer health</td>
+      </tr>
+      <tr>
+        <td>NeonNexus@icloud.com</td>
+        <td>Child Free</td>
+        <td> Adress 12560 Cyber Gone Ave</td>
+        <td>Cookies</td>
+      </tr>
+      <tr>
+        <td>@NeonNexus future</td>
+        <td>8am-12pm</td>
+        <td>Adress 7635 Future me Ave</td>
+        <td>Terms of use</td>
+      </tr>
+    </table>
+
+
+    </footer>
     
 </body>
 </html>
