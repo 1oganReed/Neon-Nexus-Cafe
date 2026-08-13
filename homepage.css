@@ -49,7 +49,7 @@ header > h1{
     border: 1px solid white;
     height: 700px;
     width: 600px;
-    margin-left: 120px;
+    margin-left: 100px;
 }
 
 .card-2{
@@ -57,7 +57,7 @@ header > h1{
     border: 1px solid white;
     height: 700px;
     width: 600px;
-    margin-left: 60px;
+    margin-left: 100px;
 }
 
 .card-3{
@@ -65,7 +65,7 @@ header > h1{
     width: 600px;
     grid-area: card-3;
     border: 1px solid white;
-    margin-left: 120px;
+    margin-left: 100px;
 }
 
 .card-4{
@@ -73,5 +73,5 @@ header > h1{
     width: 600px;
     grid-area: card-4;
     border: 1px solid white;
-    margin-left: 60px;
+    margin-left: 100px;
 }
