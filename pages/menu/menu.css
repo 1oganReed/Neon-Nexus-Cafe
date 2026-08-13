@@ -7,7 +7,7 @@
     padding:0px;
 }
 body{
-    background-color: white;
+    background-color: black
 }
 .container{
     justify-content: center;
@@ -27,17 +27,9 @@ body{
 .h3{
     text-align: center;
 }
-#sec-1{
-    display: flex;
-    grid-area: 2/1/6/5;
-    background-color: aqua;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 20px;
-    font-family:Pix ;
-   
-    
-    
+
+.food-icon{
+    width:30px;
 }
 h3{
     text-align: center;
@@ -62,6 +54,17 @@ h3{
     font-family: 'Pixelify,Sans';
 }
 
+#sec-1{
+    display: flex;
+    grid-area: 2/1/6/5;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    font-family:Pix ;
+   
+    
+    
+}
 #sec-2{
     display: flex;
     grid-area: 2/5/6/9;
@@ -75,7 +78,6 @@ h3{
 #sec-3{
     display: flex;
     grid-area: 2/9/6/13;
-    background-color: rgb(255, 0, 225);
     margin: 10px;
     padding: 25px;
      border-radius: 20px;
@@ -83,7 +85,13 @@ h3{
 #sec-4{
     display: flex;
     grid-area: 6/1/10/5;
-    background-color: rgb(3, 11, 166);
+    margin: 10px;
+    padding: 25px;
+     border-radius: 20px;
+}
+#sec-5{
+    display: flex;
+    grid-area: 6/9/10/5;
     margin: 10px;
     padding: 25px;
      border-radius: 20px;
@@ -112,12 +120,21 @@ hr{
     margin-bottom: 15px;
 }
 
-Table,td{
+table td{
+    text-align: center;
     width:500px;
     margin: 15px;
     padding: 20px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
    font-size: 12px;
-   color: rgb(77, 77, 77);
+   color: white;
+}
+
+th{ 
+   
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:14px;
+    color: white;
 }
 
 #items{
@@ -127,6 +144,9 @@ Table,td{
     color:black;
     text-align: center;
   
+}
+tr:hover{
+     text-shadow: 0 0 5px #00fffb;
 }
 
 
