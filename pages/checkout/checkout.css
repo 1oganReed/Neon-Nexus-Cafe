@@ -1,47 +1,82 @@
+/* universal styling */
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
+    text-decoration: none;
+    list-style-type: none;
 
+}
+/* direct tag applying to the page's body */
 body{
     background-image: linear-gradient(to bottom right, rgb(3, 3, 3), black, rgb(31, 31, 31));
     height: 100vh;
     padding:0;
     margin:0;
+   
 }
 
-#nav-links{
-    display: flex;
-    flex-direction: column;
-    list-style-type: none;
-
-}
-
+/* checkout box containing the page's main content */
 #checkoutCard{
     width: 80vw;
     height: 60vh;
-    border: 2px solid #000000;
+    margin-bottom: 10%;
+    border: 2px solid #00C0F5;
     border-radius: 15px;
     align-self: center;
     justify-self: center;
-
     padding: 30px;
     color: white;
     background-color: rgba(0, 0, 0, 0.545);
+    box-shadow: 5px 5px 10px #00C0F5, -5px -5px 10px #00C0F5 ;
 
 } 
+/* inside checkoutCard, form holding all info fields for user input */
+#cardinfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    font-size: larger;
+    font-weight: bold;
+    padding: 10px;
+
+}
+
+input{
+    width: 30%;
+    height: 15%;
+}
+/* submit / "next" button styling */
+#nextbtn{
+    background-color: #00C0F5;
+    border: 2px solid #0046B8;
+    color: #f1f3f4;
+    width: 60px;
+    height: 30px;
+}
+
+/* Styling for when button is actively being pressed + hovered over */
+#nextbtn:active{
+    background-color: #0046B8;
+    color: rgb(172, 172, 172);
+    border: 1px solid #00C0F5;
+}
+
+#nextbtn:hover{
+box-shadow: 1px 1px 10px #00C0F5;
+}
+
+#nextbtn:hover:active{
+    box-shadow: 2px 2px 10px #0b5fe7;
+}
+
+/* end of button styling */
+
+
 /*
 
-
-
-
-}
-.icons{
-width: 50px;
-height: 50px;
-
-}
 
 Right side of checkout card, should display user's total items, prices, subtotal, and tax. 
 
@@ -56,11 +91,5 @@ Right side of checkout card, should display user's total items, prices, subtotal
 }
 
 
-    
-footer{
-align-items:center;
-
-
-}
 
 */

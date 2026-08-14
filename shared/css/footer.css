@@ -1,0 +1,40 @@
+hr{
+    margin-bottom: 15px;
+}
+
+table td{
+    text-align: center;
+    width:500px;
+    margin: 15px;
+    padding: 20px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-size: 12px;
+   color: white;
+}
+
+th{ 
+   
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:14px;
+    color: white;
+}
+
+#items{
+    margin: 5px;
+    padding: 10px;
+   font-size: 12px;
+    color:black;
+    text-align: center;
+  
+}
+tr:hover{
+     text-shadow: 0 0 5px #00fffb;
+}
+
+
+
+th{ 
+   
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:14px;
+}
