@@ -17,6 +17,7 @@ const menu= [
     price:"15.99$",
     image:"",
    },
+
       {
     name:"Data Breakfest",
     catergory:"Breakfest",
@@ -290,6 +291,7 @@ const menu= [
     price:"13.99$",
     image:"",
    },
+   
       {
     name:"Lighting energery ",
     catergory:"Drink",
@@ -316,3 +318,7 @@ const menu= [
    },
    /*Drinks done */
 ];
+ 
+let menustring = JSON.stringify(menu);
+localStorage.setItem("menu")
+
