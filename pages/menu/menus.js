@@ -1,324 +1,238 @@
-const menu= [
+function saveobject(){
+   let menu= [
+   //breakfest
     {
-    name:"Quantum Waffles",
+    name:"quantumWaffles",
     catergory:"Breakfest",
     price:"12.99$",
     image:"",
    },
       {
-    name:"Pixel Waffles ",
+    name:"pixelWaffles ",
     catergory:"Breakfest",
     price:"11.50$",
     image:"",
    },
       {
-    name:"Cyber Omelet ",
+    name:"cyberOmelet ",
     catergory:"Breakfest",
     price:"15.99$",
     image:"",
    },
 
       {
-    name:"Data Breakfest",
+    name:"dataBreakfeast",
     catergory:"Breakfest",
     price:"14.75$",
     image:"",
    },
     {
-    name:"Ciruit bord toast",
+    name:"circuitBoardToast",
     catergory:"Breakfest",
     price:"12.99$",
     image:"",
    },
    /*Breakfest area Done*/ 
-
+   //lunch  area
    {
-    name:"Glitch wrap",
+    name:"glitchWrap",
     catergory:"Lunch",
     price:"10.99",
     image:"",
    },
       {
-    name:"Fusion club sandwich",
+    name:"fusionClubSandwich",
     catergory:"Lunch",
     price:"12.50$",
     image:"",
    },
       {
-    name:"AI ramen bowl",
+    name:"aiRamenBowl",
     catergory:"Lunch",
     price:" 15.99$",
     image:"",
    },
       {
-    name:"Hologram burger",
+    name:"hologramBurger",
     catergory:"Lunch",
     price:"15.75$",
     image:"",
    },
     {
-    name:"Fusion turkey sandwich",
+    name:"fusionTurkeySandwich",
     catergory:"Lunch",
     price:"13.99$",
     image:"",
    },
    /* Lunch area done */
+   //Dinner area
    {
-    name:"Plasma Steak",
+    name:"plasmaSteak",
     catergory:"Dinner",
     price:"60.99$",
     image:"",
    },
       {
-    name:"Binary tacos",
+    name:"binaryTacos",
     catergory:"Dinner",
     price:"20.98$",
     image:"",
    },
       {
-    name:"cyber sushi",
+    name:"cyberSushi",
     catergory:"Dinner",
     price:" 21.75$",
     image:"",
    },
       {
-    name:"Neon curry plate",
+    name:"neonCurryPlate",
     catergory:"Dinner",
     price:"35.75$",
     image:"",
    },
     {
-    name:"Quantum rice plate",
+    name:"quantumRicePlate",
     catergory:"Dinner",
     price:"20.99$",
     image:"",
    },
    /*Dinner area Done */
+   //Derserts
    {
-    name:"Data cube brownies",
+    name:"dataCubeBrownies",
     catergory:"Derserts",
     price:"15.99$",
     image:"",
    },
       {
-    name:"Neon cooke",
-    catergory:"Derserts",
-    price:"12.99$",
-    image:"",
-   },
-      {
-    name:"Hologram sundae",
+    name:"hologramSundae",
     catergory:"Derserts",
     price:"18.99$",
     image:"",
    },
       {
-    name:"pixel devil cake",
+    name:"pixelDevilCake",
     catergory:"Derserts",
     price:"25.75$",
     image:"",
    },
     {
-    name:"Quamtum icecream float",
+    name:"quantumIcecreamFloat",
     catergory:"Derserts",
     price:" 16.99$",
     image:"",
    },
    /*Dersert area done */
-
+   //Drinks Done
    {
-    name:"Blue screen soda",
+    name:"blueScreenSoda",
     catergory:"Drink",
     price:"13.99$",
     image:"",
    },
       {
-    name:"Lighting energery ",
+    name:"lightingEnergy",
     catergory:"Drink",
     price:"15.75$",
     image:"",
    },
       {
-    name:"RGB shake",
+    name:"rgbShake",
     catergory:"Drink",
     price:"12.75$",
     image:"",
    },
       {
-    name:"Nano Lemonade",
+    name:"nanoLemonade",
     catergory:"Drink",
     price:"16.99$",
     image:"",
    },
     {
-    name:"Data tea",
+    name:"dataTea",
     catergory:"Drink",
     price:"12.99$",
     image:"",
    },
    /*Drinks done */
-];
-const menu= [
-    {
-    name:"Quantum Waffles",
-    catergory:"Breakfest",
-    price:"12.99$",
-    image:"",
-   },
-      {
-    name:"Pixel Waffles ",
-    catergory:"Breakfest",
-    price:"11.50$",
-    image:"",
-   },
-      {
-    name:"Cyber Omelet ",
-    catergory:"Breakfest",
-    price:"15.99$",
-    image:"",
-   },
-      {
-    name:"Data Breakfest",
-    catergory:"Breakfest",
-    price:"14.75$",
-    image:"",
-   },
-    {
-    name:"Ciruit bord toast",
-    catergory:"Breakfest",
-    price:"12.99$",
-    image:"",
-   },
-   /*Breakfest area Done*/ 
+   ];
 
-   {
-    name:"Glitch wrap",
-    catergory:"Lunch",
-    price:"10.99",
-    image:"",
-   },
-      {
-    name:"Fusion club sandwich",
-    catergory:"Lunch",
-    price:"12.50$",
-    image:"",
-   },
-      {
-    name:"AI ramen bowl",
-    catergory:"Lunch",
-    price:" 15.99$",
-    image:"",
-   },
-      {
-    name:"Hologram burger",
-    catergory:"Lunch",
-    price:"15.75$",
-    image:"",
-   },
-    {
-    name:"Fusion turkey sandwich",
-    catergory:"Lunch",
-    price:"13.99$",
-    image:"",
-   },
-   /* Lunch area done */
-   {
-    name:"Plasma Steak",
-    catergory:"Dinner",
-    price:"60.99$",
-    image:"",
-   },
-      {
-    name:"Binary tacos",
-    catergory:"Dinner",
-    price:"20.98$",
-    image:"",
-   },
-      {
-    name:"cyber sushi",
-    catergory:"Dinner",
-    price:" 21.75$",
-    image:"",
-   },
-      {
-    name:"Neon curry plate",
-    catergory:"Dinner",
-    price:"35.75$",
-    image:"",
-   },
-    {
-    name:"Quantum rice plate",
-    catergory:"Dinner",
-    price:"20.99$",
-    image:"",
-   },
-   /*Dinner area Done */
-   {
-    name:"Data cube brownies",
-    catergory:"Derserts",
-    price:"15.99$",
-    image:"",
-   },
-      {
-    name:"Neon cooke",
-    catergory:"Derserts",
-    price:"12.99$",
-    image:"",
-   },
-      {
-    name:"Hologram sundae",
-    catergory:"Derserts",
-    price:"18.99$",
-    image:"",
-   },
-      {
-    name:"pixel devil cake",
-    catergory:"Derserts",
-    price:"25.75$",
-    image:"",
-   },
-    {
-    name:"Quamtum icecream float",
-    catergory:"Derserts",
-    price:" 16.99$",
-    image:"",
-   },
-   /*Dersert area done */
+// let cart = [];
 
-   {
-    name:"Blue screen soda",
-    catergory:"Drink",
-    price:"13.99$",
-    image:"",
-   },
+// function cartItem(itemName, itemPrice){
+//    this.name = itemName,
+//    this.price = itemPrice
+// }
+
+// function addToCart(){
+//    let cartItem = new cartItem(name.value, price.value);
+//    let cartStringified = JSON.stringify(cartItem);
+
+//    cartItemData.push(cartItemStringified);
+//    localStorage.setItem('data', cartItemData)
+// }
+
+function addToCart(name){
    
-      {
-    name:"Lighting energery ",
-    catergory:"Drink",
-    price:"15.75$",
-    image:"",
-   },
-      {
-    name:"RGB shake",
-    catergory:"Drink",
-    price:"12.75$",
-    image:"",
-   },
-      {
-    name:"Nano Lemonade",
-    catergory:"Drink",
-    price:"16.99$",
-    image:"",
-   },
-    {
-    name:"Data tea",
-    catergory:"Drink",
-    price:"12.99$",
-    image:"",
-   },
-   /*Drinks done */
-];
+}
+
+function addItemLocalStorage(menuItem){
+   let menuItems = getItemsFromStorage();
+   menuItems.push(menuItem);
+   localStorage.setItem('menuItem', JSON.stringify(menuItems));
+}
+
+function getItemsFromStorage(){
+   let menuItems = getItemsFromStorage();
+   let menuItems;
+   const menuItemsLS = localStorage.getItem('menuItems');
+   if(menuItemsLS === null){
+      menuItems = [];
+   }
+   else{
+      menuItems = JSON.parse(menuItemsLS);
+   }
+   return menuItems
+}
+
+//Java script light mode switch instantly 
+
+
+
+//local storage 
+let menuString=JSON.stringify(menu);
+localStorage.setItem("Menu", menuString);
+document.getElementById("output").textContent=
+"Item saved "+"\n"+  menuString;
+document.getElementById("output").textContent =
+"item saved"+ "\n"+ menuString, null;
+}
+
+//loadind storage
+function loadObject(){
+   let savedmenu = localStorage.getItem("menu");
+   if(savedmenu){
+      let studentObject = JSON.parse(savedmenu);
+      document.getElementById("output").textContent =
+      "Item added:"+
+      "Name"+ menuObject.name+"\n"+
+      "Price:"+ menuObject.price;
+   }
+
+   else {
+         document.getElementById("output").textContent=
+         "No Item found on Menu"
+      }
+
+   }
+
+   function clearStorage(){
+          localStorage.clear();
+            document.getElementById("cleared");
+   }
+
+
+   //function color switch light mode 
  
-let menustring = JSON.stringify(menu);
-localStorage.setItem("menu")
+
 

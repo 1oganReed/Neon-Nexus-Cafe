@@ -7,7 +7,7 @@
     padding:0px;
 }
 body{
-    background-color: black
+    background-color: var(--LightBlack);
 }
 .container{
      font-family: "VT323", monospace;
@@ -44,16 +44,25 @@ h3{
 .time-w{
     display: flex;
     grid-area: 5/13/2/15;
-    color: white;
-     box-shadow: 0 0 10px 5px #84f7ff;
+    color: var(--LightWhite);
+     box-shadow: 0 0 10px 5px var(--LightElectricCyan);
     font-size: 20px;
-    border: 5px, solid, white;
+    border: 5px, solid, var(--LightWhite);
     flex-direction: column;
     margin-top: 60px;
     padding:35px;
     border-radius: 10px;
     height: 150px;
 }
+
+/* .cart,button{
+    background-color: black;
+    border: black;
+    width: 100px;
+    border-radius: 100px;
+
+
+} */
 
 
 .vt323-regular {
@@ -118,7 +127,7 @@ h3{
     justify-content: center;
     grid-area: 1/1/1/20;
     background-image: linear-gradient(to bottom right,#f940d41f,#8f28a460,#3381FF,#70E0FF );
-    color:white;
+    color:var(--LightWhite);
     border-radius: 20px;
     margin-bottom: 10px;
     padding: 20px;
@@ -141,13 +150,13 @@ table td{
     margin: 15px;
     padding: 20px;
    font-size: 15px;
-   color: white;
+   color: var(--LightWhite);
 }
 
 th{ 
      font-family: "VT323", monospace;
     font-size:24px;
-    color: #bbfffe;
+    color: var(--LightElectricCyan);
 }
 
 #items{
@@ -159,7 +168,7 @@ th{
   
 }
 tr:hover{
-     text-shadow: 0 0 5px #00fffb;
+     text-shadow: 0 0 5px var(--LightNeonBlue);
 }
 
 
@@ -242,6 +251,29 @@ nav{
     height: auto;
 }
 
+/* button{
+    display: flex;
+    gap: 15px;
+    margin-left: 100px;
+    height: 20px;
+    background-color: #3381FF;
+    border: 1px solid rgba(255, 255, 255, 0.259)
+} */
+
+/* button{
+    display:flex;
+    flex-direction: column;
+    background: rgba(128, 128, 128, 0.012);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 10px;
+    margin: 10px 0px 10px 100px;
+    color: white;
+    
+} */
 /* Make the anchor contain the image and text side-by-side and centered */
 #nav-links > li > a{
     display: inline-flex;
@@ -250,75 +282,41 @@ nav{
     color: inherit;
     text-decoration: none;
 }
+@media screen and (max-width: 600px) {
+  .nav-card{
+     width: 100px;
+  }
+  .container{
+   display: grid;
+  }
+  /*grid container */
+  table tr{
+   justify-content: center;
+  }
+  .time-w{
+      display: flex;
+  }
+  .time{
+    display: flex
+  }
+};
 
-*{
-    margin:0px;
-    box-sizing: border-box;
-    padding:0px;
-}
-body{
-    background-color: #131212;
-}
-.container{
-    justify-content: center;
-    display: grid;
-    grid-template-columns: repeat( 15, 100px) ;
-    grid-template-rows: repeat(10,100px);
-}
-#time-restnaut{
-    display: flex;
-    margin: 10px;
-    grid-area: 2/20/4/13;
-    padding: 25px;
-    border-radius:20px ;
-    
-}
-#sec-1{
-    display: flex;
-    grid-area: 2/1/6/5;
-    background-color: aqua;
-    margin: 10px;
-    padding: 25px;
-    
-    
-}
-h3{
-    justify-content: center;
-    align-items: top;
-    margin-bottom:80px ;
-}
-.items li{
-    list-style: none;
-    justify-content: center;
-    margin: 15px;
-    align-items: self-end;
-}
-#sec-2{
-    display: flex;
-    grid-area: 2/5/6/9;
-    margin: 10px;
-    padding: 25px;;
-}
-#sec-3{
-    display: flex;
-    grid-area: 2/9/6/13;
-    margin: 10px;
-    padding: 25px;;
-}
-#sec-4{
-    display: flex;
-    grid-area: 6/1/10/5;
-    margin: 10px;
-    padding: 25px;;
-}
-#banner{
-    height:100px
-}
-#menu-H{
-    display: flex;
-    justify-content: center;
-    grid-area: 1/1/1/20;
-    margin-bottom: 10px;
-    padding: 20px;
-   
-}
+@media screen and (max-width: 380px) {
+   .nav-card{
+     width: 100px
+  }
+  .container{
+   display: grid;
+  }
+  /*grid container */
+  table tr{
+   justify-content: center;
+  }
+  .time-w{
+      display: flex;
+  }
+  .time{
+    display: flex
+  }
+
+};
