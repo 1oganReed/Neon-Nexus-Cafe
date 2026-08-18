@@ -184,18 +184,25 @@
             </form>
 
             <!-- Right side of checkout card, should display user's total items, prices, subtotal, and tax. Total should be calculated through javascript.  -->
-            <div id="carttotal">
-                <h2>Cart</h2>
-                <!-- container for selected menu items to appear, when an item is in the cart add/remove buttons should appear on the left side of the displayed item, upon hover the buttons should display their respective symbols (+/-)  -->
-                <div id="menuitems">
+            
+            <div id="items-grid" id="itemGrid"> </div>
+
+            <div id="cart-model" id="cartModel">
+                <div class="cart-content">
+                    <h2 class="cart-header">Your Cart</h2>
+                    <div id="cartItems"></div>
+
+                    <div class="cart-total">
+                        <span> Total : </span>
+
+                        <span id="cartTotal">$0 </span>
+
+                    </div>
+                        <button class="close-btn" onclick="toggleCart()">Close</button>
+
+            
+
                     
-                </div>
-
-                <div id="subtotal">
-                    <h4>Subtotal</h4>
-
-                    <p id="total"> Total : </p>
-
                 </div>
 
             </div>
@@ -208,25 +215,37 @@
 
 
     <!-- Footer containing all page links, "all rights reserved", and small "about"-->
-    <footer>
+    <!--Footer index-->
+    <footer id="footer">
         <hr>
-        <table>
-            <tr>
-                <th>Contact Info</th>
-                <th>Adress booking</th>
-                <th>Locations</th>
-            </tr>
-            <tr>
-                <td>&#128379; 000-783-1780</td>
-                <td>&#128466; Open Mon-Fri</td>
-                <td>&#128486; 2376 New tech ave&#128487;</td>
-            </tr>
-            <tr>
-                <td>&#128386; NexusSupport@sample.com</td>
-                <td>&#128364; Open 8AM-10PM</td>
-                <td>&#128486; 7891 Lunar St.&#128487;</td>
-            </tr>
-        </table>
-     </footer>
-     <script src="checkout.js"></script>
+
+    <table>
+      <tr>
+        <th>Contact Info</th>
+        <th>Info</th>
+        <th>Locations</th>
+        <th>Privacy Notice</th>
+      </tr>
+      <tr>
+        <td> 643-783-1780</td>
+        <td> open Mon-Fri</td>
+        <td>Address 2376 New Tech Ave</td>
+        <td>Consumer health</td>
+      </tr>
+      <tr>
+        <td>NeonNexus@icloud.com</td>
+        <td>Child Free</td>
+        <td>Address 12560 Cyber Gone Ave</td>
+        <td>Cookies</td>
+      </tr>
+      <tr>
+        <td>@NeonNexus future</td>
+        <td>8am-12pm</td>
+        <td>Address 7635 Future me Ave</td>
+        <td>Terms of use</td>
+      </tr>
+    </table>
+
+
+    </footer>
 </body>
