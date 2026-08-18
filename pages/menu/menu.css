@@ -55,6 +55,15 @@ h3{
     height: 150px;
 }
 
+/* .cart,button{
+    background-color: black;
+    border: black;
+    width: 100px;
+    border-radius: 100px;
+
+
+} */
+
 
 .vt323-regular {
   font-family: "VT323", monospace;
@@ -249,5 +258,19 @@ nav{
     gap: 10px;
     color: inherit;
     text-decoration: none;
+}
+@media screen and (min-width: 600px) {
+  .nav-card{
+     width: 100px
+  }
+};
+
+ .
+
+@media screen and (min-width: 480px) {
+  
+}
+@media screen and (min-width: 380px) {
+  
 }
 

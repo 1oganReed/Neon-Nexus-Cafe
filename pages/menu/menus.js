@@ -158,3 +158,10 @@ const menu= [
    /*Drinks done */
 ];
 
+let menuString=JSON.stringify(menu);
+localStorage.setItem("Menu")
+
+//Java script light mode switch instantly 
+function themeSwitch(){
+
+}
