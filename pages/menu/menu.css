@@ -259,17 +259,17 @@ nav{
     color: inherit;
     text-decoration: none;
 }
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 600px) {
   .nav-card{
      width: 100px
   }
 };
 
- .
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 380px) {
   
 }
+
 @media screen and (min-width: 380px) {
   
 }
