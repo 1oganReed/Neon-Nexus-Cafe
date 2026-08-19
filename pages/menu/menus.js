@@ -1,4 +1,4 @@
-function saveobject(){
+// function saveobject(){
    let menu= [
    //breakfest
     {
@@ -8,13 +8,13 @@ function saveobject(){
     image:"",
    },
       {
-    name:"pixelWaffles ",
+    name:"pixelWaffles",
     catergory:"Breakfeast",
     price:11.50,
     image:"",
    },
       {
-    name:"cyberOmelet ",
+    name:"cyberOmelet",
     catergory:"Breakfeast",
     price:15.99,
     image:"",
@@ -131,7 +131,7 @@ function saveobject(){
     image:"",
    },
       {
-    name:"lightingEnergy",
+    name:"lightningEnergy",
     catergory:"Drink",
     price:15.75,
     image:"",
@@ -172,66 +172,84 @@ function saveobject(){
 //    localStorage.setItem('data', cartItemData)
 // }
 
-function addToCart(name){
-   
+function getCart(){
+   const raw = localStorage.getItem('cart');
+   return raw ? JSON.parse(raw) : [];
 }
 
-function addItemLocalStorage(menuItem){
-   let menuItems = getItemsFromStorage();
-   menuItems.push(menuItem);
-   localStorage.setItem('menuItem', JSON.stringify(menuItems));
+function saveCart(cart){
+   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-function getItemsFromStorage(){
-   let menuItems = getItemsFromStorage();
-   const menuItemsLS = localStorage.getItem('menuItems');
-   if(menuItemsLS === null){
-      menuItems = [];
+// call from button click
+function addToCart(itemName){
+   const item = menu.find(i => i.name === itemName);
+   if(!item){
+      console.warn('addToCart: item not found', itemName);
+      return
    }
-   else{
-      menuItems = JSON.parse(menuItemsLS);
-   }
-   return menuItems
+   const cart = getCart();
+   cart.push(item);
+   saveCart(cart)
+
+   alert(`${item.name} added to cart`);
 }
+
+// function addItemLocalStorage(menuItem){
+//    let menuItems = getItemsFromStorage();
+//    menuItems.push(menuItem);
+//    localStorage.setItem('menuItem', JSON.stringify(menuItems));
+// }
+
+// function getItemsFromStorage(){
+//    let menuItems = getItemsFromStorage();
+//    const menuItemsLS = localStorage.getItem('menuItems');
+//    if(menuItemsLS === null){
+//       menuItems = [];
+//    }
+//    else{
+//       menuItems = JSON.parse(menuItemsLS);
+//    }
+//    return menuItems
+// }
 
 //Java script light mode switch instantly 
 
 
 
-//local storage 
-let menuString=JSON.stringify(menu);
-localStorage.setItem("Menu", menuString);
-document.getElementById("output").textContent=
-"Item saved "+"\n"+  menuString;
-document.getElementById("output").textContent =
-"item saved"+ "\n"+ menuString, null;
-}
+// //local storage 
+// let menuString=JSON.stringify(menu);
+// localStorage.setItem("Menu", menuString);
+// document.getElementById("output").textContent=
+// "Item saved "+"\n"+  menuString;
+// document.getElementById("output").textContent =
+// "item saved"+ "\n"+ menuString, null;
+// }
 
-//loadind storage
-function loadObject(){
-   let savedmenu = localStorage.getItem("menu");
-   if(savedmenu){
-      let studentObject = JSON.parse(savedmenu);
-      document.getElementById("output").textContent =
-      "Item added:"+
-      "Name"+ menuObject.name+"\n"+
-      "Price:"+ menuObject.price;
-   }
+// //loadind storage
+// function loadObject(){
+//    let savedmenu = localStorage.getItem("menu");
+//    if(savedmenu){
+//       let studentObject = JSON.parse(savedmenu);
+//       document.getElementById("output").textContent =
+//       "Item added:"+
+//       "Name"+ menuObject.name+"\n"+
+//       "Price:"+ menuObject.price;
+//    }
 
-   else {
-         document.getElementById("output").textContent=
-         "No Item found on Menu"
-      }
+//    else {
+//          document.getElementById("output").textContent=
+//          "No Item found on Menu"
+//       }
 
-   }
+//    }
 
-   function clearStorage(){
-          localStorage.clear();
-            document.getElementById("cleared");
-   }
+//    function clearStorage(){
+//           localStorage.clear();
+//             document.getElementById("cleared");
+//    }
 
 
-   //function color switch light mode 
+//    //function color switch light mode 
  
-
 
