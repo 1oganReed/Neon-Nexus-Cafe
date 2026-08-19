@@ -213,17 +213,10 @@ th {
     color: var(--LightElectricCyan);
 }
 
-#items {
-    margin: 5px;
-    padding: 10px;
-    font-size: 12px;
-    color: black;
-    text-align: center;
 
-}
 
 tr:hover {
-    text-shadow: 1px 1px 5px var(--LightNeonBlue);
+    text-shadow: 1px 3px 5px var(--LightNeonBlue);
 }
 
 
@@ -341,7 +334,11 @@ nav {
 
 @media screen and (max-width: 600px) {
     .nav-card {
-        width: 100px;
+        text-align: end;
+        width: 1000px;
+    }
+    #nav-links{
+       display: none;
     }
 
     .container {
@@ -364,14 +361,16 @@ nav {
 
 ;
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 600px) {
     .nav-card {
-        width: 100px
-    }
-
+       max-width:50px;
+       background-color: rgba(128, 128, 128, 0.012);
+       border:none;
+       box-shadow: none;
+    };
     .container {
         display: grid;
-    }
+    };
 
     /*grid container */
     table tr {
