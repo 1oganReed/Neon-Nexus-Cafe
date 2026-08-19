@@ -189,67 +189,88 @@ function addToCart(itemName){
       return
    }
    const cart = getCart();
-   cart.push(item);
-   saveCart(cart)
 
+   let foundIndex = -1;
+   for(let i=0; i<cart.length; i++){
+      if(cart[i].name === item.name){foundIndex = i; break;}
+   }
+
+   if(foundIndex !== -1){
+      cart[foundIndex].qty = (cart[foundIndex].qty || 1) + 1;
+   }
+   else{
+      cart.push({name: item.name, price: item.price, qty: 1});
+   }
+   
+   saveCart(cart);
    alert(`${item.name} added to cart`);
 }
+// end adding to cart
+//
+//
+// start toggle the opening of cart
+function toggleCart(){
+   const cart = document.getElementById('cart');
+   if(!cart) return;
+   const openCart = !cart.classList.toggle('hidden');
+   if(open) displayCart();
+}
 
-// function addItemLocalStorage(menuItem){
-//    let menuItems = getItemsFromStorage();
-//    menuItems.push(menuItem);
-//    localStorage.setItem('menuItem', JSON.stringify(menuItems));
-// }
+// read cart from local storage and display it
 
-// function getItemsFromStorage(){
-//    let menuItems = getItemsFromStorage();
-//    const menuItemsLS = localStorage.getItem('menuItems');
-//    if(menuItemsLS === null){
-//       menuItems = [];
-//    }
-//    else{
-//       menuItems = JSON.parse(menuItemsLS);
-//    }
-//    return menuItems
-// }
+function displayCart(){
+   const items = document.getElementById('cart-items');
+   const total = document.getElementById('cart-total');
+   if(!items || !total) return;
 
-//Java script light mode switch instantly 
+   const cart = getCart(); // grabbing the local storage cart data
+   if(!cart || cart.length === 0){
+      items.innerHTML = '<p>Your cart is empty</p>';
+      total.textContent = '';
+      return;
+   }
 
+   item.innerHTML = '';
+   // let total = 0;
+   
+   for(let i=0; i<cart.length; i++){
+      const cartItem = cart[i];
+      const line = document.createElement('div');
+      line.className = 'cart-line';
+      line.innerHTML= `
+      <span class="cart-name">${formatName(cartItem.name)} x ${cartItem.qty}</span>
+      <span class="cart-sub">${(cartItem.price * cartItem.qty).toFixed(2)}</span>
+      <div class="cart-controls">
+       <button class="cart-dec" data-name="${cartItem.name}">-</button>
+       <button class="cart-inc" data-name="${cartItem.name}">+</button>
+       <button class="cart-remove" data-name="${cartItem.name}">Remove</button>
+      </div>
+      `;
+      items.appendChild(line);
+      total += cartItem.price * cartItem.qty;
+   }
 
+   total.textContent = `Total: $${total.toFixed(2)}`;
 
-// //local storage 
-// let menuString=JSON.stringify(menu);
-// localStorage.setItem("Menu", menuString);
-// document.getElementById("output").textContent=
-// "Item saved "+"\n"+  menuString;
-// document.getElementById("output").textContent =
-// "item saved"+ "\n"+ menuString, null;
-// }
+   const remBtns = items.querySelectorAll('.cart-remove');
+   for(let i=0; i< remBtns.length; i++){
+      remBtns[i].addEventListener('click', function(){removeAll(this.dataset.name);
+   })
+}
 
-// //loadind storage
-// function loadObject(){
-//    let savedmenu = localStorage.getItem("menu");
-//    if(savedmenu){
-//       let studentObject = JSON.parse(savedmenu);
-//       document.getElementById("output").textContent =
-//       "Item added:"+
-//       "Name"+ menuObject.name+"\n"+
-//       "Price:"+ menuObject.price;
-//    }
+   
+}
 
-//    else {
-//          document.getElementById("output").textContent=
-//          "No Item found on Menu"
-//       }
+function removeAll(name){
+   const cart = getCart();
+   const out = [];
+   for(let i=0; i<cart.length; i++){
+      if(cart[i].name !== name) out.push(cart[i]);
+   }
+   saveCart(out);
+   displayCart();
+}
 
-//    }
-
-//    function clearStorage(){
-//           localStorage.clear();
-//             document.getElementById("cleared");
-//    }
-
-
-//    //function color switch light mode 
- 
-
+function formatName(name) {
+  return name.replace(/([A-Z])/g, ' $1').trim();
+}
