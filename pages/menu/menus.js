@@ -171,9 +171,15 @@ function saveobject(){
 //    cartItemData.push(cartItemStringified);
 //    localStorage.setItem('data', cartItemData)
 // }
+}
+
+
 
 function addToCart(name){
-   
+      
+   // let menuItem = [];
+   // localStorage.setItem('menuItem', menuItem);
+   console.log("addToCart Was accessed");
 }
 
 function addItemLocalStorage(menuItem){
@@ -184,7 +190,7 @@ function addItemLocalStorage(menuItem){
 
 function getItemsFromStorage(){
    let menuItems = getItemsFromStorage();
-   let menuItems;
+ 
    const menuItemsLS = localStorage.getItem('menuItems');
    if(menuItemsLS === null){
       menuItems = [];
@@ -198,34 +204,6 @@ function getItemsFromStorage(){
 //Java script light mode switch instantly 
 
 
-
-//local storage 
-let menuString=JSON.stringify(menu);
-localStorage.setItem("Menu", menuString);
-document.getElementById("output").textContent=
-"Item saved "+"\n"+  menuString;
-document.getElementById("output").textContent =
-"item saved"+ "\n"+ menuString, null;
-}
-
-//loadind storage
-function loadObject(){
-   let savedmenu = localStorage.getItem("menu");
-   if(savedmenu){
-      let studentObject = JSON.parse(savedmenu);
-      document.getElementById("output").textContent =
-      "Item added:"+
-      "Name"+ menuObject.name+"\n"+
-      "Price:"+ menuObject.price;
-   }
-
-   else {
-         document.getElementById("output").textContent=
-         "No Item found on Menu"
-      }
-
-   }
-
    function clearStorage(){
           localStorage.clear();
             document.getElementById("cleared");
@@ -234,5 +212,6 @@ function loadObject(){
 
    //function color switch light mode 
  
+   
 
 

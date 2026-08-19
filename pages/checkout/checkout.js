@@ -169,18 +169,8 @@ function displayItems(){
     for(let i=0; i<items.length;i++){
         const item=items[i];
         html+=`
-        <div class="item-card">
-            <div class="item-icon">${item.icon}</div>
-            <div class="item-category">${item.category}</div>
-            <div class="item-name">${item.name}</div>
-            <div class="item-desc">${item.description}</div>
-
-            <div class="item-footer">
-                <div class="item-price">$${item.price}</div>
-                <button class="add-btn" onclick="addToCart(${item.id})">Add to cart</button>
-            </div>
-        </div>
-        
+            <td><button class="button" onclick="addToCart(quantumWaffles)">Add To Cart</button> Quantum Waffles
+                        &nbsp; ${items.price}</td>
         `;
     }
     grid.innerHTML=html;
@@ -189,10 +179,9 @@ function displayItems(){
 
 document.getElementById("menuitems").innerHTML = "";
 
-
 function calculateSubTotal(){
     for(let i=0; i <= cart.length; i++){
-        
+       (items.price * 2.5);
     }
 }
 

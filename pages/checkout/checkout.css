@@ -27,8 +27,8 @@ body{
     justify-self: center;
 
     padding: 30px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.545);
+    color: var(--LightWhite);
+    background-color: var(--LightBlack);
 
 } 
 /*
