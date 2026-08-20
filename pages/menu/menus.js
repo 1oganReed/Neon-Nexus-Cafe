@@ -212,34 +212,32 @@ function addToCart(itemName){
 function toggleCart(){
    const cart = document.getElementById('cart');
    if(!cart) return;
-   const openCart = !cart.classList.toggle('hidden');
-   if(open) displayCart();
+   const isOpen = !cart.classList.toggle('hidden');
+   if(isOpen) displayCart();
 }
-
-// read cart from local storage and display it
 
 function displayCart(){
    const items = document.getElementById('cart-items');
-   const total = document.getElementById('cart-total');
-   if(!items || !total) return;
+   const totalEl = document.getElementById('cart-total');
+   if(!items || !totalEl) return;
 
-   const cart = getCart(); // grabbing the local storage cart data
+   const cart = getCart();
    if(!cart || cart.length === 0){
       items.innerHTML = '<p>Your cart is empty</p>';
-      total.textContent = '';
+      totalEl.textContent = '';
       return;
    }
 
-   item.innerHTML = '';
-   // let total = 0;
-   
+   items.innerHTML = '';
+   let total = 0;
+
    for(let i=0; i<cart.length; i++){
       const cartItem = cart[i];
       const line = document.createElement('div');
       line.className = 'cart-line';
-      line.innerHTML= `
+      line.innerHTML = `
       <span class="cart-name">${formatName(cartItem.name)} x ${cartItem.qty}</span>
-      <span class="cart-sub">${(cartItem.price * cartItem.qty).toFixed(2)}</span>
+      <span class="cart-sub">$${(cartItem.price * cartItem.qty).toFixed(2)}</span>
       <div class="cart-controls">
        <button class="cart-dec" data-name="${cartItem.name}">-</button>
        <button class="cart-inc" data-name="${cartItem.name}">+</button>
@@ -250,26 +248,51 @@ function displayCart(){
       total += cartItem.price * cartItem.qty;
    }
 
-   total.textContent = `Total: $${total.toFixed(2)}`;
+   totalEl.textContent = `Total: $${total.toFixed(2)}`;
 
    const remBtns = items.querySelectorAll('.cart-remove');
-   for(let i=0; i< remBtns.length; i++){
-      remBtns[i].addEventListener('click', function(){removeAll(this.dataset.name);
-   })
-}
-
-   
-}
-
-function removeAll(name){
-   const cart = getCart();
-   const out = [];
-   for(let i=0; i<cart.length; i++){
-      if(cart[i].name !== name) out.push(cart[i]);
+   for(let i=0; i<remBtns.length; i++){
+      remBtns[i].addEventListener('click', function(){
+         removeAll(this.dataset.name);
+      });
    }
-   saveCart(out);
+}
+
+function closeCart(){
+   const cart = document.getElementById('cart');
+   if(!cart) return;
+   cart.classList.add('hidden');
+}
+
+function clearCart(){
+   saveCart([]);
    displayCart();
 }
+
+function changeQty(name, delta){
+   const cart = getCart();
+   const idx = cart.findIndex(i => i.name === name);
+   if(idx === -1) return;
+
+   cart[idx].qty += delta;
+
+   if(cart[idx].qty <= 0){
+      cart.splice(idx, 1);
+   }
+
+   saveCart(cart);
+   displayCart();
+}
+
+// function removeAll(name){
+//    const cart = getCart();
+//    const out = [];
+//    for(let i=0; i<cart.length; i++){
+//       if(cart[i].name !== name) out.push(cart[i]);
+//    }
+//    saveCart(out);
+//    displayCart();
+// }
 
 function formatName(name) {
   return name.replace(/([A-Z])/g, ' $1').trim();
