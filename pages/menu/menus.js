@@ -264,6 +264,12 @@ function displayCart(){
    }
 }
 
+function clearCart(){
+   localStorage.clear();
+   
+   displayCart();
+}
+
 function removeAll(name){
    let cart = getCart();
    let out = [];

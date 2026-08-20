@@ -74,11 +74,7 @@ body {
     color: var(--LightWhite);
 }
 
-<<<<<<< HEAD
-#cart-button{
-=======
 #cart-button {
->>>>>>> 255928f2c55ea1259457323f9edb7316ddc5f6b8
     display:flex;
     justify-self: flex-end;
     position: sticky;
@@ -90,11 +86,7 @@ body {
     box-shadow: none;
     margin-top: auto;
     align-self: self-end;
-<<<<<<< HEAD
-};
-=======
 }
->>>>>>> 255928f2c55ea1259457323f9edb7316ddc5f6b8
 
 
 #Dark-mode {
