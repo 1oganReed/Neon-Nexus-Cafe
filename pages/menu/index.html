@@ -230,7 +230,7 @@
     <!-- Cart overlay -->
     <div id="cart" class="cart hidden">
     <div class="cart-panel">
-        <button id="close-cart" class="cart-close">Close ×</button>
+        <button id="close-cart" class="cart-close" onclick="closeCart()">Close ×</button>
         <h3>Your Cart</h3>
         <div id="cart-items"></div>
         <div id="cart-total"></div>
@@ -250,9 +250,6 @@
     <!--Cart button -->
     <button id="cart-button" onclick="toggleCart()"><img class="img" src="/assets/icons/cart-whitecyanglow.png" width="70px"
             alt="Checkout Logo"></button>
-    
-
-    <button class="close-button" onclick="toggleCart()">Close</button>
     <!--Footer index-->
     <footer id="footer">
         <hr>
