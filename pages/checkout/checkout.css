@@ -31,36 +31,69 @@ body{
     background-color: var(--LightBlack);
 
 } 
-/*
-
-
-
-
-}
-.icons{
-width: 50px;
-height: 50px;
-
-}
-
-Right side of checkout card, should display user's total items, prices, subtotal, and tax. 
-
-#carttotal{
-
+} 
+#cardinfo{
+    display: flex;
+    width: 30vw;
+    height: 40vh;
+    gap: 5pt;
+    padding: 10px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-shadow: 2px 2px 10px var(--LightNeonPurple);
 }
 
-
- container for selected menu items to appear
-#menuitems{
-
-}
-
-
+#items-grid{
+    display: flex;
+    width: 30vw;
+    height: 40vh;
+    gap: 5pt;
+    padding: 10pt;
+    flex-direction: column;
+    flex-wrap: wrap;
     
-footer{
-align-items:center;
-
+    box-shadow: 2px 2px 10px;
 
 }
 
-*/
+label{
+
+    border-radius: 2px;
+    color: cyan;
+    font-weight: bolder;
+    text-shadow: 2px 2px 10px cyan;
+}
+input{
+    width: 10vw;
+    height: 4vh;
+    text-align: center;
+    background-color:#000 ;
+    color: #fff;
+    box-shadow: 2px 2px 10px var(--LightNeonPurple);
+    border: 1px 1px var(--LightNeonPurple);
+}
+input:hover{
+    background:var(--DarkNeonPurple) ;
+    
+}
+
+button{
+    width: 5vw;
+    height: 3vh;
+    border-radius: 2px;
+    border: 1px 1px var(--DarkNeonBlue);
+background: var(--LightNeonBlue);
+    box-shadow: 2px 2px 10px var(--DarkNeonBlue);
+
+}
+button:hover{
+    box-shadow: 1px 1px 10px var(--LightElectricCyan);
+
+
+}
+button:active{
+    border: 1px 1px var(--LightNeonBlue);
+    background: var(--DarkNeonBlue);
+    box-shadow: 2px 2px 10px var(--LightNeonBlue);
+
+}

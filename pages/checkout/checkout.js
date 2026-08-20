@@ -264,15 +264,15 @@ function updateCartDisplay(){
 
 }
 
-// toggle cart model
-function toggleCart() {
-    const model = document.getElementById('cartModel');
-    if(model.classList.contains("active")){
-        model.classList.remove("active");
+// toggle cart model, applicable for the other pages
+// function toggleCart() {
+//     const model = document.getElementById('cartModel');
+//     if(model.classList.contains("active")){
+//         model.classList.remove("active");
 
-    }
-    else{
-        model.classList.add("active");
-    }
+//     }
+//     else{
+//         model.classList.add("active");
+//     }
     
-}
+// }
