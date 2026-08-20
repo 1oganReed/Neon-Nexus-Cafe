@@ -105,6 +105,38 @@ nav{
     height: auto;
 }
 
+/* .nav-list {
+  background: #b621fe;
+  border: none;
+  z-index: 1;
+} */
+.nav-list:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #663dff;
+  border-radius: 5px;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  transition: all 0.3s ease;
+}
+.nav-list:hover {
+  color: #fff;
+}
+.nav-list:hover:after {
+  left: 0;
+  width: 100%;
+}
+.nav-list:active {
+  top: 2px;
+}
+
+
 /* Make the anchor contain the image and text side-by-side and centered */
 #nav-links > li > a{
     display: inline-flex;
@@ -172,9 +204,10 @@ nav{
 } */
 
 #logo{
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 12px;
+    
 }
 
 #logo > a{
