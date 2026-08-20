@@ -27,7 +27,7 @@
                     <li class="nav-list"><a href="/"><img class="img" src="/assets/icons/NEXUS-whitecyan.png"
                                 width="70px" alt="Home Logo">Home</a></li>
                     <li class="nav-list"><a href="/pages/menu/"><img class="img"
-                                src="/assets/icons/NEXUS-menu-whitecyan.png" width="70px" alt="Menu Logo">Menu</a></li>
+                                src="/assets/iconsNEXUS-menu-whitecyan.png" width="70px" alt="Menu Logo">Menu</a></li>
                     <li class="nav-list"><a href="/pages/checkout/"><img class="img"
                                 src="/assets/icons/cart-whitecyanglow.png" width="70px" alt="Checkout Logo">Checkout</a>
                     </li>
@@ -58,11 +58,11 @@
                 </tr>
                 <tr>
                 <tr>
-                    <td><button class="button" onclick="addToCart(quantumWaffles)">Add To Cart</button> Quantum Waffles
+                    <td><button class="button" onclick="addToCart('quantumWaffles')">Add To Cart</button> Quantum Waffles
                         &nbsp; 12.99$</td>
                 </tr>
                 <tr>
-                    <td><button class="button" onclick="addToCart(pixelWaffles)">Add To Cart</button> Pixel Waffles
+                    <td><button class="button" onclick="addToCart('pixelWaffles')">Add To Cart</button> Pixel Waffles
                         &nbsp; 11.50$</td>
                 </tr>
 
@@ -72,12 +72,12 @@
                 </tr>
 
                 <tr>
-                    <td><button class="button" onclick="addToCart(dataBreakfeast)">Add To Cart</button> Data Breakfest
+                    <td><button class="button" onclick="addToCart('dataBreakfeast')">Add To Cart</button> Data Breakfest
                         &nbsp; 14.75$</td>
                 </tr>
 
                 <tr>
-                    <td><button class="button" onclick="addToCart(circuitBoardToast)">Add To Cart</button> Ciruit board
+                    <td><button class="button" onclick="addToCart('circuitBoardToast')">Add To Cart</button> Ciruit board
                         toast &nbsp; 12.99$</td>
                 </tr>
 
@@ -93,7 +93,7 @@
                     <th class="h3">Lunch</th>
                 </tr>
                 <tr>
-                    <td><button class="button" onclick="addToCart(glitchWrap)"> Add To Cart</button>Glitch wrap
+                    <td><button class="button" onclick="addToCart('glitchWrap')"> Add To Cart</button>Glitch wrap
                         &nbsp;10.99$</td>
 
                 </tr>
@@ -230,7 +230,7 @@
     <!-- Cart overlay -->
     <div id="cart" class="cart hidden">
     <div class="cart-panel">
-        <button id="close-cart" class="cart-close">Close ×</button>
+        <button id="close-cart" class="cart-close" onclick="closeCart()">Close ×</button>
         <h3>Your Cart</h3>
         <div id="cart-items"></div>
         <div id="cart-total"></div>
@@ -250,9 +250,6 @@
     <!--Cart button -->
     <button id="cart-button" onclick="toggleCart()"><img class="img" src="/assets/icons/cart-whitecyanglow.png" width="70px"
             alt="Checkout Logo"></button>
-    
-
-    <button class="close-button" onclick="toggleCart()">Close</button>
     <!--Footer index-->
     <footer id="footer">
         <hr>
