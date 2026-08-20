@@ -74,24 +74,19 @@ body {
     color: var(--LightWhite);
 }
 
-#cart-button {
-<<<<<<< HEAD
-=======
+#cart-button{
     display:flex;
     justify-self: flex-end;
     position: sticky;
     transform: translate(-100%, -50%);
     margin: 20px;
->>>>>>> 315f55beb2052b32be5c98613cd64061923a7fca
     background-color: var(--LightBlack);
     color: var(--LightBlack);
     border: none;
     box-shadow: none;
-<<<<<<< HEAD
     margin-top: auto;
     align-self: self-end;
->>>>>>> 315f55beb2052b32be5c98613cd64061923a7fca
-}
+};
 
 
 #Dark-mode {

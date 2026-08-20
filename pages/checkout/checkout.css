@@ -3,9 +3,26 @@
     margin: 0;
     padding: 0;
 }
+:root{
+    /* Light Mode Palette */
+    --LightNeonBlue: #3381FF;
+    --LightNeonPurple: #8F28A4;
+    --LightElectricCyan: #70E0FF;
+    --LightBlack: #141414;
+    --LightDarkGray: #3D3E3D;
+    --LightWhite: #ffffff;
+
+    /* Dark Mode Palette */
+    --DarkNeonBlue: #0046B8;
+    --DarkNeonPurple: #391042;
+    --DarkElectricCyan: #00C0F5;
+    --DarkBlack: #020202;
+    --DarkDarkGray: #161413;
+    --DarkWhite: #ffffff;
+}
 
 body{
-    background-image: linear-gradient(to bottom right, rgb(3, 3, 3), black, rgb(31, 31, 31));
+    background-color: var(--LightBlack);
     height: 100vh;
     padding:0;
     margin:0;
@@ -18,14 +35,21 @@ body{
 
 }
 
+.container{
+    display: grid;
+    grid-template-columns: repeat(15, 100px);
+    grid-template-rows: repeat(5, 100px);
+}
+
 #checkoutCard{
+     display:flex;
+    grid-area: 1/7/8/10;
     width: 80vw;
     height: 60vh;
-    border: 2px solid #000000;
+    border: 2px solid var(--LightWhite);
     border-radius: 15px;
     align-self: center;
     justify-self: center;
-
     padding: 30px;
     color: var(--LightWhite);
     background-color: var(--LightBlack);
@@ -33,6 +57,8 @@ body{
 } 
 
 #cardinfo{
+    margin-left:80px;
+    padding-left: 20px;
     display: flex;
     width: 30vw;
     height: 40vh;
@@ -41,17 +67,18 @@ body{
     flex-direction: column;
     flex-wrap: wrap;
     box-shadow: 2px 2px 10px var(--LightNeonPurple);
+
 }
 
 #items-grid{
+
     display: flex;
     width: 30vw;
     height: 40vh;
     gap: 5pt;
     padding: 10pt;
     flex-direction: column;
-    flex-wrap: wrap;
-    
+    flex-wrap: wrap;   
     box-shadow: 2px 2px 10px;
 
 }
@@ -59,15 +86,15 @@ body{
 label{
 
     border-radius: 2px;
-    color: cyan;
+    color: var(--LightElectricCyan);
     font-weight: bolder;
-    text-shadow: 2px 2px 10px cyan;
+    text-shadow: 2px 2px 10px var(--LightElectricCyan);
 }
 input{
     width: 10vw;
     height: 4vh;
     text-align: center;
-    background-color:#000 ;
+    background-color:var(--LightBlack) ;
     color: #fff;
     box-shadow: 2px 2px 10px var(--LightNeonPurple);
     border: 1px 1px var(--LightNeonPurple);
@@ -76,8 +103,12 @@ input:hover{
     background:var(--DarkNeonPurple) ;
     
 }
+.cart-header{
+    text-align: center;
+}
 
 button{
+    margin-top: 250px;
     width: 5vw;
     height: 3vh;
     border-radius: 2px;
@@ -96,4 +127,8 @@ button:active{
     background: var(--DarkNeonBlue);
     box-shadow: 2px 2px 10px var(--LightNeonBlue);
 
+}
+
+footer{
+    margin-top: 100px;
 }

@@ -46,11 +46,11 @@
 
     </header>
     <!-- Main body content containing the checkout card to display user's total items, price, and enter card info -->
-    <main>
+    <main class="container">
         <div id="checkoutCard">
             
             <!-- left side of checkout card, field for user to enter card info. -->
-            <form id="cardinfo">
+            <form id="cardinfo" class="box-1">
                 <h3>Payment</h3>
                 <label for="cnumber">Card number</label>
                 <input type="number" id="cnumber" name="cnumber" minlength="16" maxlength="19" placeholder="0000-0000-0000-0000" required>
@@ -69,7 +69,7 @@
 
             <!-- Right side of checkout card, should display user's total items, prices, subtotal, and tax. Total should be calculated through javascript.  -->
             
-            <div id="items-grid" id="itemGrid"> </div>
+            <div id="items-grid"> </div>
 
             <div id="cart-model" id="cartModel">
                 <div class="cart-content">
