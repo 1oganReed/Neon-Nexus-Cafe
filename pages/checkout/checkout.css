@@ -31,7 +31,7 @@ body{
     background-color: var(--LightBlack);
 
 } 
-} 
+
 #cardinfo{
     display: flex;
     width: 30vw;

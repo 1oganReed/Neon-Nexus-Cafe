@@ -2,6 +2,24 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
+:root{
+    /* Light Mode Palette */
+    --LightNeonBlue: #3381FF;
+    --LightNeonPurple: #8F28A4;
+    --LightElectricCyan: #70E0FF;
+    --LightBlack: #141414;
+    --LightDarkGray: #3D3E3D;
+    --LightWhite: #ffffff;
+
+    /* Dark Mode Palette */
+    --DarkNeonBlue: #0046B8;
+    --DarkNeonPurple: #391042;
+    --DarkElectricCyan: #00C0F5;
+    --DarkBlack: #020202;
+    --DarkDarkGray: #161413;
+    --DarkWhite: #ffffff;
+}
+
 * {
     margin: 0px;
     box-sizing: border-box;
@@ -57,13 +75,17 @@ body {
 }
 
 #cart-button {
-    margin: 20px;
     background-color: var(--LightBlack);
     color: var(--LightBlack);
     border: none;
     box-shadow: none;
+    margin-top: auto;
+    align-self: self-end;
+
+
 
 }
+
 
 #Dark-mode {
     background-color: var(--LightBlack);
@@ -213,14 +235,7 @@ th {
     color: var(--LightElectricCyan);
 }
 
-#items {
-    margin: 5px;
-    padding: 10px;
-    font-size: 12px;
-    color: black;
-    text-align: center;
 
-}
 
 tr:hover {
     text-shadow: 1px 1px 5px var(--LightNeonBlue);
