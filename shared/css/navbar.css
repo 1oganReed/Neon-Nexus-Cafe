@@ -118,11 +118,9 @@ nav{
   top: 0;
   right: 0;
   z-index: -1;
-  background-color: #663dff;
-  border-radius: 5px;
-   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-   7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1);
+  background: linear-gradient(270deg, #08000050 0.000%, #0d0000 25.000%, #130000 50.000%, #1a000e 75.000%, #210826 100.000%);
+  border-radius: 20px;
+   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   transition: all 0.3s ease;
 }
 .nav-list:hover {
