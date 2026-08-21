@@ -73,11 +73,21 @@ body {
     border: none;
     color: var(--LightWhite);
 }
+.cart-panel{
+    font-family: "VT323", monospace;
+     color: var(--LightWhite);
+     border-radius: 10px;
+     border: 1px solid white;
+}
 
 #cart-button {
     display:flex;
+    top:0;
+    overflow: visible;
+    position: -webkit-sticky;
+    position: sticky flex-start;
     justify-self: flex-end;
-    position: sticky;
+    align-items: start;
     transform: translate(-100%, -50%);
     margin: 20px;
     background-color: var(--LightBlack);
@@ -85,7 +95,7 @@ body {
     border: none;
     box-shadow: none;
     margin-top: auto;
-    align-self: self-end;
+
 }
 
 
@@ -127,15 +137,15 @@ h3 {
     border-radius: 10px;
     height: 150px;
 }
-
-/* .cart,button{
+/* 
+ .cart,button{
     background-color: black;
     border: black;
     width: 100px;
     border-radius: 100px;
 
 
-} */
+}  */
 
 
 .vt323-regular {

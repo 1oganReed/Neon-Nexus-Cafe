@@ -26,4 +26,14 @@ document.getElementById("Card-container").onclick = function () {
     card.style.transform = "rotateY(180deg)";
   }
   fliped = !fliped;
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".Card");
+
+    cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        card.classList.toggle("is-flipped");
+      });
+    });
+  });
 };
+

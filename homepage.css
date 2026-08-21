@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=VT323&display=swap');
+
+
+
 body {
     background: linear-gradient(270deg, #020209 0.000%, #05050b 8.333%, #08080d 16.667%, #0a0a10 25.000%, #0d0d13 33.333%, #0f1015 41.667%, #121217 50.000%, #14151a 58.333%, #17171c 66.667%, #19191e 75.000%, #1b1b20 83.333%, #1c1c22 91.667%, #1e1e24 100.000%);
     height: 100vh;
@@ -6,7 +12,12 @@ body {
     color: white;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+.vt323-regular {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
 
 .audiowide-regular {
     font-family: "Audiowide", sans-serif;
@@ -21,7 +32,7 @@ main {
         "card-3 card-4";
     grid-template-columns: 1fr 1fr;
     justify-content: space-evenly;
-    row-gap: 200px;
+    row-gap: 100px;
 }
 
 header {
@@ -57,31 +68,15 @@ header > h1 {
 .card-2,
 .card-3,
 .card-4 {
-    border: 1px solid white;
+    border: none;
     height: 700px;
     width: 600px;
-    margin-left: 100px;
+    margin-left: 200px;
     border-radius: 20px;
     text-align: center;
 }
 
-.card-1 {
-    margin-bottom: 20px;
-    grid-area: card-1;
-}
 
-.card-2 {
-    grid-area: card-2;
-}
-
-.card-3 {
-    margin-bottom: 20px;
-    grid-area: card-3;
-}
-
-.card-4 {
-    grid-area: card-4;
-}
 
 /*Ading card animations */
 .Card-container{
@@ -99,6 +94,10 @@ header > h1 {
   /*   transition: transform 0.6s ; */
 }
 
+.Card.is-flipped {
+    transform: rotateY(180deg);
+}
+
 .Card-face{
     position: absolute;
     width:100%;
@@ -113,8 +112,8 @@ header > h1 {
     padding: 40px;
 }
 .Card-front{
-    background: linear-gradient(135deg,#ec43ea,#629cbe);
-    color: white;
+    background: linear-gradient(135deg,cyan,#629cbe);
+    color: black;
     box-shadow:  0 20px 60px darkblue;
 }
 
@@ -123,13 +122,15 @@ header > h1 {
     margin-bottom: 24px;
 }
     .Card-front .h2{
-font-size:26px;
-margin-bottom: 12px;
+    font-family: "Audiowide", sans-serif;
+    font-size:26px;
+    margin-bottom: 12px;
 }
     .Card-front p{
-font-size: 15px;
-line-height: 1.6;
-opacity: 0.85;
+    font-family: "VT323", monospace;
+    font-size: 20px;
+    line-height: 1.6;
+    opacity: 0.85;
 }
     .hint{
     margin-top: 24px;

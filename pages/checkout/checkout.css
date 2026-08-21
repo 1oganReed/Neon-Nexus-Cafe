@@ -227,6 +227,7 @@ input:hover{
 }
 
 button{
+    position: sticky;
     margin-top: 250px;
     width: 5vw;
     height: 3vh;
