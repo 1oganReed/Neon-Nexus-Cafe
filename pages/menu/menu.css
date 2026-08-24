@@ -262,6 +262,7 @@ nav {
 }
 
 #nav-card {
+  font-size: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -276,7 +277,9 @@ nav {
   max-width: 1900px;
   color: white;
 }
-
+.Hamburger {
+  display: none;
+}
 /* #nav-card:hover{
     background: rgba(128, 128, 128, 0.034);
     backdrop-filter: blur(20px);
@@ -434,32 +437,7 @@ nav {
   text-decoration: none;
 }
 
-@media screen and (max-width: 600px) {
-  .nav-card {
-    text-align: end;
-    width: 1000px;
-  }
-  #nav-links {
-    display: none;
-  }
 
-  .container {
-    display: grid;
-  }
-
-  /*grid container */
-  table tr {
-    justify-content: center;
-  }
-
-  .time-w {
-    display: flex;
-  }
-
-  .time {
-    display: flex;
-  }
-}
 
 @media (prefers-color-scheme: dark) {
 }
@@ -471,8 +449,42 @@ nav {
     border: none;
     box-shadow: none;
   }
+   .nav-card {
+    text-align: end;
+    width: 100%;
+  }
+  #nav-links {
+display:none;
+
+  }
+ 
+ .Hamburger{
+  display:block;
+ }
+ .nav-links {
+    display: none;
+ }
+ .img{
+  width:50px;
+ }
+ 
+  /*grid container */
+  table tr {
+    margin-top: 100px;
+    font-size: small;
+    justify-content: center;
+  }
+  th{
+    font-size: small;
+  }
+
+  .time-w {
+    display: none;
+  }
   .container {
     display: grid;
+    grid-template-columns: repeat(5, 100px);
+  grid-template-rows: repeat(25, 100px);
   }
 
   /*grid container */
@@ -480,11 +492,46 @@ nav {
     justify-content: center;
   }
 
-  .time-w {
-    display: flex;
-  }
+  
+#sec-1 {
+  display: flex;
+  grid-area: 2/1/7/10;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  font-family: Pix;
+}
 
-  .time {
-    display: flex;
-  }
+#sec-2 {
+  display: flex;
+  grid-area: 7/1/7/10;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+#sec-3 {
+  display: flex;
+  grid-area: 11/1/11/10;
+  margin: 10px;
+ 
+  border-radius: 20px;
+}
+
+#sec-4 {
+  display: flex;
+  grid-area: 15/1/20/10;
+  margin: 30px;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+#sec-5 {
+  display: flex;
+  grid-area: 20/1/24/10;
+  margin: 30px;
+  padding: 25px;
+  border-radius: 20px;
+}
+
 }
