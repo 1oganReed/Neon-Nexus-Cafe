@@ -425,6 +425,12 @@ nav {
     color: white;
     
 } */
+
+.button{
+  background-color: #00c0f5;
+  color: #020202;
+  
+}
 /* Make the anchor contain the image and text side-by-side and centered */
 #nav-links > li > a {
   display: inline-flex;
