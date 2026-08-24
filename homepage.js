@@ -13,27 +13,12 @@ const options = {
 // Can be selector string or DOM node
 const element = ".cursor";
 
-const customCursor = new CustomCursor(element, options);
+/* const customCursor = new CustomCursor(element, options); */
 
-//script for card flip
 
-let fliped = false;
-document.getElementById("Card-container").onclick = function () {
-  let card = document.getElementById("Card");
-  if (fliped) {
-    card.style.transform = "rotateY(0deg)";
-  } else {
-    card.style.transform = "rotateY(180deg)";
-  }
-  fliped = !fliped;
-  document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".Card");
-
-    cards.forEach((card) => {
-      card.addEventListener("click", () => {
-        card.classList.toggle("is-flipped");
-      });
-    });
+// Script for card flips.
+document.querySelectorAll(".Card").forEach((card) => {
+  card.addEventListener("click", () => {
+    card.classList.toggle("is-flipped");
   });
-};
-
+});

@@ -26,6 +26,11 @@ nav{
     justify-content: center;
     padding: 20px;
 }
+h1{
+    color: white;
+    text-align: center;
+    font-family: "Audiowide", sans-serif;
+}
 
 #nav-card{
     display: flex;
@@ -192,7 +197,10 @@ body{
 } 
 
 #cardinfo{
-    margin-left:80px;
+     font-family: "Audiowide", sans-serif;
+     font-size: small;
+    font-family: 5px;
+    margin-left:125px;
     padding-left: 20px;
     display: flex;
     width: 30vw;
@@ -239,11 +247,12 @@ input:hover{
     
 }
 .cart-header{
+    font-family: "Audiowide", sans-serif;
     text-align: center;
 }
 
-button{
-    position: sticky;
+#nextbtn{
+    flex-direction: row;
     margin-top: 250px;
     width: 5vw;
     height: 3vh;
@@ -254,16 +263,34 @@ background: var(--LightNeonBlue);
     color:#020202
 
 }
+
 button:hover{
     box-shadow: 1px 1px 10px var(--LightElectricCyan);
-
-
 }
+#nextbtn:hover{
+    box-shadow: 1px 1px 10px var(--LightElectricCyan);
+}
+
 button:active{
     border: 1px 1px var(--LightNeonBlue);
     background: var(--DarkNeonBlue);
     box-shadow: 2px 2px 10px var(--LightNeonBlue);
 
+}
+button{
+    font-family: "VT323", monospace;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    margin-left: 85px;
+    flex-direction: row-reverse;
+    justify-content: center;
+    width: 5vw;
+    height: 3vh;
+    border-radius: 2px;
+    border: 1px 1px var(--DarkNeonBlue);
+    background: var(--LightNeonBlue);
+    box-shadow: 2px 2px 10px var(--DarkNeonBlue);
+    color:#020202
 }
 
 footer{
