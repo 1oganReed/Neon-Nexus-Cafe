@@ -212,7 +212,7 @@ body{
     height: 40vh;
     gap: 5pt;
     padding: 10pt;
-    flex-direction: column;
+    flex-direction:column;
     flex-wrap: wrap;   
     box-shadow: 2px 2px 10px;
 
