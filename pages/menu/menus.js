@@ -293,8 +293,16 @@ function toggleDarkMode() {
   const isDark = document.documentElement.classList.toggle("darkmode");
 
   darkmode.textContent = isDark
-    ? "Switch to Light Mode"
-    : "Switch to Dark Mode";
+  if (button.innerHTML.includes = `/../../assets/icons/DM-YP.png"`) {
+       button.innerHTML= `<img class="dark" width="100px" src= alt="dark/light mode">`;
+  }
+   else {
+     button.innerHTML = `<img class="dark" width="100px" src=/../../assets/icons/DM-YP.png alt="dark/light mode">
+
+`;
+  }
+   /*  ? "light"
+    : "dark" */
 
   localStorage.setItem("darkMode", isDark);
 }
