@@ -12,6 +12,15 @@
     margin: 0;
     padding: 0;
 }
+.container {
+    text-align: center;
+    font-family: "VT323", monospace;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(10, 100px);
+    grid-template-rows: repeat(5, 100px);
+}
+
 
 .audiowide-regular {
     font-family: "Audiowide", sans-serif;
@@ -126,6 +135,13 @@ h1{
   box-shadow: 0 8px 24px rgba(0,0,0,0.6);
   z-index: 2;
 }
+
+.cart-content{
+    height: auto;
+    
+    
+}
+
 .cart-backdrop {
   position: absolute; inset: 0;
   z-index: 1;
@@ -168,11 +184,12 @@ body{
     margin:0;
 }
 
-#nav-links{
+/* Nav Container CSS */
+nav{
     display: flex;
-    flex-direction: column;
-    list-style-type: none;
-
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 .container{
@@ -184,8 +201,10 @@ body{
 #checkoutCard{
      display:flex;
     grid-area: 1/7/8/10;
-    width: 80vw;
-    height: 60vh;
+    min-width: 80vw;
+    width: auto;
+    min-height: 60vh;
+    height: auto;
     border: 2px solid var(--LightWhite);
     border-radius: 15px;
     align-self: center;
@@ -194,8 +213,8 @@ body{
     color: var(--LightWhite);
     background-color: var(--LightBlack);
 
-} 
 
+} 
 #cardinfo{
      font-family: "Audiowide", sans-serif;
      font-size: small;
@@ -203,6 +222,7 @@ body{
     margin-left:125px;
     padding-left: 20px;
     display: flex;
+    grid-area: 1/3/2/1;
     width: 30vw;
     height: 40vh;
     gap: 5pt;
@@ -214,9 +234,12 @@ body{
 }
 
 #items-grid{
-
+    overflow-y: auto;     /* Adds a vertical scrollbar only when needed */
     display: flex;
-    width: 30vw;
+    grid-area: 1/7/10/11;
+    min-width: 30vw;
+    width: auto;
+    /* min-height: 40vh; */
     height: 40vh;
     gap: 5pt;
     padding: 10pt;
@@ -224,6 +247,11 @@ body{
     flex-wrap: wrap;   
     box-shadow: 2px 2px 10px;
 
+}
+.text-1{
+    display: flex;
+    grid-area:2/8/10/11 ;
+    margin-left: 10px;
 }
 
 label{
@@ -246,6 +274,23 @@ input:hover{
     background:var(--DarkNeonPurple) ;
     
 }
+#cart-items {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+#cart-total {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+    font-family: "VT323", monospace;
+    font-size: 18px;
+    color: var(--LightElectricCyan);
+    line-height: 1.4;
+}
+
 .cart-header{
     font-family: "Audiowide", sans-serif;
     text-align: center;
@@ -278,13 +323,17 @@ button:active{
 
 }
 button{
+    display: inline-flex;
+    width: auto;
+    min-width: 60px;
+    margin: 0;
     font-family: "VT323", monospace;
-    margin-top: 25px;
+    /* margin-top: 25px;
     margin-bottom: 20px;
-    margin-left: 85px;
+    margin-left: 85px; */
     flex-direction: row-reverse;
     justify-content: center;
-    width: 5vw;
+    /* width: 5vw; */
     height: 3vh;
     border-radius: 2px;
     border: 1px 1px var(--DarkNeonBlue);
