@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,81 +8,117 @@
     <link rel="stylesheet" href="/shared/css/navbar.css">
     <link rel="stylesheet" href="/shared/css/footer.css">
     <link href="menu.css" rel="stylesheet">
-    <defer>
-        <a src="menus.js"alt="javascript"></a>
+
+
 </head>
+
 <body>
     <nav>
         <div id="nav-card">
             <!-- Logo -->
             <div id="logo">
-                <img src="/assets/icons/Transparent_LM-Logo.png" alt="Nexus Logo" width="90px">
-                <h1 id="logo"><a href="index.html">Neon Nexus</a></h1>
+                <img src="/assets/icons/Transparent_DM-Logo.png" alt="Nexus Logo" width="90px">
+                <h1 id="logo"><a href="/">Neon Nexus</a></h1>
             </div>
 
             <!-- Nav Links -->
             <div id="nav-links-container">
                 <ul id="nav-links">
-                    <li class="nav-list"><a href="/"><img class="img" src="/assets/icons/NEXUS-whitecyan.png" width="70px" alt="Home Logo">Home</a></li>
-                    <li class="nav-list"><a href=""><img class="img"  src="/assets/icons/NEXUS-menu-whitecyan.png" width="70px" alt="Menu Logo">Menu</a></li>
-                    <li class="nav-list"><a href="/pages/checkout/"><img  class="img" src="/assets/icons/cart-whitecyanglow.png" width="70px" alt="Checkout Logo">Checkout</a></li>
+                    <li class="nav-list"><a href="/"><img class="img" src="/assets/icons/NEXUS-whitecyan.png"
+                                width="70px" alt="Home Logo">Home</a></li>
+                    <li class="nav-list"><a href="/pages/menu/"><img class="img"
+                                src="/assets/icons/NEXUS-menu-whitecyan.png" width="70px" alt="Menu Logo">Menu</a></li>
+                    <li class="nav-list"><a href="/pages/checkout/"><img class="img"
+                                src="/assets/icons/cart-whitecyanglow.png" width="70px" alt="Checkout Logo">Checkout</a>
+                    </li>
                 </ul>
             </div>
         </div>
-     </nav>
-    <header id="banner">
-        
-    </header>
+    </nav>
+    <!-- <button><img class="cart" src="/assets\icons\cart-whitecyanglow.png" alt="cart"></button> -->
+
+
     <main class="container">
         <div id="menu-H">
             <h1>Menu</h1>
         </div>
-       
+
         <!--Times of resnaut-->
         <div class="time-w">
-        <h4>Opening times</h4>
-        &nbsp;
-        <p>Open for 8am-12pm all WEEK</p>
-        
+            <h4>Opening times</h4>
+            &nbsp;
+            <p>Open for 8am-12pm all WEEK</p>
+
         </div>
-         <!--Main menu and food-->   
+        <!--Main menu and food-->
         <section class="menu" id="sec-1">
             <Table id="items">
                 <tr>
-                    <th class="h3">Breakfest</th>
-                </tr>
-                <tr >
-                <tr>
-                    <td>Quantum Waffles &nbsp; 12.99$</td>
+                    <th class="h3">Breakfeast</th>
                 </tr>
                 <tr>
-                    <td>Pixel Waffles  &nbsp; 11.50$</td>
+                <tr>
+                    <td><button class="button" onclick="addToCart('quantumWaffles')">Add To Cart</button> Quantum Waffles
+                        &nbsp; 12.99$</td>
                 </tr>
                 <tr>
-                     <td>Cyber Omelet  &nbsp; 15.99$</td>
+                    <td><button class="button" onclick="addToCart('pixelWaffles')">Add To Cart</button> Pixel Waffles
+                        &nbsp; 11.50$</td>
                 </tr>
+
                 <tr>
-                     <td>Data Breakfest &nbsp; 14.75$</td>
+                    <td><button class="button" onclick="addToCart('cyberOmelet')">Add To Cart</button> Cyber Omelet &nbsp;
+                        15.99$</td>
                 </tr>
+
                 <tr>
-                    <td>Ciruit bord toast  &nbsp; 12.99$</td>
-                                             
+                    <td><button class="button" onclick="addToCart('dataBreakfeast')">Add To Cart</button> Data Breakfest
+                        &nbsp; 14.75$</td>
                 </tr>
-                  
-    
+
+                <tr>
+                    <td><button class="button" onclick="addToCart('circuitBoardToast')">Add To Cart</button> Ciruit board
+                        toast &nbsp; 12.99$</td>
+                </tr>
+
+
+
             </table>
         </section>
         <!--Lunch-->
-         <section class="menu"id="sec-2">
-             <h3>Lunch</h3>
-             <ul class="items">
-                <li>Glitch wrap &nbsp;10.99$</li>
-                <li>Fusion club sandwich &nbsp;12.50$</li>
-                <li>AI ramen bowl &nbsp; 15.99$</li>
-                <li>Hologram burger &nbsp;15.75$</li>
-                <li>Fusion turkey sandwich &nbsp; 13.99$</li>
+        <section class="menu" id="sec-2">
 
-             </ul>
+            <table class="items">
+                <tr>
+                    <th class="h3">Lunch</th>
+                </tr>
+                <tr>
+                    <td><button class="button" onclick="addToCart('glitchWrap')"> Add To Cart</button>Glitch wrap
+                        &nbsp;10.99$</td>
+
+                </tr>
+                <tr>
+                    <td><button class="button" onclick="addToCart('fusionClubSandwich')">Add To Cart</button> Fusion club
+                        sandwich &nbsp;12.50$</td>
+
+                </tr>
+                <tr>
+                    <td><button class="button" onclick="addToCart('aiRamenBowl')">Add To Cart</button> AI ramen bowl
+                        &nbsp; 15.99$</td>
+
+                </tr>
+                <tr>
+                    <td><button class="button" onclick="addToCart('hologramBurger')">Add To Cart</button> Hologram burger
+                        &nbsp;15.75$</td>
+
+                </tr>
+                <tr>
+                    <td><button class="button" onclick="addToCart('fusionTurkeySandwich')">Add To Cart</button> Fusion
+                        turkey sandwich &nbsp; 13.99$</td>
+
+                </tr>
+
+            </table>
         </section>
         <!--Dinner-->
         <section class="menu" id="sec-3">
@@ -90,42 +127,60 @@
                     <th class="h3">Dinner</th>
                 </tr>
                 <tr>
-                    <td>Plasma Steak &nbsp; 60.99$</td>
+                    <td><button class="button" onclick="addToCart('plasmaSteak')">Add To Cart</button> Plasma Steak &nbsp;
+                        60.99$</td>
+
                 </tr>
                 <tr>
-                    <td>Binary tacos &nbsp; 20.98$</td>
+                    <td><button class="button" onclick="addToCart('binaryTacos')">Add To Cart</button> Binary tacos &nbsp;
+                        20.98$</td>
+
                 </tr>
                 <tr>
-                    <td>cyber sushi &nbsp; 21.75$</td>
+                    <td><button class="button" onclick="addToCart('cyberSushi')">Add To Cart</button> cyber sushi &nbsp;
+                        21.75$</td>
+
                 </tr>
                 <tr>
-                    <td>Neon curry plate &nbsp;35.75$ </td>
+                    <td><button class="button" onclick="addToCart('neonCurryPlate')">Add To Cart</button> Neon curry plate
+                        &nbsp;35.75$ </td>
+
                 </tr>
                 <tr>
-                     <td>Quantum rice plate &nbsp;20.99$</td>
+                    <td><button class="button" onclick="addToCart('quantumRicePlate')">Add To Cart</button> Quantum rice
+                        plate &nbsp;20.99$</td>
+
                 </tr>
             </table>
         </section>
-        <!--Derserts-->
+        <!--Desserts-->
         <section class="deals" id="sec-4">
             <table class="items">
                 <tr>
-                    <th class="h3">Derserts </th>
+                    <th class="h3">Desserts </th>
                 </tr>
                 <tr>
-                      <td>Data cube brownies &nbsp; 15.99$</td>
+                    <td><button class="button" onclick="addToCart('dataCubeBrownies')">Add To Cart</button> Data cube
+                        brownies &nbsp; 15.99$</td>
+
                 </tr>
                 <tr>
-                      <td>Hologram sundae &nbsp; 18.99$</td>
+                    <td><button class="button" onclick="addToCart('hologramSundae')">Add To Cart</button> Hologram sundae
+                        &nbsp; 18.99$</td>
+
                 </tr>
                 <tr>
-                       <td>pixel devil cake &nbsp; 25.75$</td>
+                    <td><button class="button" onclick="addToCart('pixelDevilCake')">Add To Cart</button> pixel devil cake
+                        &nbsp; 25.75$</td>
+
                 </tr>
                 <tr>
-                    <td>Quamtum icecream float &nbsp; 16.99$</td>
+                    <td><button class="button" onclick="addToCart('quantumIcecreamFloat')">Add To Cart</button> Quamtum
+                        icecream float &nbsp; 16.99$</td>
+
                 </tr>
             </table>
-    
+
         </section>
         <section class="menu" id="sec-5">
             <table class="items">
@@ -133,62 +188,105 @@
                     <th class="h3">Drinks</th>
                 </tr>
                 <tr>
-                     <td>Blue screen soda &nbsp; 13.99$</td>
+                    <td><button class="button" onclick="addToCart('blueScreenSoda')">Add To Cart</button> Blue screen soda
+                        &nbsp; 13.99$</td>
+
                 </tr>
                 <tr>
-                     <td>Lighting energery &nbsp; 15.75$</td>
+                    <td><button class="button" onclick="addToCart('lightningEnergy')">Add To Cart</button> Lightning
+                        energy &nbsp; 15.75$</td>
+
                 </tr>
                 <tr>
-                         <td>RGB shake &nbsp; 12.75$</td>
+                    <td><button class="button" onclick="addToCart('rgbShake')">Add To Cart</button> RGB shake &nbsp;
+                        12.75$</td>
+
                 </tr>
                 <tr>
-                        <td>Nano Lemonade &nbsp;16.99$</td>
+                    <td><button class="button" onclick="addToCart('nanoLemonade')">Add To Cart</button> Nano Lemonade
+                        &nbsp;16.99$</td>
+
                 </tr>
                 <tr>
-                          <td>Data tea &nbsp;12.99$</td>
-                </tr>              
+                    <td><button class="button" onclick="addToCart('dataTea')">Add To Cart</button> Data tea &nbsp;12.99$
+                    </td>
+
+                </tr>
             </table>
 
         </section>
 
     </main>
-   <!--Cart button -->
-    <button id="cart-button"></button>
-    <button id="Dark-mode"></button>
+    <button id="Dark-mode">Dark-mode</button>
 
+
+
+
+
+
+
+
+
+    <!-- Cart overlay -->
+    <div id="cart" class="cart hidden">
+    <div class="cart-panel">
+        <button id="close-cart" class="cart-close">Close ×</button>
+        <h3>Your Cart</h3>
+        <div id="cart-items"></div>
+        <div id="cart-total"></div>
+        <div class="cart-actions">
+        <button id="clear-cart">Clear cart</button>
+        </div>
+    </div>
+    <div id="cart-backdrop" class="cart-backdrop"></div>
+    </div>
+
+
+
+
+
+
+
+    <!--Cart button -->
+    <button id="cart-button" onclick="toggleCart()"><img class="img" src="/assets/icons/cart-whitecyanglow.png" width="70px"
+            alt="Checkout Logo"></button>
+    
+
+    <button class="close-button" onclick="toggleCart()">Close</button>
     <!--Footer index-->
     <footer id="footer">
         <hr>
 
-    <table>
-      <tr>
-        <th>Contact Info</th>
-        <th>Info</th>
-        <th>Locations</th>
-        <th>Privacy Notice</th>
-      </tr>
-      <tr>
-        <td> 643-783-1780</td>
-        <td> open Mon-Fri</td>
-        <td>Address 2376 New Tech Ave</td>
-        <td>Consumer health</td>
-      </tr>
-      <tr>
-        <td>NeonNexus@icloud.com</td>
-        <td>Child Free</td>
-        <td>Address 12560 Cyber Gone Ave</td>
-        <td>Cookies</td>
-      </tr>
-      <tr>
-        <td>@NeonNexus future</td>
-        <td>8am-12pm</td>
-        <td>Address 7635 Future me Ave</td>
-        <td>Terms of use</td>
-      </tr>
-    </table>
+        <table>
+            <tr>
+                <th>Contact Info</th>
+                <th>Info</th>
+                <th>Locations</th>
+                <th>Privacy Notice</th>
+            </tr>
+            <tr>
+                <td> 643-783-1780</td>
+                <td> open Mon-Fri</td>
+                <td>Address 2376 New Tech Ave</td>
+                <td>Consumer health</td>
+            </tr>
+            <tr>
+                <td>NeonNexus@icloud.com</td>
+                <td>Child Free</td>
+                <td>Address 12560 Cyber Gone Ave</td>
+                <td>Cookies</td>
+            </tr>
+            <tr>
+                <td>@NeonNexus future</td>
+                <td>8am-12pm</td>
+                <td>Address 7635 Future me Ave</td>
+                <td>Terms of use</td>
+            </tr>
+        </table>
 
 
     </footer>
-    
+    <script src="menus.js" alt="javascript"></script>
 </body>
+
 </html>
