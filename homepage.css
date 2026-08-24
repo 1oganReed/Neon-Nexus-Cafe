@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+.audiowide-regular {
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 body {
     background: linear-gradient(270deg, #020209 0.000%, #05050b 8.333%, #08080d 16.667%, #0a0a10 25.000%, #0d0d13 33.333%, #0f1015 41.667%, #121217 50.000%, #14151a 58.333%, #17171c 66.667%, #19191e 75.000%, #1b1b20 83.333%, #1c1c22 91.667%, #1e1e24 100.000%);
     height: 100vh;
@@ -12,12 +20,13 @@ main {
         "header header"
         "card-1 card-2"
         "card-3 card-4";
-    grid-template-columns: 1fr 1fr;
+   /*  grid-template-columns: 1fr 1fr; */
     justify-content: space-evenly;
     row-gap: 200px;
 }
 
 header {
+    font-family: "Audiowide", sans-serif;
     grid-area: header;
     font-size: 60px;
     text-align: center;
@@ -27,7 +36,12 @@ header {
     height: 700px;
 }
 
+#p{
+    margin-top: 120px;
+}
+
 header > h1 {
+    font-family: "Audiowide", sans-serif;
     background: rgba(128, 128, 128, 0.134);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -73,4 +87,84 @@ header > h1 {
 
 .card-4 {
     grid-area: card-4;
+}
+
+.Card-container{
+    width: 350px;
+    height: 450px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+.Card{
+    width:100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.7s;
+  /*   transition: transform 0.6s ; */
+}
+
+.Card-face{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+}
+
+.Card.flipped {
+    transform: rotateY(180deg);
+}
+.Card-front{
+    background: linear-gradient(135deg,#ec43ea,#629cbe);
+    color: white;
+    box-shadow:  0 20px 60px darkblue;
+}
+
+.Card-front .icon{
+    font-size: 64px;
+    margin-bottom: 24px;
+}
+    .Card-front .h2{
+font-size:26px;
+margin-bottom: 12px;
+}
+    .Card-front p{
+font-size: 15px;
+line-height: 1.6;
+opacity: 0.85;
+}
+    .hint{
+    margin-top: 24px;
+    font-size: 13px;
+    opacity: 0.6;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+}
+.Card-back{
+    background: linear-gradient(135deg, blue,gold);
+    color:white;
+    transform: rotateY(180deg);
+    box-shadow: 0 20px 60px darkred;
+}
+
+.Card-back .icon{
+    font-size: 64px;
+    margin-bottom: 24px;
+}
+    .Card-back .h2{
+font-size:26px;
+margin-bottom: 12px;
+}
+    .Card-back p{
+font-size: 15px;
+line-height: 1.6;
+opacity: 0.85;
 }

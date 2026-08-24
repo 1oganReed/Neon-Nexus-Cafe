@@ -14,3 +14,16 @@ const options = {
 const element = '.cursor'
 
 const customCursor = new CustomCursor(element, options)
+
+//js card flip 
+let fliped = false;
+document.getElementById('Card-container').onclick= function(){
+    let card = document.getElementById('Card');
+    if(fliped){
+        card.style.transform ='rotateY(0deg)';
+    }
+    else{
+        card.style.transform ='rotateY(180deg)';
+    }
+    fliped = !fliped;
+};

@@ -1,35 +1,35 @@
-function saveobject(){
+// function saveobject(){
    let menu= [
    //breakfest
     {
     name:"quantumWaffles",
-    catergory:"Breakfest",
-    price:"12.99$",
+    catergory:"Breakfeast",
+    price:12.99,
     image:"",
    },
       {
-    name:"pixelWaffles ",
-    catergory:"Breakfest",
-    price:"11.50$",
+    name:"pixelWaffles",
+    catergory:"Breakfeast",
+    price:11.50,
     image:"",
    },
       {
-    name:"cyberOmelet ",
-    catergory:"Breakfest",
-    price:"15.99$",
+    name:"cyberOmelet",
+    catergory:"Breakfeast",
+    price:15.99,
     image:"",
    },
 
       {
     name:"dataBreakfeast",
-    catergory:"Breakfest",
-    price:"14.75$",
+    catergory:"Breakfeast",
+    price:14.75,
     image:"",
    },
     {
     name:"circuitBoardToast",
-    catergory:"Breakfest",
-    price:"12.99$",
+    catergory:"Breakfeast",
+    price:12.99,
     image:"",
    },
    /*Breakfest area Done*/ 
@@ -37,31 +37,31 @@ function saveobject(){
    {
     name:"glitchWrap",
     catergory:"Lunch",
-    price:"10.99",
+    price:10.99,
     image:"",
    },
       {
     name:"fusionClubSandwich",
     catergory:"Lunch",
-    price:"12.50$",
+    price:12.50,
     image:"",
    },
       {
     name:"aiRamenBowl",
     catergory:"Lunch",
-    price:" 15.99$",
+    price:15.99,
     image:"",
    },
       {
     name:"hologramBurger",
     catergory:"Lunch",
-    price:"15.75$",
+    price:15.75,
     image:"",
    },
     {
     name:"fusionTurkeySandwich",
     catergory:"Lunch",
-    price:"13.99$",
+    price:13.99,
     image:"",
    },
    /* Lunch area done */
@@ -69,31 +69,31 @@ function saveobject(){
    {
     name:"plasmaSteak",
     catergory:"Dinner",
-    price:"60.99$",
+    price:60.99,
     image:"",
    },
       {
     name:"binaryTacos",
     catergory:"Dinner",
-    price:"20.98$",
+    price:20.98,
     image:"",
    },
       {
     name:"cyberSushi",
     catergory:"Dinner",
-    price:" 21.75$",
+    price:21.75,
     image:"",
    },
       {
     name:"neonCurryPlate",
     catergory:"Dinner",
-    price:"35.75$",
+    price:35.75,
     image:"",
    },
     {
     name:"quantumRicePlate",
     catergory:"Dinner",
-    price:"20.99$",
+    price:20.99,
     image:"",
    },
    /*Dinner area Done */
@@ -101,25 +101,25 @@ function saveobject(){
    {
     name:"dataCubeBrownies",
     catergory:"Derserts",
-    price:"15.99$",
+    price:15.99,
     image:"",
    },
       {
     name:"hologramSundae",
     catergory:"Derserts",
-    price:"18.99$",
+    price:18.99,
     image:"",
    },
       {
     name:"pixelDevilCake",
     catergory:"Derserts",
-    price:"25.75$",
+    price:25.75,
     image:"",
    },
     {
     name:"quantumIcecreamFloat",
     catergory:"Derserts",
-    price:" 16.99$",
+    price:16.99,
     image:"",
    },
    /*Dersert area done */
@@ -127,31 +127,31 @@ function saveobject(){
    {
     name:"blueScreenSoda",
     catergory:"Drink",
-    price:"13.99$",
+    price:13.99,
     image:"",
    },
       {
-    name:"lightingEnergy",
+    name:"lightningEnergy",
     catergory:"Drink",
-    price:"15.75$",
+    price:15.75,
     image:"",
    },
       {
     name:"rgbShake",
     catergory:"Drink",
-    price:"12.75$",
+    price:12.75,
     image:"",
    },
       {
     name:"nanoLemonade",
     catergory:"Drink",
-    price:"16.99$",
+    price:16.99,
     image:"",
    },
     {
     name:"dataTea",
     catergory:"Drink",
-    price:"12.99$",
+    price:12.99,
     image:"",
    },
    /*Drinks done */
@@ -172,67 +172,105 @@ function saveobject(){
 //    localStorage.setItem('data', cartItemData)
 // }
 
-function addToCart(name){
+function getCart(){
+   const raw = localStorage.getItem('cart');
+   return raw ? JSON.parse(raw) : [];
+}
+
+function saveCart(cart){
+   localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// call from button click
+function addToCart(itemName){
+   const item = menu.find(i => i.name === itemName);
+   if(!item){
+      console.warn('addToCart: item not found', itemName);
+      return
+   }
+   const cart = getCart();
+
+   let foundIndex = -1;
+   for(let i=0; i<cart.length; i++){
+      if(cart[i].name === item.name){foundIndex = i; break;}
+   }
+
+   if(foundIndex !== -1){
+      cart[foundIndex].qty = (cart[foundIndex].qty || 1) + 1;
+   }
+   else{
+      cart.push({name: item.name, price: item.price, qty: 1});
+   }
+   
+   saveCart(cart);
+   alert(`${item.name} added to cart`);
+}
+// end adding to cart
+//
+//
+// start toggle the opening of cart
+function toggleCart(){
+   const cart = document.getElementById('cart');
+   if(!cart) return;
+   const openCart = !cart.classList.toggle('hidden');
+   if(open) displayCart();
+}
+
+// read cart from local storage and display it
+
+function displayCart(){
+   const items = document.getElementById('cart-items');
+   const total = document.getElementById('cart-total');
+   if(!items || !total) return;
+
+   const cart = getCart(); // grabbing the local storage cart data
+   if(!cart || cart.length === 0){
+      items.innerHTML = '<p>Your cart is empty</p>';
+      total.textContent = '';
+      return;
+   }
+
+   item.innerHTML = '';
+   // let total = 0;
+   
+   for(let i=0; i<cart.length; i++){
+      const cartItem = cart[i];
+      const line = document.createElement('div');
+      line.className = 'cart-line';
+      line.innerHTML= `
+      <span class="cart-name">${formatName(cartItem.name)} x ${cartItem.qty}</span>
+      <span class="cart-sub">${(cartItem.price * cartItem.qty).toFixed(2)}</span>
+      <div class="cart-controls">
+       <button class="cart-dec" data-name="${cartItem.name}">-</button>
+       <button class="cart-inc" data-name="${cartItem.name}">+</button>
+       <button class="cart-remove" data-name="${cartItem.name}">Remove</button>
+      </div>
+      `;
+      items.appendChild(line);
+      total += cartItem.price * cartItem.qty;
+   }
+
+   total.textContent = `Total: $${total.toFixed(2)}`;
+
+   const remBtns = items.querySelectorAll('.cart-remove');
+   for(let i=0; i< remBtns.length; i++){
+      remBtns[i].addEventListener('click', function(){removeAll(this.dataset.name);
+   })
+}
+
    
 }
 
-function addItemLocalStorage(menuItem){
-   let menuItems = getItemsFromStorage();
-   menuItems.push(menuItem);
-   localStorage.setItem('menuItem', JSON.stringify(menuItems));
+function removeAll(name){
+   const cart = getCart();
+   const out = [];
+   for(let i=0; i<cart.length; i++){
+      if(cart[i].name !== name) out.push(cart[i]);
+   }
+   saveCart(out);
+   displayCart();
 }
 
-function getItemsFromStorage(){
-   let menuItems = getItemsFromStorage();
-   let menuItems;
-   const menuItemsLS = localStorage.getItem('menuItems');
-   if(menuItemsLS === null){
-      menuItems = [];
-   }
-   else{
-      menuItems = JSON.parse(menuItemsLS);
-   }
-   return menuItems
+function formatName(name) {
+  return name.replace(/([A-Z])/g, ' $1').trim();
 }
-
-//Java script light mode switch instantly 
-
-
-
-//local storage 
-let menuString=JSON.stringify(menu);
-localStorage.setItem("Menu", menuString);
-document.getElementById("output").textContent=
-"Item saved "+"\n"+  menuString;
-document.getElementById("output").textContent =
-"item saved"+ "\n"+ menuString, null;
-}
-
-//loadind storage
-function loadObject(){
-   let savedmenu = localStorage.getItem("menu");
-   if(savedmenu){
-      let studentObject = JSON.parse(savedmenu);
-      document.getElementById("output").textContent =
-      "Item added:"+
-      "Name"+ menuObject.name+"\n"+
-      "Price:"+ menuObject.price;
-   }
-
-   else {
-         document.getElementById("output").textContent=
-         "No Item found on Menu"
-      }
-
-   }
-
-   function clearStorage(){
-          localStorage.clear();
-            document.getElementById("cleared");
-   }
-
-
-   //function color switch light mode 
- 
-
-
