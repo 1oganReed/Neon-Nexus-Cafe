@@ -1,10 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
-.audiowide-regular {
-    font-family: "Audiowide", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=VT323&display=swap');
+
+
 
 body {
     background: linear-gradient(270deg, #020209 0.000%, #05050b 8.333%, #08080d 16.667%, #0a0a10 25.000%, #0d0d13 33.333%, #0f1015 41.667%, #121217 50.000%, #14151a 58.333%, #17171c 66.667%, #19191e 75.000%, #1b1b20 83.333%, #1c1c22 91.667%, #1e1e24 100.000%);
@@ -14,6 +12,18 @@ body {
     color: white;
 }
 
+
+.vt323-regular {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.audiowide-regular {
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 main {
     display: grid;
     grid-template-areas:
@@ -22,17 +32,17 @@ main {
         "card-3 card-4";
    /*  grid-template-columns: 1fr 1fr; */
     justify-content: space-evenly;
-    row-gap: 200px;
+    row-gap: 100px;
 }
 
 header {
-    font-family: "Audiowide", sans-serif;
     grid-area: header;
     font-size: 60px;
     text-align: center;
+    font-family: "Audiowide", sans-serif;
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    background: conic-gradient(from 180deg, #a47451 0.000deg, #9c9881 60.000deg, #73a09d 120.000deg, #3b899a 180.000deg, #095b79 240.000deg, #002847 300.000deg, #000116 360.000deg);
+    background: conic-gradient(from 180deg, #953374 0.000deg, #f555c5 60.000deg, #81f0e8 120.000deg, #2a5ab4 180.000deg, #0a7ba3 240.000deg, #002847 300.000deg, #000116 360.000deg);
     height: 700px;
 }
 
@@ -41,7 +51,7 @@ header {
 }
 
 header > h1 {
-    font-family: "Audiowide", sans-serif;
+    margin-bottom:150px;
     background: rgba(128, 128, 128, 0.134);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -61,34 +71,17 @@ header > h1 {
 .card-2,
 .card-3,
 .card-4 {
-    border: 1px solid white;
+    border: none;
     height: 700px;
     width: 600px;
-    margin-left: 100px;
-    padding:20px;
-    text-align: center;
+    margin-left: 200px;
     border-radius: 20px;
+    text-align: center;
 }
 
-.card-1 {
-    grid-area: card-1;
-    margin-bottom: 30px;
-}
 
-.card-2 {
-    grid-area: card-2;
-   
-}
 
-.card-3 {
-    grid-area: card-3;
-     margin-bottom: 30px;
-}
-
-.card-4 {
-    grid-area: card-4;
-}
-
+/*Ading card animations */
 .Card-container{
     width: 350px;
     height: 450px;
@@ -104,6 +97,10 @@ header > h1 {
   /*   transition: transform 0.6s ; */
 }
 
+.Card.is-flipped {
+    transform: rotateY(180deg);
+}
+
 .Card-face{
     position: absolute;
     width:100%;
@@ -117,13 +114,9 @@ header > h1 {
     text-align: center;
     padding: 40px;
 }
-
-.Card.flipped {
-    transform: rotateY(180deg);
-}
 .Card-front{
-    background: linear-gradient(135deg,#ec43ea,#629cbe);
-    color: white;
+    background: linear-gradient(135deg,cyan,#629cbe);
+    color: black;
     box-shadow:  0 20px 60px darkblue;
 }
 
@@ -132,13 +125,15 @@ header > h1 {
     margin-bottom: 24px;
 }
     .Card-front .h2{
-font-size:26px;
-margin-bottom: 12px;
+    font-family: "Audiowide", sans-serif;
+    font-size:26px;
+    margin-bottom: 12px;
 }
     .Card-front p{
-font-size: 15px;
-line-height: 1.6;
-opacity: 0.85;
+    font-family: "VT323", monospace;
+    font-size: 20px;
+    line-height: 1.6;
+    opacity: 0.85;
 }
     .hint{
     margin-top: 24px;

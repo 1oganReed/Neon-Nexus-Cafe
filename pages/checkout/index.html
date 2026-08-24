@@ -4,40 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexus Link Checkout</title>
-    <link href="/shared/css/footer.css" rel="stylesheet">
-    <link href="checkout.css" rel="stylesheet">
-    <link href="/shared/css/global.css" rel="stylesheet">
-    <link href="/shared/css/navbar.css" rel="stylesheet">
-
-    <script src="checkout.js">
-        
-        
-        </script>
-    <link href="\menu\index.html" rel="prev">
-    <link href="index.html" rel="next">
+    <link href="../../shared/css/footer.css" rel="stylesheet">
+    <link href="../checkout/checkout.css" rel="stylesheet">
+    <link href="../../shared/css/global.css" rel="stylesheet">
+    <link href="../../shared/css/navbar.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation bar, should expand horizontally on hover, navigation icons should have inverted/alternated colours upon hover, links/words should toggle an underline when hovered -->
-    <nav>
+   <nav>
         <div id="nav-card">
             <!-- Logo -->
             <div id="logo">
-                <img src="/assets/icons/Transparent_DM-Logo.png" alt="Nexus Logo" width="90px">
-                <h1 id="logo"><a href="/index.html">Neon Nexus</a></h1>
+                <img src="../../assets/icons/Transparent_DM-Logo.png" alt="Nexus Logo" width="90px">
+                <h1 id="logo"><a href="../../">Neon Nexus</a></h1>
             </div>
 
             <!-- Nav Links -->
             <div id="nav-links-container">
                 <ul id="nav-links">
-                    <li class="nav-list"><a href="/index.html"><img class="img" src="/assets/icons/NEXUS-whitecyan.png" width="70px" alt="Home Logo">Home</a></li>
-                    <li class="nav-list"><a href="/pages/menu/index.html"><img class="img"  src="/assets/icons/NEXUS-menu-whitecyan.png" width="70px" alt="Menu Logo">Menu</a></li>
-                    <li class="nav-list"><a href="index.html"><img  class="img" src="/assets/icons/cart-whitecyanglow.png" width="70px" alt="Checkout Logo">Checkout</a></li>
+                    <li class="nav-list"><a href="../../"><img class="img" src="../../assets/icons/NEXUS-whitecyan.png" width="70px" alt="Home Logo">Home</a></li>
+                    <li class="nav-list"><a href="../../pages/menu/"><img class="img"  src="../../assets/icons/NEXUS-menu-whitecyan.png" width="70px" alt="Menu Logo">Menu</a></li>
+                    <li class="nav-list"><a href="index.html"><img  class="img" src="../../assets/icons/cart-whitecyanglow.png" width="70px" alt="Checkout Logo">Checkout</a></li>
                 </ul>
             </div>
         </div>
-    </nav>
-     
-
+     </nav>
 
     <!-- Header containing title -->
     <header>
@@ -46,11 +37,11 @@
 
     </header>
     <!-- Main body content containing the checkout card to display user's total items, price, and enter card info -->
-    <main>
+    <main class="container">
         <div id="checkoutCard">
             
             <!-- left side of checkout card, field for user to enter card info. -->
-            <form id="cardinfo">
+            <form id="cardinfo" class="box-1">
                 <h3>Payment</h3>
                 <label for="cnumber">Card number</label>
                 <input type="number" id="cnumber" name="cnumber" minlength="16" maxlength="19" placeholder="0000-0000-0000-0000" required>
@@ -69,12 +60,20 @@
 
             <!-- Right side of checkout card, should display user's total items, prices, subtotal, and tax. Total should be calculated through javascript.  -->
             
-            <div id="items-grid" id="itemGrid"> </div>
+            <div id="items-grid"> </div>
 
             <div id="cart-model" id="cartModel">
                 <div class="cart-content">
                     <h2 class="cart-header">Your Cart</h2>
-                    <div id="cartItems"></div>
+                    <button onclick="displayCart()">Display Cart</button>
+                    <div id="cart-items"></div>
+                    <div id="cart-total"></div>
+                    <div class="cart-actions">
+                    <button id="clear-cart" onclick="clearCart()">Clear cart</button>
+
+
+
+                    <!-- <div id="cartItems"></div>
 
                     <div class="cart-total">
                         <span> Total : </span>
@@ -82,7 +81,7 @@
                         <span id="cartTotal">$0 </span>
 
                     </div>
-                        <button class="close-btn" onclick="toggleCart()">Close</button>
+                        <button class="close-btn" onclick="toggleCart()">Close</button> -->
 
             
 
@@ -132,4 +131,6 @@
 
 
     </footer>
+
+    <script src="checkout.js" alt="javascript"></script>
 </body>

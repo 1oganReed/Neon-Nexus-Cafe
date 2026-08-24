@@ -1,11 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=VT323&display=swap');
+
+
+.vt323-regular {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+.audiowide-regular {
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+/* Nav Container CSS */
+nav{
+      font-family: "Audiowide", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#nav-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(128, 128, 128, 0.012);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 20px 40px;
+    width: 100%;
+    max-width: 1900px;
+    color: white;
+}
+#logo{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#nav-links-container{
+    display: flex;
+    align-items: center;
+}
+
+#nav-links{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+}
+.img{
+    display: inline-flex;
+    vertical-align: middle;
+    align-items: center;
+    align-content: center;
+    margin: 0;
+}
+
+#nav-links > li{
+    font-size: 18px;
+    border: 1px solid white;
+    padding: 6px 12px;
+    border-radius: 25px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: auto;
+}
+
+/* .nav-list {
+  background: #b621fe;
+  border: none;
+  z-index: 1;
+} */
+.nav-list:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #663dff;
+  border-radius: 5px;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  transition: all 0.3s ease;
+}
+.nav-list:hover {
+  color: #fff;
+}
+.nav-list:hover:after {
+  left: 0;
+  width: 100%;
+}
+.nav-list:active {
+  top: 2px;
+}
+
+/* Cart */
+.cart.hidden { display: none; }
+.cart { position: fixed; inset: 0; z-index: 9999; display: block; }
+.cart-panel {
+  position: absolute; right: 20px; top: 20px; width: 320px;
+  background: #111; color: #fff; padding: 16px; border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  z-index: 2;
+}
+.cart-backdrop {
+  position: absolute; inset: 0;
+  z-index: 1;
+}
+.cart-line { display:flex; justify-content:space-between; gap:8px; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06);}
+.cart-close { position:absolute; right:8px; top:8px;  border:none; color:#fff; font-size:16px; cursor:pointer; }
+
+
+/* Make the anchor contain the image and text side-by-side and centered */
+#nav-links > li > a{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: inherit;
+    text-decoration: none;
+}
+
+:root{
+    /* Light Mode Palette */
+    --LightNeonBlue: #3381FF;
+    --LightNeonPurple: #8F28A4;
+    --LightElectricCyan: #70E0FF;
+    --LightBlack: #141414;
+    --LightDarkGray: #3D3E3D;
+    --LightWhite: #ffffff;
+
+    /* Dark Mode Palette */
+    --DarkNeonBlue: #0046B8;
+    --DarkNeonPurple: #391042;
+    --DarkElectricCyan: #00C0F5;
+    --DarkBlack: #020202;
+    --DarkDarkGray: #161413;
+    --DarkWhite: #ffffff;
+}
+
 body{
-    background-image: linear-gradient(to bottom right, rgb(3, 3, 3), black, rgb(31, 31, 31));
+    background-color: var(--LightBlack);
     height: 100vh;
     padding:0;
     margin:0;
@@ -18,21 +170,30 @@ body{
 
 }
 
+.container{
+    display: grid;
+    grid-template-columns: repeat(15, 100px);
+    grid-template-rows: repeat(5, 100px);
+}
+
 #checkoutCard{
+     display:flex;
+    grid-area: 1/7/8/10;
     width: 80vw;
     height: 60vh;
-    border: 2px solid #000000;
+    border: 2px solid var(--LightWhite);
     border-radius: 15px;
     align-self: center;
     justify-self: center;
-
     padding: 30px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.545);
+    color: var(--LightWhite);
+    background-color: var(--LightBlack);
 
 } 
 
 #cardinfo{
+    margin-left:80px;
+    padding-left: 20px;
     display: flex;
     width: 30vw;
     height: 40vh;
@@ -41,17 +202,18 @@ body{
     flex-direction: column;
     flex-wrap: wrap;
     box-shadow: 2px 2px 10px var(--LightNeonPurple);
+
 }
 
 #items-grid{
+
     display: flex;
     width: 30vw;
     height: 40vh;
     gap: 5pt;
     padding: 10pt;
     flex-direction: column;
-    flex-wrap: wrap;
-    
+    flex-wrap: wrap;   
     box-shadow: 2px 2px 10px;
 
 }
@@ -59,15 +221,15 @@ body{
 label{
 
     border-radius: 2px;
-    color: cyan;
+    color: var(--LightElectricCyan);
     font-weight: bolder;
-    text-shadow: 2px 2px 10px cyan;
+    text-shadow: 2px 2px 10px var(--LightElectricCyan);
 }
 input{
     width: 10vw;
     height: 4vh;
     text-align: center;
-    background-color:#000 ;
+    background-color:var(--LightBlack) ;
     color: #fff;
     box-shadow: 2px 2px 10px var(--LightNeonPurple);
     border: 1px 1px var(--LightNeonPurple);
@@ -76,14 +238,20 @@ input:hover{
     background:var(--DarkNeonPurple) ;
     
 }
+.cart-header{
+    text-align: center;
+}
 
 button{
+    position: sticky;
+    margin-top: 250px;
     width: 5vw;
     height: 3vh;
     border-radius: 2px;
     border: 1px 1px var(--DarkNeonBlue);
 background: var(--LightNeonBlue);
     box-shadow: 2px 2px 10px var(--DarkNeonBlue);
+    color:#020202
 
 }
 button:hover{
@@ -96,4 +264,38 @@ button:active{
     background: var(--DarkNeonBlue);
     box-shadow: 2px 2px 10px var(--LightNeonBlue);
 
+}
+
+footer{
+    margin-top: 100px;
+}
+
+footer{
+    background-color: var(--LightBlack);
+}
+
+hr {
+    margin-bottom: 15px;
+}
+
+table td {
+    font-family: "VT323", monospace;
+    text-align: center;
+    width: 500px;
+    margin: 15px;
+    padding: 12px;
+    font-size: 15px;
+    color: var(--LightWhite);
+}
+
+th {
+    font-family: "VT323", monospace;
+    font-size: 24px;
+    color: var(--LightElectricCyan);
+}
+
+
+
+tr:hover {
+    text-shadow: 1px 1px 5px var(--LightNeonBlue);
 }
