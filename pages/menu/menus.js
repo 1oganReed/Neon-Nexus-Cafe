@@ -173,7 +173,7 @@
 // }
 
 function getCart(){
-   const raw = localStorage.getItem('cart');
+   let raw = localStorage.getItem('cart');
    return raw ? JSON.parse(raw) : [];
 }
 
@@ -183,12 +183,12 @@ function saveCart(cart){
 
 // call from button click
 function addToCart(itemName){
-   const item = menu.find(i => i.name === itemName);
+   let item = menu.find(i => i.name === itemName);
    if(!item){
       console.warn('addToCart: item not found', itemName);
       return
    }
-   const cart = getCart();
+   let cart = getCart();
 
    let foundIndex = -1;
    for(let i=0; i<cart.length; i++){
@@ -210,36 +210,40 @@ function addToCart(itemName){
 //
 // start toggle the opening of cart
 function toggleCart(){
+   let cart = document.getElementById('cart');
+   if(!cart) return;
+   let openCart = !cart.classList.toggle('hidden');
+   if(openCart) displayCart();
+}
+function closeCart(){
    const cart = document.getElementById('cart');
    if(!cart) return;
-   const openCart = !cart.classList.toggle('hidden');
-   if(open) displayCart();
+   cart.classList.add('hidden');
 }
-
 // read cart from local storage and display it
 
 function displayCart(){
    const items = document.getElementById('cart-items');
-   const total = document.getElementById('cart-total');
-   if(!items || !total) return;
+   const totalEl = document.getElementById('cart-total');   // DOM element
+   if(!items || !totalEl) return;
 
-   const cart = getCart(); // grabbing the local storage cart data
+   const cart = getCart();
    if(!cart || cart.length === 0){
       items.innerHTML = '<p>Your cart is empty</p>';
-      total.textContent = '';
+      totalEl.textContent = '';
       return;
    }
 
-   item.innerHTML = '';
-   // let total = 0;
-   
+   items.innerHTML = '';
+   let total = 0;   // running number, NOT reused from above
+
    for(let i=0; i<cart.length; i++){
       const cartItem = cart[i];
       const line = document.createElement('div');
       line.className = 'cart-line';
-      line.innerHTML= `
-      <span class="cart-name">${formatName(cartItem.name)} x ${cartItem.qty}</span>
-      <span class="cart-sub">${(cartItem.price * cartItem.qty).toFixed(2)}</span>
+      line.innerHTML = `
+      <span class="cart-name">Item: ${formatName(cartItem.name)} x ${cartItem.qty}</span>
+      <span class="cart-sub">Subtotal: ${(cartItem.price * cartItem.qty).toFixed(2)}</span>
       <div class="cart-controls">
        <button class="cart-dec" data-name="${cartItem.name}">-</button>
        <button class="cart-inc" data-name="${cartItem.name}">+</button>
@@ -247,23 +251,28 @@ function displayCart(){
       </div>
       `;
       items.appendChild(line);
-      total += cartItem.price * cartItem.qty;
+      total += cartItem.price * cartItem.qty;   // total is a plain number here
    }
 
-   total.textContent = `Total: $${total.toFixed(2)}`;
+   totalEl.textContent = `Total: $${total.toFixed(2)}`;   // .toFixed works — total is a number
 
    const remBtns = items.querySelectorAll('.cart-remove');
-   for(let i=0; i< remBtns.length; i++){
-      remBtns[i].addEventListener('click', function(){removeAll(this.dataset.name);
-   })
+   for(let i=0; i<remBtns.length; i++){
+      remBtns[i].addEventListener('click', function(){
+         removeAll(this.dataset.name);
+      });
+   }
 }
 
+function clearCart(){
+   localStorage.clear();
    
+   displayCart();
 }
 
 function removeAll(name){
-   const cart = getCart();
-   const out = [];
+   let cart = getCart();
+   let out = [];
    for(let i=0; i<cart.length; i++){
       if(cart[i].name !== name) out.push(cart[i]);
    }
@@ -274,3 +283,28 @@ function removeAll(name){
 function formatName(name) {
   return name.replace(/([A-Z])/g, ' $1').trim();
 }
+
+
+//dark and light mode
+
+const darkmode = document.getElementById("Dark-mode");
+
+function toggleDarkMode() {
+  const isDark = document.documentElement.classList.toggle("darkmode");
+
+  darkmode.textContent = isDark
+    ? "Switch to Light Mode"
+    : "Switch to Dark Mode";
+
+  localStorage.setItem("darkMode", isDark);
+}
+
+darkmode.addEventListener("click", toggleDarkMode);
+
+(function applySavedMode() {
+  const savedMode = localStorage.getItem("darkMode") === "true";
+  if (savedMode) {
+    document.documentElement.classList.add("darkmode");
+    darkmode.textContent = "Switch to Light Mode";
+  }
+})();

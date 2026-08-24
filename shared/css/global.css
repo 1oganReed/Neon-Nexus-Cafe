@@ -15,7 +15,7 @@
     --DarkDarkGray: #161413;
     --DarkWhite: #ffffff;
 }
-:root{
+:root.dark{
     /* Light Mode Palette */
     --LightNeonBlue: #3381FF;
     --LightNeonPurple: #8F28A4;

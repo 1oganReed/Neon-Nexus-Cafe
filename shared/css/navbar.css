@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
 :root{
     /* Light Mode Palette */
     --LightNeonBlue: #3381FF;
@@ -16,12 +18,20 @@
     --DarkWhite: #ffffff;
 }
 
+
+.audiowide-regular {
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 /* Nav Container CSS */
 nav{
+      font-family: "Audiowide", sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
+     font-family: "Audiowide", sans-serif;
 }
 
 #nav-card{
@@ -95,6 +105,36 @@ nav{
     height: auto;
 }
 
+/* .nav-list {
+  background: #b621fe;
+  border: none;
+  z-index: 1;
+} */
+.nav-list:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background: linear-gradient(270deg, #08000050 0.000%, #0d0000 25.000%, #130000 50.000%, #1a000e 75.000%, #210826 100.000%);
+  border-radius: 20px;
+   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  transition: all 0.3s ease;
+}
+.nav-list:hover {
+  color: #fff;
+}
+.nav-list:hover:after {
+  left: 0;
+  width: 100%;
+}
+.nav-list:active {
+  top: 2px;
+}
+
+
 /* Make the anchor contain the image and text side-by-side and centered */
 #nav-links > li > a{
     display: inline-flex;
@@ -162,9 +202,10 @@ nav{
 } */
 
 #logo{
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 12px;
+    
 }
 
 #logo > a{

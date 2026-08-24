@@ -1,16 +1,24 @@
 // Following options represent the defaults
 const options = {
-   // Whether or not the true cursor should be hidden when the custom cursor is initialized
-   hideTrueCursor: false,
+  // Whether or not the true cursor should be hidden when the custom cursor is initialized
+  hideTrueCursor: false,
 
-   // Array of DOM elements/selector strings that add interactions on hover
-   focusElements: ['a', 'button'],
+  // Array of DOM elements/selector strings that add interactions on hover
+  focusElements: ["a", "button"],
 
-   // Class applied when the true cursor is hovering over a focusElement
-   focusClass: 'cursor--focused',
-}
+  // Class applied when the true cursor is hovering over a focusElement
+  focusClass: "cursor--focused",
+};
 
 // Can be selector string or DOM node
-const element = '.cursor'
+const element = ".cursor";
 
-const customCursor = new CustomCursor(element, options)
+/* const customCursor = new CustomCursor(element, options); */
+
+
+// Script for card flips.
+document.querySelectorAll(".Card").forEach((card) => {
+  card.addEventListener("click", () => {
+    card.classList.toggle("is-flipped");
+  });
+});
