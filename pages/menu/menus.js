@@ -283,3 +283,28 @@ function removeAll(name){
 function formatName(name) {
   return name.replace(/([A-Z])/g, ' $1').trim();
 }
+
+
+//dark and light mode
+
+const darkmode = document.getElementById("Dark-mode");
+
+function toggleDarkMode() {
+  const isDark = document.documentElement.classList.toggle("darkmode");
+
+  darkmode.textContent = isDark
+    ? "Switch to Light Mode"
+    : "Switch to Dark Mode";
+
+  localStorage.setItem("darkMode", isDark);
+}
+
+darkmode.addEventListener("click", toggleDarkMode);
+
+(function applySavedMode() {
+  const savedMode = localStorage.getItem("darkMode") === "true";
+  if (savedMode) {
+    document.documentElement.classList.add("darkmode");
+    darkmode.textContent = "Switch to Light Mode";
+  }
+})();

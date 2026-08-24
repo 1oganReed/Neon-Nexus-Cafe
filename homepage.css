@@ -10,6 +10,7 @@ body {
     padding: 0;
     margin: 0;
     color: white;
+    overflow-x: hidden;
 }
 
 
@@ -30,21 +31,25 @@ main {
         "header header"
         "card-1 card-2"
         "card-3 card-4";
-    grid-template-columns: 1fr 1fr;
+   /*  grid-template-columns: 1fr 1fr; */
     justify-content: space-evenly;
     row-gap: 100px;
+
 }
 
 header {
-
     grid-area: header;
     font-size: 60px;
     text-align: center;
     font-family: "Audiowide", sans-serif;
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    background: conic-gradient(from 180deg, #953374 0.000deg, #f555c5 60.000deg, #81f0e8 120.000deg, #2a5ab4 180.000deg, #0a7ba3 240.000deg, #002847 300.000deg, #000116 360.000deg);
+    background: conic-gradient(from 180deg, #9607cf 0.000deg, #c82aef 60.000deg, #81f0e8 120.000deg, #2a5ab4 180.000deg, #0a7ba3 240.000deg, #002847 300.000deg, #000116 360.000deg);
     height: 700px;
+}
+
+#p{
+    margin-top: 120px;
 }
 
 header > h1 {
@@ -71,9 +76,10 @@ header > h1 {
     border: none;
     height: 700px;
     width: 600px;
-    margin-left: 200px;
+    margin-left: 180px;
     border-radius: 20px;
     text-align: center;
+    justify-self: center;
 }
 
 
@@ -133,6 +139,7 @@ header > h1 {
     opacity: 0.85;
 }
     .hint{
+    font-family: "VT323", monospace;
     margin-top: 24px;
     font-size: 13px;
     opacity: 0.6;
@@ -141,10 +148,10 @@ header > h1 {
 
 }
 .Card-back{
-    background: linear-gradient(135deg, blue,gold);
+    background: linear-gradient(135deg, rgb(175, 21, 213),rgb(137, 46, 198));
     color:white;
     transform: rotateY(180deg);
-    box-shadow: 0 20px 60px darkred;
+    box-shadow: 0 20px 60px rgb(66, 7, 228);
 }
 
 .Card-back .icon{
@@ -152,11 +159,14 @@ header > h1 {
     margin-bottom: 24px;
 }
     .Card-back .h2{
+font-family: "Audiowide", sans-serif;
+font-size:26px;
 font-size:26px;
 margin-bottom: 12px;
 }
     .Card-back p{
-font-size: 15px;
+font-family: "VT323", monospace;
+font-size: 20px;
 line-height: 1.6;
 opacity: 0.85;
 }
