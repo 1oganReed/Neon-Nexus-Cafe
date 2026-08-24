@@ -305,7 +305,7 @@ function displayCart(){
       line.className = 'cart-line';
       line.innerHTML = `
       <span class="cart-name">Item: ${formatName(cartItem.name)} x ${cartItem.qty}</span>
-      <span class="cart-sub">Subtotal: ${(cartItem.price * cartItem.qty).toFixed(2)}</span>
+      <span class="cart-sub">$${(cartItem.price * cartItem.qty).toFixed(2)}</span>
       <div class="cart-controls">
        <button class="cart-dec" data-name="${cartItem.name}">-</button>
        <button class="cart-inc" data-name="${cartItem.name}">+</button>
@@ -315,8 +315,13 @@ function displayCart(){
       items.appendChild(line);
       total += cartItem.price * cartItem.qty;   // total is a plain number here
    }
-
-   totalEl.textContent = `Total: $${total.toFixed(2)}`;   // .toFixed works — total is a number
+   const taxRate = 0.056
+   const tax = total * taxRate
+   totalEl.innerHTML = `
+      <div>Subtotal: $${total.toFixed(2)}</div>
+      <div>Tax: $${tax.toFixed(2)} (5.6%)</div>
+      <div>Total: $${(total + tax).toFixed(2)}</div>
+   `;
 
    const remBtns = items.querySelectorAll('.cart-remove');
    for(let i=0; i<remBtns.length; i++){

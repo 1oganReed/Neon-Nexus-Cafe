@@ -126,6 +126,13 @@ h1{
   box-shadow: 0 8px 24px rgba(0,0,0,0.6);
   z-index: 2;
 }
+
+.cart-content{
+    height: auto;
+    
+    
+}
+
 .cart-backdrop {
   position: absolute; inset: 0;
   z-index: 1;
@@ -184,8 +191,10 @@ body{
 #checkoutCard{
      display:flex;
     grid-area: 1/7/8/10;
-    width: 80vw;
-    height: 60vh;
+    min-width: 80vw;
+    width: auto;
+    min-height: 60vh;
+    height: auto;
     border: 2px solid var(--LightWhite);
     border-radius: 15px;
     align-self: center;
@@ -214,12 +223,14 @@ body{
 }
 
 #items-grid{
-
+    overflow-y: auto;     /* Adds a vertical scrollbar only when needed */
     display: flex;
-    width: 30vw;
+    min-width: 30vw;
+    width: auto;
+    /* min-height: 40vh; */
     height: 40vh;
     gap: 5pt;
-    padding: 10pt;
+    padding: 8pt;
     flex-direction: column;
     flex-wrap: wrap;   
     box-shadow: 2px 2px 10px;
@@ -246,6 +257,23 @@ input:hover{
     background:var(--DarkNeonPurple) ;
     
 }
+#cart-items {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+#cart-total {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+    font-family: "VT323", monospace;
+    font-size: 18px;
+    color: var(--LightElectricCyan);
+    line-height: 1.4;
+}
+
 .cart-header{
     font-family: "Audiowide", sans-serif;
     text-align: center;
@@ -278,13 +306,17 @@ button:active{
 
 }
 button{
+    display: inline-flex;
+    width: auto;
+    min-width: 60px;
+    margin: 0;
     font-family: "VT323", monospace;
-    margin-top: 25px;
+    /* margin-top: 25px;
     margin-bottom: 20px;
-    margin-left: 85px;
+    margin-left: 85px; */
     flex-direction: row-reverse;
     justify-content: center;
-    width: 5vw;
+    /* width: 5vw; */
     height: 3vh;
     border-radius: 2px;
     border: 1px 1px var(--DarkNeonBlue);
