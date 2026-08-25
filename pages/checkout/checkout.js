@@ -284,6 +284,10 @@ function getCart(){
    return raw ? JSON.parse(raw) : [];
 }
 
+function saveCart(cart){
+   localStorage.setItem('cart', JSON.stringify(cart));
+}
+
 function displayCart(){
    const items = document.getElementById('cart-items');
    const totalEl = document.getElementById('cart-total');   // DOM element
@@ -323,6 +327,20 @@ function displayCart(){
       <div>Total: $${(total + tax).toFixed(2)}</div>
    `;
 
+   const decBtns = items.querySelectorAll('.cart-dec');
+   for(let i=0; i<decBtns.length; i++){
+      decBtns[i].addEventListener('click', function(){
+         removeOne(this.dataset.name);
+      });
+   }
+
+   const incBtns = items.querySelectorAll('.cart-inc');
+   for(let i=0; i<incBtns.length; i++){
+      incBtns[i].addEventListener('click', function(){
+         addOne(this.dataset.name);
+      });
+   }
+
    const remBtns = items.querySelectorAll('.cart-remove');
    for(let i=0; i<remBtns.length; i++){
       remBtns[i].addEventListener('click', function(){
@@ -333,7 +351,31 @@ function displayCart(){
 
 function clearCart(){
    localStorage.clear();
-   
+   localStorage.removeItem('cart');
+   displayCart();
+}
+
+function addOne(name){
+   let cart = getCart();
+   const item = cart.find(entry => entry.name === name);
+   if(!item) return;
+
+   item.qty = (item.qty || 1) + 1;
+   saveCart(cart);
+   displayCart();
+}
+
+function removeOne(name){
+   let cart = getCart();
+   const itemIndex = cart.findIndex(entry => entry.name === name);
+   if(itemIndex === -1) return;
+
+   cart[itemIndex].qty = (cart[itemIndex].qty || 1) - 1;
+   if(cart[itemIndex].qty <= 0){
+      cart.splice(itemIndex, 1);
+   }
+
+   saveCart(cart);
    displayCart();
 }
 
