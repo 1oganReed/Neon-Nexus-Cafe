@@ -131,10 +131,10 @@ body {
   height: auto;
 }
 
-img:hover {
-  border-radius: 70px;
- box-shadow: 2px 2px 10px  rgba(255, 255, 255, 0.522);
- 
+.dark:hover {
+ border-radius: 70px;
+ box-shadow: 2px 2px 15px  rgba(255, 255, 255, 0.522);
+
 }
 
 .food-icon {
@@ -450,8 +450,9 @@ nav {
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 .cart-close {
- padding: 4px;
- border-radius: 10px;    margin-top: 10px;
+  padding: 4px;
+  border-radius: 10px;   
+  margin-top: 10px;
   position: absolute;
   right: 8px;
   top: 8px;
@@ -484,29 +485,6 @@ nav {
    background-color: var(--LightWhite);
 }
 
-/* button{
-    display: flex;
-    gap: 15px;
-    margin-left: 100px;
-    height: 20px;
-    background-color: #3381FF;
-    border: 1px solid rgba(255, 255, 255, 0.259)
-} */
-
-/* button{
-    display:flex;
-    flex-direction: column;
-    background: rgba(128, 128, 128, 0.012);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    padding: 10px;
-    margin: 10px 0px 10px 100px;
-    color: white;
-    
-} */
 /* Make the anchor contain the image and text side-by-side and centered */
 #nav-links > li > a {
   display: inline-flex;
@@ -520,16 +498,7 @@ nav {
 
 @media (prefers-color-scheme: dark) {
 }
-  /* #Dark-mode {
-  background-color: var(--LightBlack);
-  border: none;
-}
-.dark:hover {
-  border-radius: 70px;
- box-shadow: 2px 2px 10px  rgba(255, 255, 255, 0.522);
- 
-}
-} */
+
 
 @media screen and (max-width: 600px) {
   .nav-card {
