@@ -61,3 +61,7 @@ th {
 tr:hover {
     text-shadow: 1px 1px 5px var(--LightNeonBlue);
 }
+
+#copyright{
+    font-size: 12px;
+}
