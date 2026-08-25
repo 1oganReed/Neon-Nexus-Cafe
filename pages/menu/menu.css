@@ -4,12 +4,12 @@
 
 :root {
   /* Light Mode Palette */
-  --LightNeonBlue: #3381ff;
-  --LightNeonPurple: #8f28a4;
-  --LightElectricCyan: #70e0ff;
-  --LightBlack: #141414;
-  --LightDarkGray: #3d3e3d;
-  --LightWhite: #ffffff;
+  --LightNeonBlue: #fe00be;
+  --LightNeonPurple: #c527cd;
+  --LightElectricCyan: #ff00e1;
+  --LightBlack: #2d2a61;
+  --LightDarkGray: #ff0e6e;
+  --LightWhite: #ffe8f7;
 }
 
 :root.darkmode {
@@ -519,6 +519,7 @@ nav {
 
 
 @media (prefers-color-scheme: dark) {
+}
   /* #Dark-mode {
   background-color: var(--LightBlack);
   border: none;
@@ -622,5 +623,4 @@ display:none;
   border-radius: 20px;
 }
 
-}
 }

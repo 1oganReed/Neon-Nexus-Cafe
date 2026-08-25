@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=VT323&display=swap');
 
 
+
 .vt323-regular {
     font-family: "VT323", monospace;
     font-weight: 400;
@@ -11,6 +12,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    background-color: var(--LightBlack);
 }
 
 .audiowide-regular {
@@ -27,7 +29,7 @@ nav{
     padding: 20px;
 }
 h1{
-    color: white;
+    color: var(--LightWhite);
     text-align: center;
     font-family: "Audiowide", sans-serif;
 }
@@ -66,6 +68,30 @@ h1{
     gap: 12px;
     margin: 0;
     padding: 0;
+}
+#Dark-mode {
+  position: fixed;
+   height:90px;
+  right: 24px;
+  bottom: 24px;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: (20, 20, 20, 0.9);
+  border: 2px solid var(--LightElectricCyan);
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 0 15px rgba(112, 224, 255, 0.5);
+  cursor: pointer;
+}
+
+#Dark-mode .dark {
+  display: block;
+  width: 70px;
+  height: auto;
+}
+@media (prefers-color-scheme: dark) {
 }
 .img{
     display: inline-flex;
@@ -121,8 +147,14 @@ h1{
 .cart.hidden { display: none; }
 .cart { position: fixed; inset: 0; z-index: 9999; display: block; }
 .cart-panel {
-  position: absolute; right: 20px; top: 20px; width: 320px;
-  background: #111; color: #fff; padding: 16px; border-radius: 8px;
+  position: absolute;
+  right: 20px; 
+  top: 20px; 
+  width: 320px;
+  background: var(--LightBlack);
+  color: var(--LightWhite);
+  padding: 16px; 
+  border-radius: 8px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.6);
   z-index: 2;
 }
@@ -150,23 +182,6 @@ h1{
     text-decoration: none;
 }
 
-:root{
-    /* Light Mode Palette */
-    --LightNeonBlue: #3381FF;
-    --LightNeonPurple: #8F28A4;
-    --LightElectricCyan: #70E0FF;
-    --LightBlack: #141414;
-    --LightDarkGray: #3D3E3D;
-    --LightWhite: #ffffff;
-
-    /* Dark Mode Palette */
-    --DarkNeonBlue: #0046B8;
-    --DarkNeonPurple: #391042;
-    --DarkElectricCyan: #00C0F5;
-    --DarkBlack: #020202;
-    --DarkDarkGray: #161413;
-    --DarkWhite: #ffffff;
-}
 
 body{
     background-color: var(--LightBlack);
@@ -250,12 +265,12 @@ input{
     height: 4vh;
     text-align: center;
     background-color:var(--LightBlack) ;
-    color: #fff;
+    color: var(--LightWhite);
     box-shadow: 2px 2px 10px var(--LightNeonPurple);
     border: 1px 1px var(--LightNeonPurple);
 }
 input:hover{
-    background:var(--DarkNeonPurple) ;
+    background:var(--LightNeonPurple) ;
     
 }
 #cart-items {
@@ -286,9 +301,9 @@ input:hover{
     width: 5vw;
     height: 3vh;
     border-radius: 2px;
-    border: 1px 1px var(--DarkNeonBlue);
+    border: 1px 1px var(--LightNeonBlue);
 background: var(--LightNeonBlue);
-    box-shadow: 2px 2px 10px var(--DarkNeonBlue);
+    box-shadow: 2px 2px 10px var(--LightNeonBlue);
     color:#020202
 
 }
@@ -302,7 +317,7 @@ button:hover{
 
 button:active{
     border: 1px 1px var(--LightNeonBlue);
-    background: var(--DarkNeonBlue);
+    background: var(--LightBlack);
     box-shadow: 2px 2px 10px var(--LightNeonBlue);
 
 }
