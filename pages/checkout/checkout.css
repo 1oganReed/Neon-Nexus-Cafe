@@ -223,13 +223,13 @@ body{
 }
 
 #items-grid{
-  height: 200px;        /* Restricts the height */
-  overflow-y: auto;     /* Adds a vertical scrollbar only when needed */
+    height: 200px;        /* Restricts the height */
+    overflow-y: auto;     /* Adds a vertical scrollbar only when needed */
     display: flex;
     min-width: 30vw;
     width: auto;
     min-height: 40vh;
-    height: auto;
+    /* height: auto; */
     gap: 5pt;
     padding: 8pt;
     flex-direction: column;
