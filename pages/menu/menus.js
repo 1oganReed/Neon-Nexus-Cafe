@@ -176,10 +176,14 @@ function getCart(){
    let raw = localStorage.getItem('cart');
    return raw ? JSON.parse(raw) : [];
 }
+// Gets the parsed data from local storage 
+
 
 function saveCart(cart){
    localStorage.setItem('cart', JSON.stringify(cart));
 }
+// Stringifies the data to be added into the local storage
+
 
 // call from button click
 function addToCart(itemName){
@@ -205,6 +209,9 @@ function addToCart(itemName){
    saveCart(cart);
    alert(`${item.name} added to cart`);
 }
+// Starts by adding items to the cart through their name. Finds through the array until there's a match of item. If there is no item match, display "item not found" then return it. The cart to be displayed should be the cart grabbed from local storage. Checks and If the item is already in the array, break the loop. However, if it's not already in the cart, but a found index of it is already in the cart, then add one to the quantity instead of adding another element of the same item. If no existing data foud, make the quantity one including the name and price of the item. Finally, it calls the saveCart function based on the cart item just added, after they click to add to cart, alerts the user using the item name found. 
+
+
 // end adding to cart
 //
 //
@@ -215,12 +222,16 @@ function toggleCart(){
    let openCart = !cart.classList.toggle('hidden');
    if(openCart) displayCart();
 }
+// Toggle the css for the div to appearing which displays the cart. If the cart was toggled open, call the displayCart, if not, return as normal (no cart being shown in html).
+
+
 function closeCart(){
    const cart = document.getElementById('cart');
    if(!cart) return;
    cart.classList.add('hidden');
 }
-// read cart from local storage and display it
+// read cart from local storage and display it. Add the cart closing functionality.
+
 
 function displayCart(){
    const items = document.getElementById('cart-items');
