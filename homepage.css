@@ -170,3 +170,66 @@ font-size: 20px;
 line-height: 1.6;
 opacity: 0.85;
 }
+
+@media screen and (max-width: 600px) {
+    .nav-card {
+    max-width: 50px;
+    background-color: rgba(128, 128, 128, 0.012);
+    border: none;
+    box-shadow: none;
+  }
+   .nav-card {
+    text-align: end;
+    width: 100%;
+  }
+  #nav-links {
+display:none;
+
+  }
+ 
+ .Hamburger{
+  display:block;
+ }
+ .nav-links {
+    display: none;
+ }
+ .img{
+  width:50px;
+ }
+ main{
+     display: grid;
+    grid-template-areas:
+        "header""header"
+        "card-1"
+        "card-2"
+        "card-3"
+        "card-4";
+   /*  grid-template-columns: 1fr 1fr; */
+    row-gap: 100px;
+ }
+ .card-1,
+.card-2,
+.card-3,
+.card-4 {
+    border: none;
+    height: 700px;
+    width: 600px;
+    margin-right: 180px;
+    border-radius: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+header {
+    grid-area: header;
+    font-size: 60px;
+    text-align: center;
+    font-family: "Audiowide", sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    background: conic-gradient(from 180deg, #9607cf 0.000deg, #c82aef 60.000deg, #81f0e8 120.000deg, #2a5ab4 180.000deg, #0a7ba3 240.000deg, #002847 300.000deg, #000116 360.000deg);
+    height: 700px;
+    width: 180px;
+}
+
+}
