@@ -123,19 +123,16 @@ header > h1 {
     box-shadow:  0 20px 60px darkblue;
 }
 
-.Card-front .icon{
-    font-size: 64px;
-    margin-bottom: 24px;
-}
     .Card-front .h2{
     font-family: "Audiowide", sans-serif;
-    font-size:26px;
-    margin-bottom: 12px;
+    font-size:25px;
+    margin-top: 25px;
+    margin-bottom: 10px;
 }
     .Card-front p{
     font-family: "VT323", monospace;
-    font-size: 20px;
-    line-height: 1.6;
+    font-size: 18px;
+    line-height: 1.5;
     opacity: 0.85;
 }
     .hint{
@@ -196,6 +193,7 @@ display:none;
  .img{
   width:50px;
  }
+
  main{
      display: grid;
     grid-template-areas:

@@ -288,23 +288,19 @@ function formatName(name) {
 //dark and light mode
 
 const darkmode = document.getElementById("Dark-mode");
+const darkModeImage = darkmode.querySelector("img");
+
+function updateDarkModeIcon() {
+  const isDark = document.documentElement.classList.contains("darkmode");
+  darkModeImage.src = isDark ? "../../assets/icons/LM.png" : "../../assets/icons/DM-YP.png";
+  darkModeImage.alt = isDark ? "Switch to light mode" : "Switch to dark mode";
+  darkModeImage.title = isDark ? "Switch to light mode" : "Switch to dark mode";
+}
 
 function toggleDarkMode() {
   const isDark = document.documentElement.classList.toggle("darkmode");
-
-  darkmode.textContent = isDark
-  if (button.innerHTML.includes = `/../../assets/icons/DM-YP.png"`) {
-       button.innerHTML= `<img class="dark" width="100px" src= alt="dark/light mode">`;
-  }
-   else {
-     button.innerHTML = `<img class="dark" width="100px" src=/../../assets/icons/DM-YP.png alt="dark/light mode">
-
-`;
-  }
-   /*  ? "light"
-    : "dark" */
-
-  localStorage.setItem("darkMode", isDark);
+  localStorage.setItem("darkMode", String(isDark));
+  updateDarkModeIcon();
 }
 
 darkmode.addEventListener("click", toggleDarkMode);
@@ -313,6 +309,6 @@ darkmode.addEventListener("click", toggleDarkMode);
   const savedMode = localStorage.getItem("darkMode") === "true";
   if (savedMode) {
     document.documentElement.classList.add("darkmode");
-    darkmode.textContent = "Switch to Light Mode";
   }
+  updateDarkModeIcon();
 })();
