@@ -176,10 +176,14 @@ function getCart(){
    let raw = localStorage.getItem('cart');
    return raw ? JSON.parse(raw) : [];
 }
+// Gets the parsed data from local storage 
+
 
 function saveCart(cart){
    localStorage.setItem('cart', JSON.stringify(cart));
 }
+// Stringifies the data to be added into the local storage
+
 
 // call from button click
 function addToCart(itemName){
@@ -205,6 +209,9 @@ function addToCart(itemName){
    saveCart(cart);
    alert(`${item.name} added to cart`);
 }
+// Starts by adding items to the cart through their name. Finds through the array until there's a match of item. If there is no item match, display "item not found" then return it. The cart to be displayed should be the cart grabbed from local storage. Checks and If the item is already in the array, break the loop. However, if it's not already in the cart, but a found index of it is already in the cart, then add one to the quantity instead of adding another element of the same item. If no existing data foud, make the quantity one including the name and price of the item. Finally, it calls the saveCart function based on the cart item just added, after they click to add to cart, alerts the user using the item name found. 
+
+
 // end adding to cart
 //
 //
@@ -215,12 +222,16 @@ function toggleCart(){
    let openCart = !cart.classList.toggle('hidden');
    if(openCart) displayCart();
 }
+// Toggle the css for the div to appearing which displays the cart. If the cart was toggled open, call the displayCart, if not, return as normal (no cart being shown in html).
+
+
 function closeCart(){
    const cart = document.getElementById('cart');
    if(!cart) return;
    cart.classList.add('hidden');
 }
-// read cart from local storage and display it
+// read cart from local storage and display it. Add the cart closing functionality.
+
 
 function displayCart(){
    const items = document.getElementById('cart-items');
@@ -256,6 +267,20 @@ function displayCart(){
 
    totalEl.textContent = `Total: $${total.toFixed(2)}`;   // .toFixed works — total is a number
 
+   const decBtns = items.querySelectorAll('.cart-dec');
+   for(let i=0; i<decBtns.length; i++){
+      decBtns[i].addEventListener('click', function(){
+         removeOne(this.dataset.name);
+      });
+   }
+
+   const incBtns = items.querySelectorAll('.cart-inc');
+   for(let i=0; i<incBtns.length; i++){
+      incBtns[i].addEventListener('click', function(){
+         addOne(this.dataset.name);
+      });
+   }
+
    const remBtns = items.querySelectorAll('.cart-remove');
    for(let i=0; i<remBtns.length; i++){
       remBtns[i].addEventListener('click', function(){
@@ -266,7 +291,31 @@ function displayCart(){
 
 function clearCart(){
    localStorage.clear();
-   
+   localStorage.removeItem('cart');
+   displayCart();
+}
+
+function addOne(name){
+   let cart = getCart();
+   const item = cart.find(entry => entry.name === name);
+   if(!item) return;
+
+   item.qty = (item.qty || 1) + 1;
+   saveCart(cart);
+   displayCart();
+}
+
+function removeOne(name){
+   let cart = getCart();
+   const itemIndex = cart.findIndex(entry => entry.name === name);
+   if(itemIndex === -1) return;
+
+   cart[itemIndex].qty = (cart[itemIndex].qty || 1) - 1;
+   if(cart[itemIndex].qty <= 0){
+      cart.splice(itemIndex, 1);
+   }
+
+   saveCart(cart);
    displayCart();
 }
 
@@ -288,15 +337,19 @@ function formatName(name) {
 //dark and light mode
 
 const darkmode = document.getElementById("Dark-mode");
+const darkModeImage = darkmode.querySelector("img");
+
+function updateDarkModeIcon() {
+  const isDark = document.documentElement.classList.contains("darkmode");
+  darkModeImage.src = isDark ? "../../assets/icons/LM.png" : "../../assets/icons/DM-YP.png";
+  darkModeImage.alt = isDark ? "Switch to light mode" : "Switch to dark mode";
+  darkModeImage.title = isDark ? "Switch to light mode" : "Switch to dark mode";
+}
 
 function toggleDarkMode() {
   const isDark = document.documentElement.classList.toggle("darkmode");
-
-  darkmode.textContent = isDark
-    ? "Switch to Light Mode"
-    : "Switch to Dark Mode";
-
-  localStorage.setItem("darkMode", isDark);
+  localStorage.setItem("darkMode", String(isDark));
+  updateDarkModeIcon();
 }
 
 darkmode.addEventListener("click", toggleDarkMode);
@@ -305,6 +358,6 @@ darkmode.addEventListener("click", toggleDarkMode);
   const savedMode = localStorage.getItem("darkMode") === "true";
   if (savedMode) {
     document.documentElement.classList.add("darkmode");
-    darkmode.textContent = "Switch to Light Mode";
   }
+  updateDarkModeIcon();
 })();

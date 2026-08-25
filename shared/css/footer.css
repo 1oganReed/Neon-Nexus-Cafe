@@ -8,22 +8,30 @@
 }
 
 
-:root{
-    /* Light Mode Palette */
-    --LightNeonBlue: #3381FF;
-    --LightNeonPurple: #8F28A4;
-    --LightElectricCyan: #70E0FF;
-    --LightBlack: #141414;
-    --LightDarkGray: #3D3E3D;
-    --LightWhite: #ffffff;
+:root {
+  /* Light Mode Palette */
+  --LightNeonBlue: #fe00be;
+  --LightNeonPurple: #c527cd;
+  --LightElectricCyan: #ff00e1;
+  --LightBlack: #413d8c;
+  --LightDarkGray: #ff0e6e;
+  --LightWhite: #ffe8f7;
+}
 
-    /* Dark Mode Palette */
-    --DarkNeonBlue: #0046B8;
-    --DarkNeonPurple: #391042;
-    --DarkElectricCyan: #00C0F5;
-    --DarkBlack: #020202;
-    --DarkDarkGray: #161413;
-    --DarkWhite: #ffffff;
+:root.darkmode {
+  /* Dark Mode Palette */
+  --DarkNeonBlue: #0046b8;
+  --DarkNeonPurple: #a745bd;
+  --DarkElectricCyan: #00c0f5;
+  --DarkBlack: #020202;
+  --DarkDarkGray: #161413;
+  --DarkWhite: #ffffff;
+  --LightNeonBlue: var(--DarkNeonBlue);
+  --LightNeonPurple: var(--DarkNeonPurple);
+  --LightElectricCyan: var(--DarkElectricCyan);
+  --LightBlack: var(--DarkBlack);
+  --LightDarkGray: var(--DarkDarkGray);
+  --LightWhite: var(--DarkWhite);
 }
 
 .vt323-regular {
@@ -60,4 +68,8 @@ th {
 
 tr:hover {
     text-shadow: 1px 1px 5px var(--LightNeonBlue);
+}
+
+#copyright{
+    font-size: 12px;
 }

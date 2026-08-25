@@ -284,6 +284,10 @@ function getCart(){
    return raw ? JSON.parse(raw) : [];
 }
 
+function saveCart(cart){
+   localStorage.setItem('cart', JSON.stringify(cart));
+}
+
 function displayCart(){
    const items = document.getElementById('cart-items');
    const totalEl = document.getElementById('cart-total');   // DOM element
@@ -305,7 +309,7 @@ function displayCart(){
       line.className = 'cart-line';
       line.innerHTML = `
       <span class="cart-name">Item: ${formatName(cartItem.name)} x ${cartItem.qty}</span>
-      <span class="cart-sub">Subtotal: ${(cartItem.price * cartItem.qty).toFixed(2)}</span>
+      <span class="cart-sub">$${(cartItem.price * cartItem.qty).toFixed(2)}</span>
       <div class="cart-controls">
        <button class="cart-dec" data-name="${cartItem.name}">-</button>
        <button class="cart-inc" data-name="${cartItem.name}">+</button>
@@ -315,8 +319,27 @@ function displayCart(){
       items.appendChild(line);
       total += cartItem.price * cartItem.qty;   // total is a plain number here
    }
+   const taxRate = 0.056
+   const tax = total * taxRate
+   totalEl.innerHTML = `
+      <div>Subtotal: $${total.toFixed(2)}</div>
+      <div>Tax: $${tax.toFixed(2)} (5.6%)</div>
+      <div>Total: $${(total + tax).toFixed(2)}</div>
+   `;
 
-   totalEl.textContent = `Total: $${total.toFixed(2)}`;   // .toFixed works — total is a number
+   const decBtns = items.querySelectorAll('.cart-dec');
+   for(let i=0; i<decBtns.length; i++){
+      decBtns[i].addEventListener('click', function(){
+         removeOne(this.dataset.name);
+      });
+   }
+
+   const incBtns = items.querySelectorAll('.cart-inc');
+   for(let i=0; i<incBtns.length; i++){
+      incBtns[i].addEventListener('click', function(){
+         addOne(this.dataset.name);
+      });
+   }
 
    const remBtns = items.querySelectorAll('.cart-remove');
    for(let i=0; i<remBtns.length; i++){
@@ -328,7 +351,31 @@ function displayCart(){
 
 function clearCart(){
    localStorage.clear();
-   
+   localStorage.removeItem('cart');
+   displayCart();
+}
+
+function addOne(name){
+   let cart = getCart();
+   const item = cart.find(entry => entry.name === name);
+   if(!item) return;
+
+   item.qty = (item.qty || 1) + 1;
+   saveCart(cart);
+   displayCart();
+}
+
+function removeOne(name){
+   let cart = getCart();
+   const itemIndex = cart.findIndex(entry => entry.name === name);
+   if(itemIndex === -1) return;
+
+   cart[itemIndex].qty = (cart[itemIndex].qty || 1) - 1;
+   if(cart[itemIndex].qty <= 0){
+      cart.splice(itemIndex, 1);
+   }
+
+   saveCart(cart);
    displayCart();
 }
 
@@ -345,3 +392,31 @@ function removeAll(name){
 function formatName(name) {
   return name.replace(/([A-Z])/g, ' $1').trim();
 }
+
+//dark and light mode
+
+const darkmode = document.getElementById("Dark-mode");
+const darkModeImage = darkmode.querySelector("img");
+
+function updateDarkModeIcon() {
+  const isDark = document.documentElement.classList.contains("darkmode");
+  darkModeImage.src = isDark ? "../../assets/icons/LM.png" : "../../assets/icons/DM-YP.png";
+  darkModeImage.alt = isDark ? "Switch to light mode" : "Switch to dark mode";
+  darkModeImage.title = isDark ? "Switch to light mode" : "Switch to dark mode";
+}
+
+function toggleDarkMode() {
+  const isDark = document.documentElement.classList.toggle("darkmode");
+  localStorage.setItem("darkMode", String(isDark));
+  updateDarkModeIcon();
+}
+
+darkmode.addEventListener("click", toggleDarkMode);
+
+(function applySavedMode() {
+  const savedMode = localStorage.getItem("darkMode") === "true";
+  if (savedMode) {
+    document.documentElement.classList.add("darkmode");
+  }
+  updateDarkModeIcon();
+})();
