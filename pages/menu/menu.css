@@ -63,7 +63,9 @@ body {
 .h3 {
   text-align: center;
 }
-
+img{
+  border-radius: 20px;
+}
 .button {
   border-radius: 10px;
   width: 75px;
