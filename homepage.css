@@ -361,35 +361,29 @@ header > h1 {
     perspective: 1000px;
     cursor: pointer;
 }
-
+input[type='checkbox']:not(:checked)+ul {
+    display: none;
+}
 }
 @media (min-width: 600px){
 .Hamburger{
   display:none;
  }
 
+
 }
 
 @media screen and (max-width: 600px) {
 
-     .nav-card {
-    max-width: 60px;
-    background-color: rgba(128, 128, 128, 0.012);
-    border: none;
-    box-shadow: none;
-  }
-   .nav-card {
-    text-align: end;
-    width: 100%;
-  }
-  #nav-links {
-display:none;
 
-  }
+ nav label {
+    text-align: right;
+    display: block;
+    padding: 0.5em;
+    line-height: 1.6em;
+    align-self: center;
+}
  
- .Hamburger{
-  display:block;
- }
  .nav-links {
     display: none;
  }
