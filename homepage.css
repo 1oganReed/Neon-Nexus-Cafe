@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=VT323&display=swap');
-
+/*imports so that the font work*/
 :root {
   /* Light Mode Palette */
   --LightNeonBlue: #fe00be;
@@ -38,7 +38,7 @@ body {
     overflow-x: hidden;
 }
 
-
+/*font for page*/
 .vt323-regular {
     font-family: "VT323", monospace;
     font-weight: 400;
@@ -50,6 +50,8 @@ body {
     font-weight: 400;
     font-style: normal;
 }
+
+/*main frid used for page*/
 main {
     display: grid;
     grid-template-areas:
@@ -62,6 +64,7 @@ main {
 
 }
 
+/*header stylization*/
 header {
     grid-area: header;
     font-size: 60px;
@@ -128,7 +131,7 @@ header > h1 {
 .Card.is-flipped {
     transform: rotateY(180deg);
 }
-
+/*front of cards*/
 .Card-face{
     position: absolute;
     width:100%;
@@ -160,6 +163,8 @@ header > h1 {
     line-height: 1.5;
     opacity: 0.85;
 }
+
+/*stylization for card to ley people know to flip them*/
     .hint{
     font-family: "VT323", monospace;
     margin-top: 24px;
@@ -169,6 +174,8 @@ header > h1 {
     text-transform: uppercase;
 
 }
+
+/*card back*/
 .Card-back{
     background: linear-gradient(135deg, rgb(175, 21, 213),rgb(137, 46, 198));
     color:var(--LightWhite);
@@ -193,8 +200,6 @@ line-height: 1.6;
 opacity: 0.85;
 }
 /*Button for dark mode*/
-
-
 #Dark-mode {
   position: fixed;
   right: 24px;
@@ -217,12 +222,14 @@ opacity: 0.85;
   height: auto;
 }
 
-img:hover {
-  border-radius: 100px;
- box-shadow: 2px 2px 10px  rgba(255, 255, 255, 0.522);
- 
+.dark:hover {
+ border-radius: 70px;
+ box-shadow: 2px 2px 15px  rgba(255, 255, 255, 0.522);
+
 }
 
+
+/*stylization for media querys*/
 @media screen and (max-width: 600px) {
     .nav-card {
     max-width: 50px;

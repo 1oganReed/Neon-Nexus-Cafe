@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=VT323&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+/*Import for fonts so that the heaer look cool*/
 
 :root {
   /* Light Mode Palette */
@@ -28,6 +28,7 @@
   --LightWhite: var(--DarkWhite);
 }
 
+/*Full css and styleization*/
 * {
   margin: 0px;
   box-sizing: border-box;
@@ -37,6 +38,8 @@
 body {
   background-color: var(--LightBlack);
 }
+
+/*Grid for cards and stylization*/
 
 .container {
   width: min(1180px, calc(100% - 32px));
@@ -72,6 +75,7 @@ body {
   color: var(--LightNeonBlue);
 }
 
+/*button hover effect for adding to cart*/
 .button:hover {
   border-radius: 10px;
   width: 75px;
@@ -83,6 +87,8 @@ body {
   border: none;
   color: var(--LightWhite);
 }
+
+/*cart panel for when you press cart button*/
 .cart-panel {
   font-family: "VT323", monospace;
   color: var(--LightWhite);
@@ -90,11 +96,12 @@ body {
   border: 1px solid white;
 }
 
+/*button style for cart button */
 #cart-button {
   position: fixed;
   margin-right: 130px;
   width:90px;
-   height:90px;
+  height:90px;
   right: 24px;
   bottom: 24px;
   z-index: 50;
@@ -108,6 +115,8 @@ body {
   box-shadow: 0 0 15px rgba(112, 224, 255, 0.5);
   cursor: pointer;
 }
+
+/*Button stlylization for theme switch*/
 
 #Dark-mode {
   position: fixed;
@@ -134,11 +143,6 @@ body {
 .dark:hover {
  border-radius: 70px;
  box-shadow: 2px 2px 15px  rgba(255, 255, 255, 0.522);
-
-}
-
-.food-icon {
-  width: 30px;
 }
 
 h3 {
@@ -146,10 +150,7 @@ h3 {
   margin-left: 40px;
 }
 
-.time {
-  width: 300px;
-}
-
+/*style of */
 .time-w {
   display: flex;
   grid-column: 1 / -1;
@@ -165,28 +166,9 @@ h3 {
   border-radius: 10px;
   min-height: 150px;
 }
-/* 
- .cart,button{
-    background-color: black;
-    border: black;
-    width: 100px;
-    border-radius: 100px;
 
 
-}  */
-
-.vt323-regular {
-  font-family: "VT323", monospace;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.audiowide-regular {
-  font-family: "Audiowide", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
+/*section for menu items*/
 #sec-1 {
   display: flex;
   grid-column: 1;
