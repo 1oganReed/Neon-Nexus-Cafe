@@ -1,24 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=VT323&display=swap');
+/*Import for font*/
+:root {
+  /* Light Mode Palette */
+  --LightNeonBlue: #fe00be;
+  --LightNeonPurple: #c527cd;
+  --LightElectricCyan: #ff00e1;
+  --LightBlack: #2d2a61;
+  --LightDarkGray: #ff0e6e;
+  --LightWhite: #ffe8f7;
+}
 
+:root.darkmode {
+  /* Dark Mode Palette */
+  --DarkNeonBlue: #0046b8;
+  --DarkNeonPurple: #391042;
+  --DarkElectricCyan: #00c0f5;
+  --DarkBlack: #020202;
+  --DarkDarkGray: #161413;
+  --DarkWhite: #ffffff;
+  --LightNeonBlue: var(--DarkNeonBlue);
+  --LightNeonPurple: var(--DarkNeonPurple);
+  --LightElectricCyan: var(--DarkElectricCyan);
+  --LightBlack: var(--DarkBlack);
+  --LightDarkGray: var(--DarkDarkGray);
+  --LightWhite: var(--DarkWhite);
+}
 
+/*fonts that are used for webiste*/
 .vt323-regular {
     font-family: "VT323", monospace;
     font-weight: 400;
     font-style: normal;
-}
-
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-.container {
-    text-align: center;
-    font-family: "VT323", monospace;
-    justify-content: center;
-    display: grid;
-    grid-template-columns: repeat(10, 100px);
-    grid-template-rows: repeat(5, 100px);
 }
 
 
@@ -26,6 +38,20 @@
     font-family: "Audiowide", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+/*effect body or all css*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    background-color: var( --LightBlack);
+    height: 100vh;
+    padding:0;
+    margin:0;
 }
 /* Nav Container CSS */
 nav{
@@ -36,7 +62,7 @@ nav{
     padding: 20px;
 }
 h1{
-    color: white;
+    color: var(--LightWhite);
     text-align: center;
     font-family: "Audiowide", sans-serif;
 }
@@ -56,6 +82,8 @@ h1{
     max-width: 1900px;
     color: white;
 }
+
+/*logo stylization*/
 #logo{
     display: flex;
     align-items: center;
@@ -76,14 +104,6 @@ h1{
     margin: 0;
     padding: 0;
 }
-.img{
-    display: inline-flex;
-    vertical-align: middle;
-    align-items: center;
-    align-content: center;
-    margin: 0;
-}
-
 #nav-links > li{
     font-size: 18px;
     border: 1px solid white;
@@ -95,11 +115,7 @@ h1{
     height: auto;
 }
 
-/* .nav-list {
-  background: #b621fe;
-  border: none;
-  z-index: 1;
-} */
+/* animation for head bar*/
 .nav-list:after {
   position: absolute;
   content: "";
@@ -108,7 +124,7 @@ h1{
   top: 0;
   right: 0;
   z-index: -1;
-  background-color: #663dff;
+
   border-radius: 5px;
    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
    7px 7px 20px 0px rgba(0,0,0,.1),
@@ -125,25 +141,7 @@ h1{
 .nav-list:active {
   top: 2px;
 }
-
-/* Cart */
-.cart.hidden { display: none; }
-.cart { position: fixed; inset: 0; z-index: 9999; display: block; }
-.cart-panel {
-  position: absolute; right: 20px; top: 20px; width: 320px;
-  background: #111; color: #fff; padding: 16px; border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
-  z-index: 2;
-}
-.cart-backdrop {
-  position: absolute; inset: 0;
-  z-index: 1;
-}
-.cart-line { display:flex; justify-content:space-between; gap:8px; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06);}
-.cart-close { position:absolute; right:8px; top:8px;  border:none; color:#fff; font-size:16px; cursor:pointer; }
-
-
-/* Make the anchor contain the image and text side-by-side and centered */
+/*links fro nav and style*/
 #nav-links > li > a{
     display: inline-flex;
     align-items: center;
@@ -152,50 +150,107 @@ h1{
     text-decoration: none;
 }
 
-:root{
-    /* Light Mode Palette */
-    --LightNeonBlue: #3381FF;
-    --LightNeonPurple: #8F28A4;
-    --LightElectricCyan: #70E0FF;
-    --LightBlack: #141414;
-    --LightDarkGray: #3D3E3D;
-    --LightWhite: #ffffff;
 
-    /* Dark Mode Palette */
-    --DarkNeonBlue: #0046B8;
-    --DarkNeonPurple: #391042;
-    --DarkElectricCyan: #00C0F5;
-    --DarkBlack: #020202;
-    --DarkDarkGray: #161413;
-    --DarkWhite: #ffffff;
-}
-
-body{
-    background-color: var(--LightBlack);
-    height: 100vh;
-    padding:0;
-    margin:0;
-}
-
-/* Nav Container CSS */
-nav{
+#nav-links{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+    flex-direction: column;
+    list-style-type: none;
+
+}
+/*end of nav bar area*/
+
+
+/* Dark mode stylization for theme switch*/
+/* also id for java script*/
+#Dark-mode {
+  height: 85px;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  background: rgba(20, 20, 20, 0.9);
+  border: 2px solid var(--LightElectricCyan);
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 0 15px rgba(112, 224, 255, 0.5);
+  cursor: pointer;
 }
 
+#Dark-mode .dark {
+  border-radius: 50px;
+  display: block;
+  width: 65px;
+  height: auto;
+}
+/* Hover effect*/
+.dark:hover {
+ border-radius: 70px;
+ box-shadow: 2px 2px 15px  rgba(255, 255, 255, 0.522);
+
+}
+
+
+/* Cart */
+.cart.hidden { display: none; }
+
+.cart { 
+    position: fixed;
+    inset: 0; 
+    z-index: 9999;
+    display: block; 
+    }
+.cart-panel {
+  position: absolute;
+  right: 20px; 
+  top: 20px; 
+  width: 320px;
+  background: var(--LightBlack);
+  color: var(--LightWhite);
+  padding: 16px; 
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  z-index: 2;
+}
+
+/*outer white container*/
+.cart-content{
+    height: auto;
+}
+.cart-backdrop {
+  position: absolute; inset: 0;
+  z-index: 1;
+}
+.cart-line { 
+    display:flex; 
+    justify-content:
+    space-between; 
+    gap:8px; 
+    padding:8px 0; 
+    border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.cart-close { 
+    position:absolute; 
+    right:8px; top:8px;
+    border:none; 
+    color:#fff;
+    font-size:16px;
+        cursor:pointer; }
+
+/*grid for items in cart and style*/
 .container{
     display: grid;
-    grid-template-columns: repeat(15, 100px);
-    grid-template-rows: repeat(5, 100px);
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(6, 100px);
 }
 
+
+/*Cart check out system and it disoplaying and adding the food*/
 #checkoutCard{
-     display:flex;
-    grid-area: 1/7/8/10;
-    width: 80vw;
-    height: 60vh;
+    display:flex;
+    grid-area: 1/1/8/10;
+    min-width: 80vw;
+    width: auto;
+    min-height: 60vh;
+    height: auto;
     border: 2px solid var(--LightWhite);
     border-radius: 15px;
     align-self: center;
@@ -204,16 +259,15 @@ nav{
     color: var(--LightWhite);
     background-color: var(--LightBlack);
 
-
 } 
+/*info cart need to achomplich purchase and making it look scifi*/
 #cardinfo{
-     font-family: "Audiowide", sans-serif;
-     font-size: small;
+    font-family: "Audiowide", sans-serif;
+    font-size: small;
     font-family: 5px;
     margin-left:125px;
     padding-left: 20px;
     display: flex;
-    grid-area: 1/3/2/1;
     width: 30vw;
     height: 40vh;
     gap: 5pt;
@@ -225,24 +279,20 @@ nav{
 }
 
 #items-grid{
-
+    height: 200px;        /* Restricts the height */
+    overflow-y: auto;     /* Adds a vertical scrollbar only when needed */
     display: flex;
-    grid-area: 1/7/10/11;
-    width: 30vw;
-    height: 40vh;
+    min-width: 30vw;
+    width: auto;
+    min-height: 40vh;
     gap: 5pt;
-    padding: 10pt;
-    flex-direction:column;
+    padding: 8pt;
+    flex-direction: column;
     flex-wrap: wrap;   
     box-shadow: 2px 2px 10px;
 
 }
-.text-1{
-    display: flex;
-    grid-area:2/8/10/11 ;
-    margin-left: 10px;
-}
-
+/*form stylization for the payemt*/
 label{
 
     border-radius: 2px;
@@ -255,28 +305,48 @@ input{
     height: 4vh;
     text-align: center;
     background-color:var(--LightBlack) ;
-    color: #fff;
+    color: var(--LightWhite);
     box-shadow: 2px 2px 10px var(--LightNeonPurple);
     border: 1px 1px var(--LightNeonPurple);
 }
 input:hover{
-    background:var(--DarkNeonPurple) ;
+    background:var(--LightNeonPurple) ;
     
 }
+
+/*id for javascript to displai items also css */
+#cart-items {
+    width: 100%;
+    font-family: "VT323", monospace;
+    max-width: 100%;
+    overflow: hidden;
+}
+/*displays total*/
+#cart-total {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+    font-family: "VT323", monospace;
+    font-size: 18px;
+    color: var(--LightElectricCyan);
+    line-height: 1.4;
+}
+
 .cart-header{
     font-family: "Audiowide", sans-serif;
     text-align: center;
 }
-
+/*button stylization*/
 #nextbtn{
     flex-direction: row;
     margin-top: 250px;
     width: 5vw;
     height: 3vh;
     border-radius: 2px;
-    border: 1px 1px var(--DarkNeonBlue);
-background: var(--LightNeonBlue);
-    box-shadow: 2px 2px 10px var(--DarkNeonBlue);
+    border: 1px 1px var(--LightNeonBlue);
+    background: var(--LightNeonBlue);
+    box-shadow: 2px 2px 10px var(--LightNeonBlue);
     color:#020202
 
 }
@@ -290,18 +360,18 @@ button:hover{
 
 button:active{
     border: 1px 1px var(--LightNeonBlue);
-    background: var(--DarkNeonBlue);
+    background: var(--LightBlack);
     box-shadow: 2px 2px 10px var(--LightNeonBlue);
 
 }
 button{
+    display: inline-flex;
+    width: auto;
+    min-width: 60px;
+    margin: 0;
     font-family: "VT323", monospace;
-    margin-top: 25px;
-    margin-bottom: 20px;
-    margin-left: 85px;
     flex-direction: row-reverse;
     justify-content: center;
-    width: 5vw;
     height: 3vh;
     border-radius: 2px;
     border: 1px 1px var(--DarkNeonBlue);
@@ -309,6 +379,8 @@ button{
     box-shadow: 2px 2px 10px var(--DarkNeonBlue);
     color:#020202
 }
+
+/*footer stylization*/
 
 footer{
     margin-top: 100px;
@@ -337,9 +409,58 @@ th {
     font-size: 24px;
     color: var(--LightElectricCyan);
 }
-
-
-
+/*Hover effect for footer*/
 tr:hover {
     text-shadow: 1px 1px 5px var(--LightNeonBlue);
+}
+
+/*media query for moblie devices*/
+/*stylization for media querys*/
+@media screen and (max-width: 600px) {
+
+    body{
+        overflow-x: hidden;
+    }
+    #checkoutCard{
+    display:flex;
+    grid-area: 1/1/7/7;
+    min-width: 20vw;
+    min-height: 60vh;
+    height: auto;
+    border: 2px solid var(--LightWhite);
+    border-radius: 15px;
+    align-self: center;
+    justify-self: center;
+    padding: 30px;
+    color: var(--LightWhite);
+    background-color: var(--LightBlack);
+
+} 
+
+
+#cardinfo{
+    font-family: "Audiowide", sans-serif;
+    font-size: small;
+    font-family: 5px;
+    margin-left:10px;
+    padding-left: 20px;
+    display: flex;
+    width: 30vw;
+    height: 40vh;
+    gap: 5pt;
+    padding: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: 2px 2px 10px var(--LightNeonPurple);
+
+}
+
+#nextbtn{
+    flex-direction: row;
+    margin-top: 50px;
+   
+
+}
+
+
 }

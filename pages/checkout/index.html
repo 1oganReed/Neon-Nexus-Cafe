@@ -11,7 +11,7 @@
 </head>
 <body>
     <!-- Navigation bar, should expand horizontally on hover, navigation icons should have inverted/alternated colours upon hover, links/words should toggle an underline when hovered -->
-   <nav>
+<nav>
         <div id="nav-card">
             <!-- Logo -->
             <div id="logo">
@@ -28,7 +28,7 @@
                 </ul>
             </div>
         </div>
-     </nav>
+    </nav>
 
     <!-- Header containing title -->
     <header>
@@ -67,32 +67,25 @@
                     <h2 class="cart-header">Your Cart</h2>
                     <button class="buttons"onclick="displayCart()">Display Cart</button>
                     <button class="buttons"id="clear-cart" onclick="clearCart()">Clear cart</button>
-                    <div id="cart-items"></div>
-                    <div id="cart-total"></div>
-                    <div class="cart-actions">
-                    
-
-
-
-                    <!-- <div id="cartItems"></div>
-
-                    <div class="cart-total">
-                        <span> Total : </span>
-
-                        <span id="cartTotal">$0 </span>
-
+                    <div id="cart-items">
+                        <div class="cart-line">
+                            <div class="cart-name">Item Name</div>
+                            <div class="cart-sub">Item Description</div>
+                            <div class="cart-controls">
+                                <button class="buttons">Remove</button>
+                            </div>
+                        </div>
                     </div>
-                        <button class="close-btn" onclick="toggleCart()">Close</button> -->
-                    
+                    <div id="cart-total">Tax: 5.6%</div>
+                    <div class="cart-actions">
+                    </div>
+                    </div>
                 </div>
-
-            </div>
-
-        </div>
-</div>      
-
+            </div>     
     </main>
 
+    <!--Dark mode button-->
+    <button id="Dark-mode" type="button"><img class="dark" width="100px" src="../../assets/icons/DM-YP.png" alt="dark/light mode"></button>
 
     <!-- Footer containing all page links, "all rights reserved", and small "about"-->
     <!--Footer index-->

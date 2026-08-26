@@ -1,19 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=VT323&display=swap');
+/*imports so that the font work*/
+:root {
+  /* Light Mode Palette */
+  --LightNeonBlue: #fe00be;
+  --LightNeonPurple: #c527cd;
+  --LightElectricCyan: #ff00e1;
+  --LightBlack: #2d2a61;
+  --LightDarkGray: #ff0e6e;
+  --LightWhite: #ffe8f7;
+}
 
-
-
-body {
-    background: linear-gradient(270deg, #020209 0.000%, #05050b 8.333%, #08080d 16.667%, #0a0a10 25.000%, #0d0d13 33.333%, #0f1015 41.667%, #121217 50.000%, #14151a 58.333%, #17171c 66.667%, #19191e 75.000%, #1b1b20 83.333%, #1c1c22 91.667%, #1e1e24 100.000%);
-    height: 100vh;
-    padding: 0;
-    margin: 0;
-    color: white;
-    overflow-x: hidden;
+:root.darkmode {
+  /* Dark Mode Palette */
+  --DarkNeonBlue: #0046b8;
+  --DarkNeonPurple: #391042;
+  --DarkElectricCyan: #00c0f5;
+  --DarkBlack: #020202;
+  --DarkDarkGray: #161413;
+  --DarkWhite: #ffffff;
+  --LightNeonBlue: var(--DarkNeonBlue);
+  --LightNeonPurple: var(--DarkNeonPurple);
+  --LightElectricCyan: var(--DarkElectricCyan);
+  --LightBlack: var(--DarkBlack);
+  --LightDarkGray: var(--DarkDarkGray);
+  --LightWhite: var(--DarkWhite);
 }
 
 
+body {
+    background:var(--LightBlack);
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    color:var(--LightWhite);
+    overflow-x: hidden;
+}
+
+/*font for page*/
 .vt323-regular {
     font-family: "VT323", monospace;
     font-weight: 400;
@@ -25,6 +50,8 @@ body {
     font-weight: 400;
     font-style: normal;
 }
+
+/*main frid used for page*/
 main {
     display: grid;
     grid-template-areas:
@@ -37,6 +64,7 @@ main {
 
 }
 
+/*header stylization*/
 header {
     grid-area: header;
     font-size: 60px;
@@ -103,7 +131,7 @@ header > h1 {
 .Card.is-flipped {
     transform: rotateY(180deg);
 }
-
+/*front of cards*/
 .Card-face{
     position: absolute;
     width:100%;
@@ -123,21 +151,20 @@ header > h1 {
     box-shadow:  0 20px 60px darkblue;
 }
 
-.Card-front .icon{
-    font-size: 64px;
-    margin-bottom: 24px;
-}
     .Card-front .h2{
     font-family: "Audiowide", sans-serif;
-    font-size:26px;
-    margin-bottom: 12px;
+    font-size:25px;
+    margin-top: 25px;
+    margin-bottom: 10px;
 }
     .Card-front p{
     font-family: "VT323", monospace;
-    font-size: 20px;
-    line-height: 1.6;
+    font-size: 18px;
+    line-height: 1.5;
     opacity: 0.85;
 }
+
+/*stylization for card to ley people know to flip them*/
     .hint{
     font-family: "VT323", monospace;
     margin-top: 24px;
@@ -147,9 +174,11 @@ header > h1 {
     text-transform: uppercase;
 
 }
+
+/*card back*/
 .Card-back{
     background: linear-gradient(135deg, rgb(175, 21, 213),rgb(137, 46, 198));
-    color:white;
+    color:var(--LightWhite);
     transform: rotateY(180deg);
     box-shadow: 0 20px 60px rgb(66, 7, 228);
 }
@@ -169,4 +198,213 @@ font-family: "VT323", monospace;
 font-size: 20px;
 line-height: 1.6;
 opacity: 0.85;
+}
+/*Button for dark mode*/
+#Dark-mode {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 20, 20, 0.9);
+  border: 2px solid var(--LightElectricCyan);
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 0 15px rgba(112, 224, 255, 0.5);
+  cursor: pointer;
+}
+
+#Dark-mode .dark {
+  display: block;
+  width: 70px;
+  height: auto;
+}
+/*hover effect for buttons*/
+.dark:hover {
+ border-radius: 70px;
+ box-shadow: 2px 2px 15px  rgba(255, 255, 255, 0.522);
+
+}
+
+
+/*stylization for media querys*/
+@media screen and (max-width: 600px) {
+
+    .nav-card {
+    max-width: 50px;
+    background-color: rgba(128, 128, 128, 0.012);
+    border: none;
+    box-shadow: none;
+  }
+   .nav-card {
+    text-align: end;
+    width: 100%;
+  }
+  #nav-links {
+display:none;
+
+  }
+ 
+ .Hamburger{
+  display:block;
+ }
+ .nav-links {
+    display: none;
+ }
+ .img{
+  width:50px;
+ }
+
+ main{
+    justify-content: center;
+    display: grid;
+    grid-template-areas:
+        "header"
+        "card-1"
+        "card-2"
+        "card-3"
+        "card-4";
+    overflow-x: hidden;
+ }
+ .card-1,
+.card-2,
+.card-3,
+.card-4 {
+    border: none;
+    height: 700px;
+    width: 600px;
+    border-radius: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+header {
+    margin-left: 70px;
+    grid-area: header;
+    font-size: 40px;
+    text-align: center;
+    font-family: "Audiowide", sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    background: conic-gradient(from 180deg, #9607cf 0.000deg, #c82aef 60.000deg, #81f0e8 120.000deg, #2a5ab4 180.000deg, #0a7ba3 240.000deg, #002847 300.000deg, #000116 360.000deg);
+    height: 400px;
+    width:680px;
+}
+#p{
+    margin-top: 120px;
+}
+
+header > h1 { 
+    font-size: 40px;
+    margin-bottom:40px;
+    background: rgba(128, 128, 128, 0.134);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    max-width: 300px;
+    height: 100%;
+    max-height: 130px;
+    color: white;
+    text-align: center;
+    justify-self: center;
+}
+
+.Card-container{
+    margin-left: 80px;
+    width: 255px;
+    height: 450px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+}
+
+@media screen and (max-width: 400px) {
+
+    .nav-card {
+    max-width: 50px;
+    background-color: rgba(128, 128, 128, 0.012);
+    border: none;
+    box-shadow: none;
+  }
+   .nav-card {
+    text-align: end;
+    width: 100%;
+  }
+  #nav-links {
+display:none;
+
+  }
+ 
+ .Hamburger{
+  display:block;
+ }
+ .nav-links {
+    display: none;
+ }
+ .img{
+  width:50px;
+ }
+
+ main{
+    justify-content: center;
+    display: grid;
+    grid-template-areas:
+        "header"
+        "card-1"
+        "card-2"
+        "card-3"
+        "card-4";
+    overflow-x: hidden;
+ }
+ .card-1,
+.card-2,
+.card-3,
+.card-4 {
+    border: none;
+    height: 700px;
+    width: 600px;
+    margin-right: 0px;
+    border-radius: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+header {
+    grid-area: header;
+    font-size: 60px;
+    text-align: center;
+    font-family: "Audiowide", sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    background: conic-gradient(from 180deg, #9607cf 0.000deg, #c82aef 60.000deg, #81f0e8 120.000deg, #2a5ab4 180.000deg, #0a7ba3 240.000deg, #002847 300.000deg, #000116 360.000deg);
+    height: 400px;
+    width: 75%;
+}
+#p{
+    margin-top: 120px;
+}
+
+header > h1 { 
+    display: none;
+    margin-bottom:80px;
+    background: rgba(128, 128, 128, 0.134);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    max-width: 300px;
+    height: 100%;
+    max-height: 130px;
+    color: white;
+    text-align: center;
+    justify-self: center;
+}
+
+
 }
