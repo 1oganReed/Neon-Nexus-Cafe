@@ -17,7 +17,7 @@
 </head>
 <body>
     <!-- Navigation bar, should expand horizontally on hover, navigation icons should have inverted/alternated colours upon hover, links/words should toggle an underline when hovered -->
- <nav>
+ <nav class="entrance-animation">
     <!-- Navbar's inner container, holds the logo and nav links  -->
         <div id="nav-card">
             <!-- Logo's container -->
@@ -33,28 +33,23 @@
                 <!-- Unordered list containing icons and embedded navigational links to the other pages. -->
                 <ul id="nav-links">
                     <li class="nav-list"><a href="../../"><img class="img" src="../../assets/icons/NEXUS-whitecyan.png" width="70px" alt="Home Logo">Home</a></li>
-                    <li class="nav-list"><a href="index.html"><img class="img"  src="../../assets/icons/NEXUS-menu-whitecyan.png" width="70px" alt="Menu Logo">Menu</a></li>
-                    <li class="nav-list"><a href="../../pages/checkout/"><img  class="img" src="../../assets/icons/cart-whitecyanglow.png" width="70px" alt="Checkout Logo">Checkout</a></li>
+                    <li class="nav-list"><a href="../../pages/menu/"><img class="img"  src="../../assets/icons/NEXUS-menu-whitecyan.png" width="70px" alt="Menu Logo">Menu</a></li>
+                    <li class="nav-list"><a href="/../../pages/checkout/"><img  class="img" src="../../assets/icons/cart-whitecyanglow.png" width="70px" alt="Checkout Logo">Checkout</a></li>
                 </ul>
             </div>
-
+    
+         </div>
         <!--Hamburger menu for moblie devices will not show for computer-->
-        
      </nav>
     <!-- <button><img class="cart" src="/assets\icons\cart-whitecyanglow.png" alt="cart"></button> -->
-
-
-
     <!-- Header containing title -->
-    <header>
+    <header class="entrance-animation">
         <h1>Checkout</h1>
-    
-
     </header>
     <!-- Main body content containing the checkout card to display user's total items, price, and enter card info -->
     <main class="container">
         <!-- Container for Interactive cart system -->
-        <div id="checkoutCard">
+        <div id="checkoutCard" class="entrance-animation">
             
             <!-- left side of checkout card, field for user to enter card information. -->
             <form id="cardinfo" class="box-1">
@@ -77,17 +72,19 @@
             <!-- Right side of checkout card, should display user's total items, prices, subtotal, and tax. Total should be calculated through javascript.  -->
             
             <div id="items-grid">
-
+            <!--Cart model that displays when pressin the cart button-->
             <div id="cart-model" id="cartModel">
-                <div class="cart-content">
+            <div class="cart-content">
+            <!--Cart header-->
                     <h2 class="cart-header">Your Cart</h2>
                     <!-- Button connected to javascript to reveal cart items when clicked -->
                     <button class="buttons"onclick="displayCart()">Display Cart</button>
                     <button class="buttons"id="clear-cart" onclick="clearCart()">Clear cart</button>
+                    <!--Displays items in cart-->
                     <div id="cart-items">
                         <!-- Container to display cart items information -->
                         <div class="cart-line">
-                            <!-- Container to  -->
+                            <!-- Container to display item name -->
                             <div class="cart-name">Item Name</div>
                             <div class="cart-sub">Item Description</div>
                             <!-- Container for cart control buttons -->
@@ -97,8 +94,9 @@
                             </div>
                         </div>
                     </div>
+                    <!--Displays full price of items and tax -->
 
-                    <div id="cart-total">Tax: 5.6%</div>
+                <div id="cart-total">Tax: 5.6%</div>
                     <!-- Container for text added through javascript to alert user to cart state/changes -->
                     <div class="cart-actions">
                     </div>

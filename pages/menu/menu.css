@@ -51,7 +51,7 @@ body {
   gap: 28px;
   align-items: start;
 }
-
+/*were time is styled an dplaced with grid*/
 #time-restnaut {
   display: flex;
   margin: 10px;
@@ -63,7 +63,9 @@ body {
 .h3 {
   text-align: center;
 }
-
+img{
+  border-radius: 20px;
+}
 .button {
   border-radius: 10px;
   width: 75px;
@@ -228,6 +230,28 @@ h3 {
   border-radius: 20px;
   margin-bottom: 10px;
   padding: 20px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Starts 30px lower */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);    /* Moves up to its natural position */
+  }
+}
+
+.entrance-animation {
+  /* Links to the keyframe name above */
+  animation-name: fadeInUp; 
+  /* How long the animation lasts */
+  animation-duration: 1s; 
+  /* Smoothly accelerates and decelerates */
+  animation-timing-function: ease-out; 
+  /* CRITICAL: Stops the element from snapping back to invisible after finishing */
+  animation-fill-mode: forwards; 
 }
 
 #img-logo {
