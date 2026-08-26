@@ -312,6 +312,9 @@ header > h1 {
     text-align: center;
     justify-self: center;
 }
+.Hamburger{
+  display:block;
+ }
 
 .Card-container{
     margin-left: 80px;
@@ -322,9 +325,36 @@ header > h1 {
 }
 
 }
+@media (min-width: 600px){
+.Hamburger{
+  display:none;
+ }
 
-@media screen and (max-width: 400px) {
+}
 
+@media screen and (max-width: 600px) {
+
+     .nav-card {
+    max-width: 60px;
+    background-color: rgba(128, 128, 128, 0.012);
+    border: none;
+    box-shadow: none;
+  }
+   .nav-card {
+    text-align: end;
+    width: 100%;
+  }
+  #nav-links {
+display:none;
+
+  }
+ 
+ .Hamburger{
+  display:block;
+ }
+ .nav-links {
+    display: none;
+ }
     .nav-card {
     max-width: 50px;
     background-color: rgba(128, 128, 128, 0.012);
@@ -385,6 +415,9 @@ header {
     height: 400px;
     width: 75%;
 }
+.Hamburger{
+  display:block;
+ }
 #p{
     margin-top: 120px;
 }
