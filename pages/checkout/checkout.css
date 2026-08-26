@@ -26,6 +26,28 @@
   --LightWhite: var(--DarkWhite);
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Starts 30px lower */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);    /* Moves up to its natural position */
+  }
+}
+
+.entrance-animation {
+  /* Links to the keyframe name above */
+  animation-name: fadeInUp; 
+  /* How long the animation lasts */
+  animation-duration: 1s; 
+  /* Smoothly accelerates and decelerates */
+  animation-timing-function: ease-out; 
+  /* CRITICAL: Stops the element from snapping back to invisible after finishing */
+  animation-fill-mode: forwards; 
+}
+
 /*fonts that are used for webiste*/
 .vt323-regular {
     font-family: "VT323", monospace;

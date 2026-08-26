@@ -28,6 +28,27 @@
   --LightWhite: var(--DarkWhite);
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Starts 30px lower */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);    /* Moves up to its natural position */
+  }
+}
+
+.entrance-animation {
+  /* Links to the keyframe name above */
+  animation-name: fadeInUp; 
+  /* How long the animation lasts */
+  animation-duration: 1s; 
+  /* Smoothly accelerates and decelerates */
+  animation-timing-function: ease-out; 
+  /* CRITICAL: Stops the element from snapping back to invisible after finishing */
+  animation-fill-mode: forwards; 
+}
 
 body {
     background:var(--LightBlack);
@@ -81,7 +102,7 @@ header {
 }
 
 header > h1 {
-    margin-bottom:150px;
+    /* margin-bottom:100px; */
     background: rgba(128, 128, 128, 0.134);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -91,7 +112,24 @@ header > h1 {
     padding: 40px;
     max-width: 1400px;
     height: 100%;
-    max-height: 130px;
+    max-height: 275px;
+    color: white;
+    text-align: center;
+    justify-self: center;
+}
+
+header > p {
+    margin-bottom:150px;
+    background: var(--DarkNeonBlue);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 40px;
+    max-width: 1400px;
+    height: 100%;
+    max-height: 50px;
     color: white;
     text-align: center;
     justify-self: center;
