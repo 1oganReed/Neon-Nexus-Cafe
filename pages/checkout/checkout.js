@@ -156,129 +156,6 @@ const items = [
 
 ];
 
-
-
-
-// // shopping cart array
-
-// let cart = [];
-
-// // function to display all menu items
-// function displayItems(){
-//     console.log(items);
-//     const grid=document.getElementById('itemsGrid');
-//     let html = '';
-//     // loop through items array and create HTML for each
-//     for(let i=0; i<items.length;i++){
-//         const item=items[i];
-//         html+=`
-//             <td><button class="button" onclick="addToCart(quantumWaffles)">Add To Cart</button> Quantum Waffles
-//                         &nbsp; ${items.price}</td>
-//         `;
-//     }
-//     grid.innerHTML=html;
-// }
-
-
-// document.getElementById("menuitems").innerHTML = "";
-
-// function calculateSubTotal(){
-//     for(let i=0; i <= cart.length; i++){
-//        (items.price * 2.5);
-//     }
-// }
-
-// function addToCart(itemId){
-//     let selectedItem = null; //null data type returns te object if not found.
-//     // 1st array of objects
-//     for (let i=0; i<items.length; i++){
-//         if(items[i].id===itemId){
-//             selectedItem=items[i];
-//             break;
-//         }
-//     }
-
-//     if(selecteditem){
-//         // check if menu item is already exists in cart
-//     let existingItem=null;
-//     // 2nd array
-//     for(let i=0; i<cart.length; i++){
-//         if(cart[i].id===itemId){
-//             existingItem=cart[i];
-//             break;
-//             }
-//         }
-//         if(existingItem){
-//             existingItem.quantity++;
-
-//         } else{
-//             cart.push({
-//                 id:selectedItem.id,
-//                 name:selectedItem.name,
-//                 price:selectedItem.price,
-//                 quantity:1
-//             });
-//             console.log(cart);
-//         }
-
-//         updateCartDisplay();
-    
-//     }
-
-// }
-
-// function updateCartDisplay(){
-//     const cartCount= document.getElementById('cartCount');
-//     const cartItems= document.getElementById('cartItems');
-//     const cartTotal= document.getElementById('cartTotal');
-
-//     let totalItems=0;
-//     for(let i=0; i<cart.length; i++){
-//         totalItems+=cart[i].quantity;
-//         console.log(totalItems);
-
-//     }
-//     cartCount.textContent=totalItems;
-//     // display cart items
-//     if(cart.length===0){
-//         cartItems.innerHTML=
-//         `
-//         <div style="text-align: center; padding:40px; color:#999;">Your Cart Is Empty</div>`;
-//         cartTotal.textContent="$0";
-//         return;
-//     }
-//     let cartHTML="";
-//     let total=0;
-//     for(let i=0;i<cart.length; i++){
-//         const item=cart[i];
-//         const itemTotal=item.price*item.quantity;
-//         console.log(itemTotal);
-//         total+=itemTotal;
-//         console.log(total);
-//         cartHTML+=`
-//         <div class="cart-item">
-//             <div class="cart-item">${item.namee} * ${item.quantity} </div>
-//             <div class="cart-item">$${itemTotal} </div>
-//         </div>
-//         `;
-//     }
-//     cartItems.innerHTML=cartHTML;
-//     cartTotal.textContent=`$${total}`;
-
-// }
-
-// // toggle cart model, applicable for the other pages
-// // function toggleCart() {
-// //     const model = document.getElementById('cartModel');
-// //     if(model.classList.contains("active")){
-// //         model.classList.remove("active");
-
-// //     }
-// //     else{
-// //         model.classList.add("active");
-// //     }
-    
-// // }
 function getCart(){
    let raw = localStorage.getItem('cart');
    return raw ? JSON.parse(raw) : [];
@@ -397,26 +274,30 @@ function formatName(name) {
 
 const darkmode = document.getElementById("Dark-mode");
 const darkModeImage = darkmode.querySelector("img");
-
+//stating tha images for the dark mode cotent 
 function updateDarkModeIcon() {
   const isDark = document.documentElement.classList.contains("darkmode");
   darkModeImage.src = isDark ? "../../assets/icons/LM.png" : "../../assets/icons/DM-YP.png";
   darkModeImage.alt = isDark ? "Switch to light mode" : "Switch to dark mode";
   darkModeImage.title = isDark ? "Switch to light mode" : "Switch to dark mode";
 }
-
+/*toggle for light and dark mode basicall like hey set it to dark this is to bright for my eyes*/ 
 function toggleDarkMode() {
   const isDark = document.documentElement.classList.toggle("darkmode");
   localStorage.setItem("darkMode", String(isDark));
   updateDarkModeIcon();
 }
 
+//Add lisenter so that when nutton i sclicked it knows to toggle
 darkmode.addEventListener("click", toggleDarkMode);
 
+//Save mode puts the team in locals storage saving the descions so that eve if teh user refreshes it saves the
+//theme
 (function applySavedMode() {
   const savedMode = localStorage.getItem("darkMode") === "true";
   if (savedMode) {
     document.documentElement.classList.add("darkmode");
   }
+  //update sthe icon so that it shows the apporate picture when you change themes
   updateDarkModeIcon();
 })();
