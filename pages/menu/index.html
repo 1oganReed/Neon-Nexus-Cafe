@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- Head section containing meta tags and information -->
 <head>
+    <!-- meta tags  -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title to appear in browser tab -->
     <title>Menu</title>
+     <!-- Favicon which appears in browser tab left of title. -->
+    <link rel="icon" type="image/x-icon" href="/assets/icons/Transparent_DM-Logo.png">
+    <!-- links to connect external stylesheets -->
     <link rel="stylesheet" href="../../shared/css/navbar.css">
     <link rel="stylesheet" href="../../shared/css/footer.css">
     <link href="menu.css" rel="stylesheet">
@@ -45,26 +50,42 @@
             <h1>Menu</h1>
         </div>
 
-        <!--Times of resnaut-->
+        <!--Times of restaurant-->
         <div class="time-w">
             <h4 class="entrance-animation">Opening times</h4>
             &nbsp;
             <p class="entrance-animation">Open for 8am-12pm all WEEK</p>
 
         </div>
-        <!--Main menu and food--> 
+        <!--Container for main menu and food-->
         <section class="menu" id="sec-1">
+
+            <!-- Menu table -->
             <Table class="items" id="breakfeast-table">
+                <!-- Menu's first row, containing one table header.  -->
+                <tr>
+                    <!-- Menu's first header, the start of the breakfast section. -->
+                    <th class="h3">Breakfast</th>
+                </tr>
+                <!-- Menu's second row, containing the waffles menu item. -->
+                <tr>
+                    <!-- Container for a menu item. Displays the menu item's picture, a buy button, and item information, including: it's name, price, and description. -->
                 <tr class="entrance-animation">
                     <th class="h3">Breakfeast</th>
                 </tr>
                 <tr class="entrance-animation">
                     <td class="table-data">
+                        <!-- Waffle menu item image -->
                         <img src="../../assets/items/quantum-waffle.jpg" width="250px" alt="item image">
+                        <!-- Container for menu item's informatiom. -->
                         <div class="menu-copy">
+                            <!-- Menu item's name. -->
                             <strong>Quantum Waffles</strong>
+                            <!-- Menu item's price. -->
                             <span>$12.99</span>
+                            <!-- Menu item's description. -->
                             <p>Fluffy, buttery waffles fried to a perfect crisp.</p>
+                            <!-- Button to add the targeted item to cart when clicked. -->
                             <button class="button" onclick="addToCart('quantumWaffles')">Add To Cart</button>
                         </div>
                     </td>
@@ -125,6 +146,8 @@
         <section class="menu" id="sec-2">
 
             <table class="items" id="lunch-table">
+                <tr>
+                    <!-- Menu's second header, the start of the lunch section -->
                 <tr class="entrance-animation">
                     <th class="h3">Lunch</th>
                 </tr>
@@ -185,6 +208,8 @@
         <!--Dinner-->
         <section class="menu" id="sec-3">
             <table class="items">
+                <tr>
+                    <!-- Menu's third header, the start of the dinner section -->
                 <tr class="entrance-animation">
                     <th class="items" id="dinner-table">Dinner</th>
                 </tr>
@@ -243,6 +268,8 @@
         <!--Desserts-->
         <section class="deals" id="sec-4">
             <table class="items">
+                <tr>
+                    <!-- Menu's fourth header, the start of the dessert section -->
                 <tr class="entrance-animation">
                     <th class="h3">Desserts </th>
                 </tr>
@@ -290,6 +317,8 @@
         </section>
         <section class="menu" id="sec-5">
             <table class="items">
+                <tr>
+                    <!-- Menu's fifth header, the start of the drink section -->
                 <tr class="entrance-animation">
                     <th class="h3">Drinks</th>
                 </tr>
