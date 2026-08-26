@@ -119,6 +119,7 @@ body {
 /*Button stlylization for theme switch*/
 
 #Dark-mode {
+  width:"100px";
   position: fixed;
   right: 24px;
   bottom: 24px;
@@ -150,10 +151,10 @@ h3 {
   margin-left: 40px;
 }
 
-/*style of */
+/*style of time of restnaut*/
 .time-w {
   display: flex;
-  grid-column: 1 / -1;
+  grid-column: 1 / 1;
   justify-self: center;
   width: min(440px, 100%);
   color: var(--LightWhite);
@@ -478,13 +479,9 @@ nav {
 
 
 
-@media (prefers-color-scheme: dark) {
-}
-
-
 @media screen and (max-width: 600px) {
   .nav-card {
-    max-width: 50px;
+    max-width: 60px;
     background-color: rgba(128, 128, 128, 0.012);
     border: none;
     box-shadow: none;
@@ -507,35 +504,22 @@ display:none;
  .img{
   width:50px;
  }
+ #menu-H{
+  flex-wrap: wrap;
+  text-align: center;
+    display: inline-flex;
+  border-radius: 10px;
+  max-width:80%;
+ }
  
-  /*grid container */
-  table tr {
-    margin-top: 100px;
-    font-size: small;
-    justify-content: center;
-  }
-  th{
-    font-size: small;
-  }
-
-  .time-w {
-    display: none;
-  }
-  .container {
-    display: grid;
-    grid-template-columns: repeat(5, 100px);
-  grid-template-rows: repeat(25, 100px);
-  }
-
-  /*grid container */
-  table tr {
-    justify-content: center;
-  }
+ .container{
+  overflow-x:hidden ;
+ }
 
   
 #sec-1 {
   display: flex;
-  grid-area: 2/1/7/10;
+  grid-area: 2/1/7/1;
   margin: 10px;
   padding: 10px;
   border-radius: 20px;
@@ -544,7 +528,7 @@ display:none;
 
 #sec-2 {
   display: flex;
-  grid-area: 7/1/7/10;
+  grid-area: 7/1/7/1;
   margin: 10px;
   padding: 10px;
   border-radius: 20px;
@@ -552,7 +536,7 @@ display:none;
 
 #sec-3 {
   display: flex;
-  grid-area: 11/1/11/10;
+  grid-area: 11/1/11/1;
   margin: 10px;
  
   border-radius: 20px;
@@ -560,7 +544,7 @@ display:none;
 
 #sec-4 {
   display: flex;
-  grid-area: 15/1/20/10;
+  grid-area: 15/1/20/1;
   margin: 30px;
   padding: 25px;
   border-radius: 20px;
@@ -568,7 +552,7 @@ display:none;
 
 #sec-5 {
   display: flex;
-  grid-area: 20/1/24/10;
+  grid-area: 20/1/24/1;
   margin: 30px;
   padding: 25px;
   border-radius: 20px;

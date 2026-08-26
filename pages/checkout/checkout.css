@@ -238,15 +238,15 @@ h1{
 /*grid for items in cart and style*/
 .container{
     display: grid;
-    grid-template-columns: repeat(15, 100px);
-    grid-template-rows: repeat(5, 100px);
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(6, 100px);
 }
 
 
 /*Cart check out system and it disoplaying and adding the food*/
 #checkoutCard{
     display:flex;
-    grid-area: 1/7/8/10;
+    grid-area: 1/1/8/10;
     min-width: 80vw;
     width: auto;
     min-height: 60vh;
@@ -415,3 +415,52 @@ tr:hover {
 }
 
 /*media query for moblie devices*/
+/*stylization for media querys*/
+@media screen and (max-width: 600px) {
+
+    body{
+        overflow-x: hidden;
+    }
+    #checkoutCard{
+    display:flex;
+    grid-area: 1/1/7/7;
+    min-width: 20vw;
+    min-height: 60vh;
+    height: auto;
+    border: 2px solid var(--LightWhite);
+    border-radius: 15px;
+    align-self: center;
+    justify-self: center;
+    padding: 30px;
+    color: var(--LightWhite);
+    background-color: var(--LightBlack);
+
+} 
+
+
+#cardinfo{
+    font-family: "Audiowide", sans-serif;
+    font-size: small;
+    font-family: 5px;
+    margin-left:10px;
+    padding-left: 20px;
+    display: flex;
+    width: 30vw;
+    height: 40vh;
+    gap: 5pt;
+    padding: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: 2px 2px 10px var(--LightNeonPurple);
+
+}
+
+#nextbtn{
+    flex-direction: row;
+    margin-top: 50px;
+   
+
+}
+
+
+}
