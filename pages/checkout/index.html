@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang ="en">
+    <!-- head section containing meta tags and information. -->
 <head>
+    <!-- meta tags determining device sizing and character encoding. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title which appears in browser tab. -->
     <title>Nexus Link Checkout</title>
+    <!-- Favicon which appears in browser tab left of title. -->
+    <link rel="icon" type="image/x-icon" href="/assets/icons/Transparent_DM-Logo.png">
+    <!-- Links to external stylesheets -->
     <link href="../../shared/css/footer.css" rel="stylesheet">
     <link href="../checkout/checkout.css" rel="stylesheet">
     <link href="../../shared/css/global.css" rel="stylesheet">
@@ -12,15 +18,19 @@
 <body>
     <!-- Navigation bar, should expand horizontally on hover, navigation icons should have inverted/alternated colours upon hover, links/words should toggle an underline when hovered -->
  <nav class="entrance-animation">
+    <!-- Navbar's inner container, holds the logo and nav links  -->
         <div id="nav-card">
-            <!-- Logo -->
+            <!-- Logo's container -->
             <div id="logo">
+                <!-- Logo -->
                 <img src="../../assets/icons/Transparent_DM-Logo.png" alt="Nexus Logo" width="90px">
+                <!--Restaurant name  -->
                 <h1 id="logo"><a href="../../">Neon Nexus</a></h1>
             </div>
 
             <!-- Nav Links -->
             <div id="nav-links-container">
+                <!-- Unordered list containing icons and embedded navigational links to the other pages. -->
                 <ul id="nav-links">
                     <li class="nav-list"><a href="../../"><img class="img" src="../../assets/icons/NEXUS-whitecyan.png" width="70px" alt="Home Logo">Home</a></li>
                     <li class="nav-list"><a href="../../pages/menu/"><img class="img"  src="../../assets/icons/NEXUS-menu-whitecyan.png" width="70px" alt="Menu Logo">Menu</a></li>
@@ -29,7 +39,7 @@
             </div>
     
          </div>
-        <!--Hamburger menu for mblie devices will not show for computer-->
+        <!--Hamburger menu for moblie devices will not show for computer-->
      </nav>
     <!-- <button><img class="cart" src="/assets\icons\cart-whitecyanglow.png" alt="cart"></button> -->
     <!-- Header containing title -->
@@ -38,23 +48,24 @@
     </header>
     <!-- Main body content containing the checkout card to display user's total items, price, and enter card info -->
     <main class="container">
+        <!-- Container for Interactive cart system -->
         <div id="checkoutCard" class="entrance-animation">
             
-            <!-- left side of checkout card, field for user to enter card info. -->
+            <!-- left side of checkout card, field for user to enter card information. -->
             <form id="cardinfo" class="box-1">
                 <h3>Payment</h3>
                 <label for="cnumber">Card number</label>
                 <input type="number" id="cnumber" name="cnumber" minlength="16" maxlength="19" placeholder="0000-0000-0000-0000" required>
             
                 <label for="cexpire">EXP. date</label>
-                <input type="date" id="cexpire" name="cexpire" placeholder="MM/YYYY" required>
+                <input type="text" id="cexpire" name="cexpire" placeholder="MM/YY" required>
             
                 <label for="ccvv">CVV</label>
                 <input type="number" id="ccvv" name="ccvv" minlength="3" maxlength="3" placeholder="000" required>
-
+                
                 <label for="cname">Name on card</label>
                 <input type="text" id="cname" name="cname" minlength="5" placeholder="Ex. John Doe" required>
-            
+                <!-- Submit Button to confirm all card information fields-->
                 <button type="submit" id="nextbtn" onclick="purchaseBtn()">Next</button>
             </form>
 
@@ -66,23 +77,30 @@
             <div class="cart-content">
             <!--Cart header-->
                     <h2 class="cart-header">Your Cart</h2>
+                    <!-- Button connected to javascript to reveal cart items when clicked -->
                     <button class="buttons"onclick="displayCart()">Display Cart</button>
                     <button class="buttons"id="clear-cart" onclick="clearCart()">Clear cart</button>
                     <!--Displays items in cart-->
                     <div id="cart-items">
+                        <!-- Container to display cart items information -->
                         <div class="cart-line">
+                            <!-- Container to display item name -->
                             <div class="cart-name">Item Name</div>
                             <div class="cart-sub">Item Description</div>
+                            <!-- Container for cart control buttons -->
                             <div class="cart-controls">
-                                <!--Reove items from card-->
+                                <!-- Button to remove cart items -->
                                 <button class="buttons">Remove</button>
                             </div>
                         </div>
                     </div>
                     <!--Displays full price of items and tax -->
+
                 <div id="cart-total">Tax: 5.6%</div>
+                    <!-- Container for text added through javascript to alert user to cart state/changes -->
                     <div class="cart-actions">
                     </div>
+
                     </div>
                 </div>
             </div>     
@@ -91,11 +109,11 @@
     <!--Dark mode button-->
     <button id="Dark-mode" type="button"><img class="dark" width="100px" src="../../assets/icons/DM-YP.png" alt="dark/light mode"></button>
 
-    <!-- Footer containing all page links, "all rights reserved", and small "about"-->
+    <!-- Footer containing all page links, "all rights reserved", and restaurant information-->
     <!--Footer index-->
     <footer id="footer">
         <hr>
-
+        <!-- Table container for footer content -->
         <table>
             <tr>
                 <th>Contact Info</th>
@@ -125,6 +143,6 @@
 
 
     </footer>
-
+    <!-- Linked external script -->
     <script src="checkout.js" alt="javascript"></script>
 </body>
