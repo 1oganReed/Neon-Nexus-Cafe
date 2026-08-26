@@ -8,6 +8,7 @@ document.querySelectorAll(".Card").forEach((card) => {
   });
 });
 
+
 //dark and light mode
 
 const darkmode = document.getElementById("Dark-mode");
@@ -35,3 +36,4 @@ darkmode.addEventListener("click", toggleDarkMode);
   }
   updateDarkModeIcon();
 })();
+
