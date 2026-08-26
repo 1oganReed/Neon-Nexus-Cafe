@@ -58,14 +58,14 @@
                 <input type="number" id="cnumber" name="cnumber" minlength="16" maxlength="19" placeholder="0000-0000-0000-0000" required>
             
                 <label for="cexpire">EXP. date</label>
-                <input type="date" id="cexpire" name="cexpire" placeholder="MM/YYYY" required>
+                <input type="text" id="cexpire" name="cexpire" placeholder="MM/YY" required>
             
                 <label for="ccvv">CVV</label>
                 <input type="number" id="ccvv" name="ccvv" minlength="3" maxlength="3" placeholder="000" required>
                 
                 <label for="cname">Name on card</label>
                 <input type="text" id="cname" name="cname" minlength="5" placeholder="Ex. John Doe" required>
-                <!-- Submit Button -->
+                <!-- Submit Button to confirm all card information fields-->
                 <button type="submit" id="nextbtn" onclick="purchaseBtn()">Next</button>
             </form>
 
@@ -113,7 +113,7 @@
     <!--Footer index-->
     <footer id="footer">
         <hr>
-
+        <!-- Table container for footer content -->
         <table>
             <tr>
                 <th>Contact Info</th>
@@ -143,6 +143,6 @@
 
 
     </footer>
-
+    <!-- Linked external script -->
     <script src="checkout.js" alt="javascript"></script>
 </body>
