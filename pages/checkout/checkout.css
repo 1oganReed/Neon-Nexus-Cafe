@@ -415,9 +415,16 @@ tr:hover {
 }
 
 /*media query for moblie devices*/
+@media screen and (min-width: 600px){
+.Hamburger{
+  display:none;
+ }
+};
 /*stylization for media querys*/
 @media screen and (max-width: 600px) {
-
+     nav{
+        display: hidden;
+     }
     body{
         overflow-x: hidden;
     }
@@ -436,7 +443,12 @@ tr:hover {
     background-color: var(--LightBlack);
 
 } 
-
+.Hamburger{
+  display:block;
+ }
+ .img{
+  width:50px;
+ }
 
 #cardinfo{
     font-family: "Audiowide", sans-serif;
@@ -462,5 +474,16 @@ tr:hover {
 
 }
 
+ #nav-links {
+display:none;
+
+  }
+  .nav-list{
+    display: none;
+  }
+ 
+ .Hamburger{
+  display:block;
+ }
 
 }
