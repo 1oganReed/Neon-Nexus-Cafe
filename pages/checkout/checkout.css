@@ -89,7 +89,7 @@ h1{
     align-items: center;
     gap: 12px;
 }
-
+/*container for nav links*/
 #nav-links-container{
     display: flex;
     align-items: center;
@@ -115,7 +115,7 @@ h1{
     height: auto;
 }
 
-/* animation for head bar*/
+/* animation for head bar to diplay what happend after you hover on the buttons*/
 .nav-list:after {
   position: absolute;
   content: "";
@@ -309,6 +309,7 @@ input{
     box-shadow: 2px 2px 10px var(--LightNeonPurple);
     border: 1px 1px var(--LightNeonPurple);
 }
+/*effect of input changing colors for a more sci fi look*/
 input:hover{
     background:var(--LightNeonPurple) ;
     
@@ -332,7 +333,7 @@ input:hover{
     color: var(--LightElectricCyan);
     line-height: 1.4;
 }
-
+/*header for cart stylization*/
 .cart-header{
     font-family: "Audiowide", sans-serif;
     text-align: center;
