@@ -120,7 +120,7 @@ header > h1 {
 
 header > p {
     margin-bottom:150px;
-    background: var(--DarkNeonBlue);
+    background: #0046b8;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: 25px;
