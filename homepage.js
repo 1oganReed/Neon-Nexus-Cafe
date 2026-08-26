@@ -16,7 +16,7 @@ const darkModeImage = darkmode.querySelector("img");
 
 function updateDarkModeIcon() {
   const isDark = document.documentElement.classList.contains("darkmode");
-  darkModeImage.src = isDark ? "../../assets/icons/LM.png" : "../../assets/icons/DM-YP.png";
+  darkModeImage.src = isDark ? "assets/icons/LM.png" : "assets/icons/DM-YP.png";
   darkModeImage.alt = isDark ? "Switch to light mode" : "Switch to dark mode";
   darkModeImage.title = isDark ? "Switch to light mode" : "Switch to dark mode";
 }
