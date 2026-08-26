@@ -51,7 +51,7 @@ body {
   gap: 28px;
   align-items: start;
 }
-
+/*were time is styled an dplaced with grid*/
 #time-restnaut {
   display: flex;
   margin: 10px;

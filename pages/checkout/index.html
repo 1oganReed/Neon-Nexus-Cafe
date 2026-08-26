@@ -61,22 +61,26 @@
             <!-- Right side of checkout card, should display user's total items, prices, subtotal, and tax. Total should be calculated through javascript.  -->
             
             <div id="items-grid">
-
+            <!--Cart model that displays when pressin the cart button-->
             <div id="cart-model" id="cartModel">
-                <div class="cart-content">
+            <div class="cart-content">
+            <!--Cart header-->
                     <h2 class="cart-header">Your Cart</h2>
                     <button class="buttons"onclick="displayCart()">Display Cart</button>
                     <button class="buttons"id="clear-cart" onclick="clearCart()">Clear cart</button>
+                    <!--Displays items in cart-->
                     <div id="cart-items">
                         <div class="cart-line">
                             <div class="cart-name">Item Name</div>
                             <div class="cart-sub">Item Description</div>
                             <div class="cart-controls">
+                                <!--Reove items from card-->
                                 <button class="buttons">Remove</button>
                             </div>
                         </div>
                     </div>
-                    <div id="cart-total">Tax: 5.6%</div>
+                    <!--Displays full price of items and tax -->
+                <div id="cart-total">Tax: 5.6%</div>
                     <div class="cart-actions">
                     </div>
                     </div>

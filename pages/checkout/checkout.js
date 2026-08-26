@@ -274,7 +274,7 @@ function formatName(name) {
 
 const darkmode = document.getElementById("Dark-mode");
 const darkModeImage = darkmode.querySelector("img");
-
+//stating tha images for the dark mode cotent 
 function updateDarkModeIcon() {
   const isDark = document.documentElement.classList.contains("darkmode");
   darkModeImage.src = isDark ? "../../assets/icons/LM.png" : "../../assets/icons/DM-YP.png";
@@ -288,12 +288,16 @@ function toggleDarkMode() {
   updateDarkModeIcon();
 }
 
+//Add lisenter so that when nutton i sclicked it knows to toggle
 darkmode.addEventListener("click", toggleDarkMode);
 
+//Save mode puts the team in locals storage saving the descions so that eve if teh user refreshes it saves the
+//theme
 (function applySavedMode() {
   const savedMode = localStorage.getItem("darkMode") === "true";
   if (savedMode) {
     document.documentElement.classList.add("darkmode");
   }
+  //update sthe icon so that it shows the apporate picture when you change themes
   updateDarkModeIcon();
 })();
