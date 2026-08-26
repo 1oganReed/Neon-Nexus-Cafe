@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- Head section containing meta tags and information -->
 <head>
+    <!-- meta tags  -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title to appear in browser tab -->
     <title>Menu</title>
+     <!-- Favicon which appears in browser tab left of title. -->
+    <link rel="icon" type="image/x-icon" href="/assets/icons/Transparent_DM-Logo.png">
+    <!-- links to connect external stylesheets -->
     <link rel="stylesheet" href="../../shared/css/navbar.css">
     <link rel="stylesheet" href="../../shared/css/footer.css">
     <link href="menu.css" rel="stylesheet">
@@ -13,7 +18,7 @@
 </head>
 
 <body>
-   <nav>
+   <nav class="entrance-animation">
         <div id="nav-card">
             <!-- Logo -->
             <div id="logo">
@@ -31,15 +36,6 @@
             </div>
             <div class="Hamburger">
             <img class="img"src="../../assets/icons/burger-menu.png" alt="burger-menu">
-        
-    
-        <ul class="nav-links">
-            <li class="nav-list"><a href="../../">Home</a></li>
-            <li class="nav-list"><a href="index.html">Menu</a></li>
-            <li class="nav-list"><a href="../../pages/checkout/index.html">Checkout</a></li>
-
-
-        </ul>
     </div>
         </div>
 
@@ -50,77 +46,93 @@
 
 
     <main class="container">
-        <div id="menu-H">
+        <div id="menu-H" class="entrance-animation">
             <h1>Menu</h1>
         </div>
 
-        <!--Times of resnaut-->
+        <!--Times of restaurant-->
         <div class="time-w">
-            <h4>Opening times</h4>
+            <h4 class="entrance-animation">Opening times</h4>
             &nbsp;
-            <p>Open for 8am-12pm all WEEK</p>
+            <p class="entrance-animation">Open for 8am-12pm all WEEK</p>
 
         </div>
-        <!--Main menu and food-->
+        <!--Container for main menu and food-->
         <section class="menu" id="sec-1">
+
+            <!-- Menu table -->
             <Table class="items" id="breakfeast-table">
+                <!-- Menu's first row, containing one table header.  -->
                 <tr>
+                    <!-- Menu's first header, the start of the breakfast section. -->
+                    <th class="h3">Breakfast</th>
+                </tr>
+                <!-- Menu's second row, containing the waffles menu item. -->
+                <tr>
+                    <!-- Container for a menu item. Displays the menu item's picture, a buy button, and item information, including: it's name, price, and description. -->
+                <tr class="entrance-animation">
                     <th class="h3">Breakfeast</th>
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <!-- Waffle menu item image -->
+                        <img src="../../assets/items/quantum-waffle.jpg" width="250px" alt="item image">
+                        <!-- Container for menu item's informatiom. -->
                         <div class="menu-copy">
+                            <!-- Menu item's name. -->
                             <strong>Quantum Waffles</strong>
+                            <!-- Menu item's price. -->
                             <span>$12.99</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
+                            <!-- Menu item's description. -->
+                            <p>Fluffy, buttery waffles fried to a perfect crisp.</p>
+                            <!-- Button to add the targeted item to cart when clicked. -->
                             <button class="button" onclick="addToCart('quantumWaffles')">Add To Cart</button>
                         </div>
                     </td>
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/pixel-waffles.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Pixel Waffles</strong>
                             <span>$11.50</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
+                            <p>Golden waffles with vibrant berry compote and whipped cream topping.</p>
                             <button class="button" onclick="addToCart('pixelWaffles')">Add To Cart</button>
                         </div>
                     </td>
                 </tr>
 
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/cyber-omelet.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Cyber Omelet</strong>
                             <span>$15.99</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
+                            <p>Egg omelet with spicy drizzle, served on a bed of lettuce.</p>
                             <button class="button" onclick="addToCart('cyberOmelet')">Add To Cart</button>
                         </div>
                     </td>
                 </tr>
 
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/data-breakfast.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Data Breakfest</strong>
                             <span>$14.75</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
+                            <p>Complete breakfast with toast, eggs, and coffee, customizable to fit your preferences.</p>
                             <button class="button" onclick="addToCart('dataBreakfeast')">Add To Cart</button>
                         </div>
                     </td>
                 </tr>
 
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/circuit-board-toast.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Ciruit board toast</strong>
                             <span>$12.99</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
+                            <p>Fluffy and crispy toast with our house-made sweet butter spread.</p>
                             <button class="button" onclick="addToCart('circuitBoardToast')">Add To Cart</button>
                         </div>
                     </td>
@@ -135,61 +147,59 @@
 
             <table class="items" id="lunch-table">
                 <tr>
+                    <!-- Menu's second header, the start of the lunch section -->
+                <tr class="entrance-animation">
                     <th class="h3">Lunch</th>
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/glitch-wrap.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Glitch wrap</strong>
                             <span>$10.99</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
+                            <p>Steak with lettuce, tomato, and cucumber wrapped in a tortilla.</p>
                             <button class="button" onclick="addToCart('glitchWrap')"> Add To Cart</button>Glitch wrap
                             &nbsp;10.99$</td>
 
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/fusion-club-sandwich.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Fusion club sandwich</strong>
                             <span>$12.50</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
-                            <button class="button" onclick="addToCart('fusionClubSandwich')">Add To Cart</button> Fusion club
-                            sandwich &nbsp;12.50$</td>
+                            <p>Triple-stacked sandwich with turkey, bacon, and Swiss cheese, lightly toasted.</p>
+                            <button class="button" onclick="addToCart('fusionClubSandwich')">Add To Cart</button>
 
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/ai-ramen-bowl.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>AI ramen bowl</strong>
                             <span>$15.99</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
-                            <button class="button" onclick="addToCart('aiRamenBowl')">Add To Cart</button> AI ramen bowl
-                            &nbsp; 15.99$</td>
+                            <p>Steaming bowl of tender ramen noodles in savory broth with vegetables and soft egg.</p>
+                            <button class="button" onclick="addToCart('aiRamenBowl')">Add To Cart</button>
 
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/hologram-burger.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Hologram burger</strong>
                             <span>$15.75</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
-                            <button class="button" onclick="addToCart('hologramBurger')">Add To Cart</button> Hologram burger
-                            &nbsp;15.75$</td>
+                            <p>Juicy patty with melted cheese, lettuce, tomato, and special sauce on a toasted bun.</p>
+                            <button class="button" onclick="addToCart('hologramBurger')">Add To Cart</button>
 
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/fusion-turkey-sandwich.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Fusion turkey sandwich</strong>
                             <span>$13.99</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
-                            <button class="button" onclick="addToCart('fusionTurkeySandwich')">Add To Cart</button> Fusion
-                            turkey sandwich &nbsp; 13.99$</td>
+                            <p>Sliced turkey breast with avocado, bacon, and fresh greens on whole wheat.</p>
+                            <button class="button" onclick="addToCart('fusionTurkeySandwich')">Add To Cart</button>
 
                 </tr>
 
@@ -199,61 +209,58 @@
         <section class="menu" id="sec-3">
             <table class="items">
                 <tr>
+                    <!-- Menu's third header, the start of the dinner section -->
+                <tr class="entrance-animation">
                     <th class="items" id="dinner-table">Dinner</th>
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/plasma-steak.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Plasma Steak</strong>
                             <span>$60.99</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
-                            <button class="button" onclick="addToCart('plasmaSteak')">Add To Cart</button> Plasma Steak &nbsp;
-                            60.99$</td>
+                            <p>Premium grilled steak cooked to perfection, served with seasonal vegetables.</p>
+                            <button class="button" onclick="addToCart('plasmaSteak')">Add To Cart</button>
 
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/binary-tacos.png" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Binary tacos</strong>
                             <span>$20.98</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
-                            <button class="button" onclick="addToCart('binaryTacos')">Add To Cart</button> Binary tacos &nbsp;
-                            20.98$</td>
+                            <p>Crispy corn tacos filled with seasoned beef, lettuce, cheese, and salsa.</p>
+                            <button class="button" onclick="addToCart('binaryTacos')">Add To Cart</button>
 
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/cyber-sushi.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Cyber sushi</strong>
                             <span>$21.75</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
-                            <button class="button" onclick="addToCart('cyberSushi')">Add To Cart</button> cyber sushi &nbsp;
-                            21.75$</td>
+                            <p>Fresh assorted sushi rolls with salmon, tuna, and crispy tempura fillings.</p>
+                            <button class="button" onclick="addToCart('cyberSushi')">Add To Cart</button>
 
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/neon-curry-plate.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Neon curry plate</strong>
                             <span>$35.75</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
-                            <button class="button" onclick="addToCart('neonCurryPlate')">Add To Cart</button> Neon curry plate
-                            &nbsp;35.75$ </td>
+                            <p>Aromatic curry dish with tender chicken, coconut sauce, and jasmine rice.</p>
+                            <button class="button" onclick="addToCart('neonCurryPlate')">Add To Cart</button>
 
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/quantum-rice-plate.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Quantum rice plate</strong>
                             <span>$20.99</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
-                            <button class="button" onclick="addToCart('quantumRicePlate')">Add To Cart</button> Quantum rice
-                            plate &nbsp;20.99$</td>
+                            <p>Fluffy jasmine rice topped with grilled vegetables and your choice of protein.</p>
+                            <button class="button" onclick="addToCart('quantumRicePlate')">Add To Cart</button>
 
                 </tr>
             </table>
@@ -262,50 +269,47 @@
         <section class="deals" id="sec-4">
             <table class="items">
                 <tr>
+                    <!-- Menu's fourth header, the start of the dessert section -->
+                <tr class="entrance-animation">
                     <th class="h3">Desserts </th>
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/data-cube-brownies.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Data cube brownies</strong>
                             <span>$15.99</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
-                            <button class="button" onclick="addToCart('dataCubeBrownies')">Add To Cart</button> Data cube
-                            brownies &nbsp; 15.99$</td>
-
+                            <p>Decadent chocolate brownies with fudgy center and rich cocoa flavor.</p>
+                            <button class="button" onclick="addToCart('dataCubeBrownies')">Add To Cart</button>
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/hologram-sundae.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Hologram sundae</strong>
                             <span>$18.99</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
-                            <button class="button" onclick="addToCart('hologramSundae')">Add To Cart</button> Hologram sundae
-                            &nbsp; 18.99$</td>
+                            <p>Vanilla ice cream sundae with chocolate sauce, nuts, and whipped cream.</p>
+                            <button class="button" onclick="addToCart('hologramSundae')">Add To Cart</button>
 
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/pixel-devil-cake.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Pixel devil cake</strong>
                             <span>$25.75</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
-                            <button class="button" onclick="addToCart('pixelDevilCake')">Add To Cart</button> pixel devil cake
-                            &nbsp; 25.75$</td>
+                            <p>Rich chocolate cake with creamy frosting and a hint of espresso.</p>
+                            <button class="button" onclick="addToCart('pixelDevilCake')">Add To Cart</button>
 
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/quantum-ice-cream-float.png" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Quamtum icecream float</strong>
                             <span>$16.99</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
-                            <button class="button" onclick="addToCart('quantumIcecreamFloat')">Add To Cart</button> Quamtum
-                            icecream float &nbsp; 16.99$</td>
+                            <p>Vanilla ice cream floating in refreshing cola with whipped cream on top.</p>
+                            <button class="button" onclick="addToCart('quantumIcecreamFloat')">Add To Cart</button>
 
                 </tr>
             </table>
@@ -314,60 +318,58 @@
         <section class="menu" id="sec-5">
             <table class="items">
                 <tr>
+                    <!-- Menu's fifth header, the start of the drink section -->
+                <tr class="entrance-animation">
                     <th class="h3">Drinks</th>
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/blue-screen-soda.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Blue screen soda</strong>
                             <span>$13.99</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
-                            <button class="button" onclick="addToCart('blueScreenSoda')">Add To Cart</button> Blue screen soda
-                            &nbsp; 13.99$</td>
+                            <p>Crisp, refreshing blue-colored soda with berry flavor.</p>
+                            <button class="button" onclick="addToCart('blueScreenSoda')">Add To Cart</button>
 
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/lightning-energy.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Lightning energy</strong>
                             <span>$15.75</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
-                            <button class="button" onclick="addToCart('lightningEnergy')">Add To Cart</button> Lightning
-                            energy &nbsp; 15.75$</td>
+                            <p>Energizing drink with citrus and tropical fruit flavors.</p>
+                            <button class="button" onclick="addToCart('lightningEnergy')">Add To Cart</button>
 
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/rgb-shake.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>RGB shake</strong>
                             <span>$12.75</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
-                            <button class="button" onclick="addToCart('rgbShake')">Add To Cart</button> RGB shake &nbsp;
-                            12.75$</td>
+                            <p>Colorful milkshake blending strawberry, vanilla, and blueberry flavors.</p>
+                            <button class="button" onclick="addToCart('rgbShake')">Add To Cart</button>
 
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/nano-lemonade.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Nano Lemonade</strong>
                             <span>$16.99</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
-                            <button class="button" onclick="addToCart('nanoLemonade')">Add To Cart</button> Nano Lemonade
-                            &nbsp;16.99$</td>
+                            <p>Fresh squeezed lemonade with a hint of mint, perfectly chilled.</p>
+                            <button class="button" onclick="addToCart('nanoLemonade')">Add To Cart</button>
 
                 </tr>
-                <tr>
+                <tr class="entrance-animation">
                     <td class="table-data">
-                        <img src="../../assets/icons/toast.png" width="250px" alt="item image">
+                        <img src="../../assets/items/data-tea.jpg" width="250px" alt="item image">
                         <div class="menu-copy">
                             <strong>Data tea</strong>
                             <span>$12.99</span>
-                            <p>Fluffy waffles with neon berry drizzle.</p>
-                            <button class="button" onclick="addToCart('dataTea')">Add To Cart</button> Data tea &nbsp;12.99$
+                            <p>Aromatic herbal tea blend with calming chamomile and lavender notes.</p>
+                            <button class="button" onclick="addToCart('dataTea')">Add To Cart</button>
                     </td>
 
                 </tr>
@@ -447,5 +449,4 @@
     </footer>
     <script src="menus.js" alt="javascript"></script>
 </body>
-
 </html>
