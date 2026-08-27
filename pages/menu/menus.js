@@ -244,6 +244,8 @@ function displayCart(){
       totalEl.textContent = '';
       return;
    }
+// Define cart items, and cart total, if there's nothing, return and no cart found, return your cart is empty back to the html.
+
 
    items.innerHTML = '';
    let total = 0;   // running number, NOT reused from above
@@ -264,6 +266,8 @@ function displayCart(){
       items.appendChild(line);
       total += cartItem.price * cartItem.qty;   // total is a plain number here
    }
+   // Getting the amount of cart items, defining it in its own HTML area, then having the html linked to where the values will display in the div when the cart button is clicked, showing the item, +, -, rmeove, clear cart, and close cart.
+
 
    totalEl.textContent = `Total: $${total.toFixed(2)}`;   // .toFixed works — total is a number
 
@@ -273,6 +277,8 @@ function displayCart(){
          removeOne(this.dataset.name);
       });
    }
+   // decrease the item quantity by one when '-' is clicked while there is enough length possible
+
 
    const incBtns = items.querySelectorAll('.cart-inc');
    for(let i=0; i<incBtns.length; i++){
@@ -280,6 +286,8 @@ function displayCart(){
          addOne(this.dataset.name);
       });
    }
+   // increase the item quantity by one when '+' is clicked
+
 
    const remBtns = items.querySelectorAll('.cart-remove');
    for(let i=0; i<remBtns.length; i++){
@@ -288,12 +296,15 @@ function displayCart(){
       });
    }
 }
+   // Remove that cart item altogether, no matter the quantity
+
 
 function clearCart(){
    localStorage.clear();
    localStorage.removeItem('cart');
    displayCart();
 }
+   // Remove that whole cart altogether, every single item removes at the same time
 
 function addOne(name){
    let cart = getCart();

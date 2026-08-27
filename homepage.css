@@ -100,9 +100,8 @@ main {
 #p{
     margin-top: 120px;
 }
-
+/*header stylization*/
 .header > h1 {
-    /* margin-bottom:100px; */
     background: rgba(128, 128, 128, 0.134);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -118,7 +117,7 @@ main {
     justify-self: center;
 }
 
-
+/*all card postion*/
 .card-1,
 .card-2,
 .card-3,
@@ -250,6 +249,9 @@ opacity: 0.85;
 
 }
 
+
+/*So that ham-burg dos enot dispaly on computer screnns and tablets 
+But only on mobile version in media querys*/
  #ham-burg{
   display: none;
  }
@@ -308,7 +310,7 @@ display:none;
  .img{
   width:50px;
  }
-
+/*changing code */
  main{
     justify-content: center;
     display: grid;
@@ -346,7 +348,7 @@ display:none;
 	z-index:2;
 	overflow: hidden;
 }
-
+/*stylization for btn and bar*/
 .menu-btn .bar {
 	width:30px;
 	height: 3px;
@@ -359,7 +361,7 @@ display:none;
    color:var(--LightWhite);
 	transition: all 0.3s ease-in-out;
 }
-
+/*animation for the button so that it crosses*/
 .menu-btn .bar:nth-of-type(2) {
 	top: calc(50% - 9px);
 }
@@ -380,7 +382,7 @@ display:none;
   transform: translate(-50%, 0%) rotate(-45deg); 
 }
 
-/* Меню, которое будет появляться */
+/* nav stylization and fixes*/
 .nav {
 	position: fixed;
 	top: 0;
@@ -408,7 +410,7 @@ a{
    text-decoration:none ;
    margin: 30px;
 }
-
+/*hover effect for the links to make it look nice*/
 a:hover{
   color:var( --LightElectricCyan);
 }
