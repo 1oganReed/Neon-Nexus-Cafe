@@ -1,13 +1,9 @@
-
-
-
 // Script for card flips.
 document.querySelectorAll(".Card").forEach((card) => {
   card.addEventListener("click", () => {
     card.classList.toggle("is-flipped");
   });
 });
-
 
 //dark and light mode
 
@@ -37,3 +33,20 @@ darkmode.addEventListener("click", toggleDarkMode);
   updateDarkModeIcon();
 })();
 
+//hamburger js 
+let menuBtn = document.querySelector('.menu-btn');
+let ham = document.querySelector('.nav');
+let menuItem = document.querySelectorAll('.nav__link');
+
+menuBtn.addEventListener('click', function(){
+	menuBtn.classList.toggle('active');
+	ham.classList.toggle('active');
+})
+
+
+menuItem.forEach (function(menuItem) {
+  menuItem.addEventListener('click',function(){
+          menuBtn.classList.toggle('active');
+          ham.classList.toggle('active');
+  })
+})
