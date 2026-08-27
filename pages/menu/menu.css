@@ -478,6 +478,7 @@ nav {
   display:none;
 }
 
+/*media querys fro screeens less than 600px*/
 
 @media screen and (max-width: 600px) {
 
@@ -548,7 +549,7 @@ display:none;
   transform: translate(-50%, 0%) rotate(-45deg); 
 }
 
-/* Меню, которое будет появляться */
+/*Nav bar animation */
 .nav {
 	position: fixed;
 	top: 0;
@@ -604,6 +605,7 @@ a:hover{
   overflow-x:hidden ;
  }
 
+ /*section of dives and were they lie*/
   
 #sec-1 {
   display: flex;

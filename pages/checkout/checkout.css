@@ -153,6 +153,7 @@ h1{
    4px 4px 5px 0px rgba(0,0,0,.1);
   transition: all 0.3s ease;
 }
+/*hover efffect fro nav*/
 .nav-list:hover {
   color: #fff;
 }
@@ -551,7 +552,7 @@ display: none !important;
   transform: translate(-50%, 0%) rotate(-45deg); 
 }
 
-/* Меню, которое будет появляться */
+/*nav for medi aquery and hamburger styling */
 .nav {
 	position: fixed;
 	top: 0;
