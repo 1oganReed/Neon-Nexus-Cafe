@@ -381,17 +381,14 @@ button:hover{
     box-shadow: 1px 1px 10px var(--LightElectricCyan);
 }
 
-button:active{
-    border: 1px 1px var(--LightNeonBlue);
-    background: var(--LightBlack);
-    box-shadow: 2px 2px 10px var(--LightNeonBlue);
-
-}
 button{
     display: inline-flex;
     width: auto;
     min-width: 60px;
     margin: 0;
+    padding: 5px;
+    align-content: center;
+    justify-content: center;
     font-family: "VT323", monospace;
     flex-direction: row-reverse;
     justify-content: center;
