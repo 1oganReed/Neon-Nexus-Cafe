@@ -16,12 +16,16 @@ function updateDarkModeIcon() {
   darkModeImage.alt = isDark ? "Switch to light mode" : "Switch to dark mode";
   darkModeImage.title = isDark ? "Switch to light mode" : "Switch to dark mode";
 }
+// Switch the icons when dark mode button clicked
+
 
 function toggleDarkMode() {
   const isDark = document.documentElement.classList.toggle("darkmode");
   localStorage.setItem("darkMode", String(isDark));
   updateDarkModeIcon();
 }
+// Change colors to it's dark version
+
 
 darkmode.addEventListener("click", toggleDarkMode);
 
@@ -32,6 +36,8 @@ darkmode.addEventListener("click", toggleDarkMode);
   }
   updateDarkModeIcon();
 })();
+// Save theme setting chosen to the local storage
+
 
 //hamburger js 
 let menuBtn = document.querySelector('.menu-btn');

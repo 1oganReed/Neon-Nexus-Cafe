@@ -306,11 +306,14 @@ darkmode.addEventListener("click", toggleDarkMode);
 let menuBtn = document.querySelector('.menu-btn');
 let ham = document.querySelector('.nav');
 let menuItem = document.querySelectorAll('.nav__link');
+//defining cart area
+
 
 menuBtn.addEventListener('click', function(){
 	menuBtn.classList.toggle('active');
 	ham.classList.toggle('active');
 })
+// When menu button clicked, appears with the cart on the checkout page, with all details.
 
 
 menuItem.forEach (function(menuItem) {
@@ -319,3 +322,4 @@ menuItem.forEach (function(menuItem) {
           ham.classList.toggle('active');
   })
 })
+// Toggle appearance (visibility) of each cart item
