@@ -254,12 +254,18 @@ opacity: 0.85;
   display: none;
  }
 
+ img{
+    border-radius: 20px;
+ }
+
 
 /*stylization for media querys*/
 
 
 @media screen and (max-width: 600px) {
-
+body{
+    overflow-x: hidden;
+}
  nav label {
     text-align: right;
     display: block;
