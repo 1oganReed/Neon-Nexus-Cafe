@@ -1,6 +1,3 @@
-
-
-
 // Script for card flips.
 document.querySelectorAll(".Card").forEach((card) => {
   card.addEventListener("click", () => {
@@ -15,7 +12,7 @@ const darkModeImage = darkmode.querySelector("img");
 
 function updateDarkModeIcon() {
   const isDark = document.documentElement.classList.contains("darkmode");
-  darkModeImage.src = isDark ? "../../assets/icons/LM.png" : "../../assets/icons/DM-YP.png";
+  darkModeImage.src = isDark ? "assets/icons/LM.png" : "assets/icons/DM-YP.png";
   darkModeImage.alt = isDark ? "Switch to light mode" : "Switch to dark mode";
   darkModeImage.title = isDark ? "Switch to light mode" : "Switch to dark mode";
 }
@@ -35,3 +32,21 @@ darkmode.addEventListener("click", toggleDarkMode);
   }
   updateDarkModeIcon();
 })();
+
+//hamburger js 
+let menuBtn = document.querySelector('.menu-btn');
+let ham = document.querySelector('.nav');
+let menuItem = document.querySelectorAll('.nav__link');
+
+menuBtn.addEventListener('click', function(){
+	menuBtn.classList.toggle('active');
+	ham.classList.toggle('active');
+})
+
+
+menuItem.forEach (function(menuItem) {
+  menuItem.addEventListener('click',function(){
+          menuBtn.classList.toggle('active');
+          ham.classList.toggle('active');
+  })
+})
